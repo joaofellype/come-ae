@@ -1,0 +1,274 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divGeral">
+
+        <!-- NAVBAR -->
+        <header>
+            <nav id="navBar">
+                <div onclick="window.location.href='/admin_start'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+                <div id="divIconMenu">
+                    <button style="padding: 0px;" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger"><i id="menuIconSup"
+                            class="material-icons">menu</i></button>
+                </div>
+
+                <div>
+                    <div id="divHorarioTopo">
+                        <select name="selc" class="selc">
+                            <option id="1" value="Fechado">Restaurante Fechado</option>
+                            <option id="2" value="Aberto">Restaurante Aberto</option>
+                            <option id="3" value="Pausado">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair
+                    </button>
+                </div>
+
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+            <div id="pageLinks">
+
+                <li><a id="nomePropEstab" class="waves-effect waves-light">{{nome}}<span class="notific new badge pulse"
+                            onclick="javascript:window.location.href='/admin_ped'">4</span></a></li>
+
+                <li><a id="emailProp" data-id="{{idrestaurante}}" class="waves-effect waves-light">{{email}}</a></li>
+
+                <li><a class="waves-effect waves-light" href="/admin_start">Início</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ava">Avaliações</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light" href="">Financeiro</a></li>
+                <li><a id="marcaPaginaAtual" class="waves-effect waves-light" href="/admin_card">Cardápio</a></li>
+                <li><a class="waves-effect waves-light" href="admin_promo">Promoções</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_areas">Áreas de entrega</a></li>
+                <li><a class="waves-effect waves-light" href="">Formas de pagamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_users">Usuários</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_hr">Horário de funcionamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light" href="">Novidades</a></li>
+                <li><a class="waves-effect waves-light" href="">Políticas</a></li>
+                <li><a id="config" class="waves-effect waves-light" href="">Configurações do ambiente</a></li>
+                <div class="divider"></div>
+                <li><a id="indef" class="waves-effect waves-light"></a></li>
+            </div>
+        </ul>
+
+        <div id="divCorpo">
+            <div id="divCardapio">
+        
+                <h4>Cardápio</h4>
+
+            </div>
+
+            <li id="divisorCard" class="divider"></li>
+
+            <ul id="tabsPrinc" class="tabs">
+                <li style="width: 49%" class="tab">
+                    <a id="categs" style="width: 90%" href="#test-swipe-1">Categorias</a>
+                </li>
+                <li style="width: 49%" class="tab">
+                    <a id="comples" style="width: 90%" href="#test-swipe-2">Grupos</a>
+                </li>
+            </ul>
+
+            {{!-- CATEGORIAS --}}
+            <div style="overflow: auto; padding-bottom: 20px; margin-bottom: 40px;" id="test-swipe-1" class="col s12">
+
+                <div class="center">
+                    <a style="background-color: purple; text-shadow: 1px 1px 1px black; border-radius: 100px"
+                        class="waves-effect waves-light btn-small modal-trigger btnCateg"
+                        href="#cadastra_Categoria">Nova Categoria
+                    </a>
+                </div>
+
+                <div style="width: 95%;" id="test-swipe-1">
+                    <table id="tableCateg" class="display1 cell-border nowrap compact">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th class="center">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            {{!-- COMPLEMENTOS --}}
+            <div id="test-swipe-2" style="width: 95%; margin-bottom: 40px;" class="col s12">
+
+                <div id="test-swipe-2">
+
+                    <div class="center">
+                        <a style="background-color: purple; text-shadow: 1px 1px 1px black; border-radius: 100px"
+                            class="waves-effect waves-light btn-small modal-trigger btnGrup"
+                            href="#modalComplemento">Novo Grupo</a>
+                    </div>
+
+                    <table id="tableGrup" class="display2 cell-border nowrap compact">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th class="center">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alguma coisa</td>
+
+                                <td class="center" style="font-weight: bold; text-shadow: 0.5px 0.5px 2px black">
+                                    <a class="btn-floating btn-small waves-effect waves-light blue darken-2 tooltipped modal-trigger"
+                                        data-tooltip="Editar" href="#editComp" data-position="left">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                    <a class="btn-floating btn-small waves-effect waves-light red darken-4 tooltipped modal-trigger btnDelGrup"
+                                        href="#" data-tooltip="Excluir" data-position="left">
+                                        <i class="material-icons">delete_forever</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- MODAL CRIAR CATEGORIA -->
+            <div style="outline: none; border-radius: 5px" id="cadastra_Categoria" class="modal">
+                <div id="corpoModal" class="modal-content">
+                    <p id="pCriarCat">Criar categoria</p>
+                    <i id="iconX" class="material-icons modal-close">close</i>
+
+                    <div id="divInpNomeModal" class="input-field">
+                        <input required class="browser-default validate" name="categoria" id="input_text" type="text"
+                            maxlength="40">
+                        <label id="lblNomeCatg" for="input_text">Nome da categoria *</label>
+                    </div>
+                    <div id="divModalBtns">
+                        <button id="btnModalCancelar"
+                            class="waves-effect waves-light btn-small modal-close">Cancelar</button>
+                        <button id="btnModalSalvarCateg" class="waves-effect waves-light btn-small">Salvar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL EDITAR GRUPO -->
+            <div id="editComp" class="modal editCompModal">
+                <div id="corpoModal" class="modal-content editCompModalCorpo">
+                    <p id="pCriarGrupo1">Editar Grupo</p>
+                    <i id="iconX" class="material-icons modal-close">close</i>
+
+
+                    <p class="idGrupo" style="display:none"></p>
+                    <div id="divInpNomeModal" class="input-field">
+                        <input required class="browser-default validate" value="" name="nomegrupo" id="desccomp"
+                            type="text" placeholder="Editar Grupo" maxlength="40">
+
+                        <input type="hidden" name="idgrupo" value="">
+                    </div>
+
+                    <div id="divModalBtns">
+                        <button id="btnModalCancelar"
+                            class="waves-effect waves-light btn-small modal-close">Cancelar</button>
+                        <button id="btnModalSalvarGrupo" class="waves-effect waves-light btn-small ">Editar</button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- MODAL EDITAR CATEGORIA -->
+            <div id="editCategoria" class="modal">
+
+                <div id="corpoModal" class="modal-content">
+                    <p id="pCriarCat">Editar categoria</p>
+                    <i id="iconX" class="material-icons modal-close">close</i>
+                    <p style="display: none;" class="idCategoria"></p>
+                    <div id="divInpNomeModal" class="input-field">
+                        <input required class="browser-default validate" value="" name="categoria12" id="input_text2"
+                            type="text" data-length="25" maxlength="25" placeholder="Editar categoria *">
+                        <input type="hidden" id="id" name="idValue" value="" />
+                    </div>
+
+                    <div id="divModalBtns">
+                        <button id="btnModalCancelar"
+                            class="waves-effect waves-light btn-small modal-close">Cancelar</button>
+                        <button id="btnModalSalvar"
+                            class="waves-effect waves-light btn-small editCategoria">Editar</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MODAL CRIAR COMPLEMENTO -->
+            <div id="modalComplemento" class="modal">
+                <div id="corpoModal3" class="modal-content">
+                    <p id="pCriarGrupo2">Novo Grupo</p>
+                    <i id="iconX" class="material-icons modal-close">close</i>
+                    <div id="divGrupoComp">
+                        <div id="divInpNomeModalGrupo" class="input-field">
+                            <input id="grupoComp" name="grupo" required class="browser-default" type="text">
+                            <label id="lblGrupoComp" for="input_text">Grupo *</label>
+                        </div>
+                    </div>
+                    <div id="divModalBtnsGrupo">
+                        <button id="btnModalCancelarGrupo"
+                            class="waves-effect waves-light btn-small modal-close btnclosecancelgrup">Cancelar</button>
+                        <button id="btnModalSalvarComplesGrupo"
+                            class="waves-effect waves-light btn-small">Salvar</button>
+                    </div>
+                </div>
+            </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.bootcss.com/push.js/1.0.12/push.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.4/jspdf.plugin.autotable.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.4/jspdf.plugin.autotable.min.js"></script>
+<script src="/js/Funcoes/Compartilhado-REST.js"></script>
+<script src="/js/admin_card.js"></script>
+
+</html>

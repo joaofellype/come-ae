@@ -1,0 +1,205 @@
+<!DOCTYPE>
+<html lang="pt-br">
+
+<head>
+    <title>Complementos</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divGeral">
+
+        <body>
+
+            <!-- NAVBAR -->
+            <header>
+                <nav id="navBar">
+
+                    <div onclick="window.location.href='/admin_start'" class="purple-text kit-flex logo-nav">
+                        <i class="icon-comeae kit-flex"></i>
+                        <i class="icon-comeae_texto kit-flex"></i>
+                    </div>
+                    <div id="divIconMenu">
+                        <button style="padding: 0px" data-target="sidenav-1"
+                            class="waves-effect waves-light btn sidenav-trigger"><i id="menuIconSup"
+                                class="material-icons">menu</i></button>
+                    </div>
+
+                    <div>
+                        <div id="divHorarioTopo">
+                            <select name="selc" class="selc">
+                                <option id="1" value="1">Restaurante Fechado</option>
+                                <option id="2" value="2">Restaurante Aberto</option>
+                                <option id="3" value="3">Pausado</option>
+                            </select>
+                        </div>
+                        <button id="btnLog" class="btn-small logout">Sair
+                        </button>
+                    </div>
+
+                </nav>
+            </header>
+
+            <!-- LEFT SIDEBAR	 -->
+            <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+                <div id="pageLinks">
+                    <li><a id="nomePropEstab" class="waves-effect waves-light">{{nome}}<span class="new badge pulse"
+                                onclick="javascript:window.location.href='/admin_ped'">4</span></a></li>
+                    <li><a id="emailProp" data-id="{{idrestaurante}}" class="waves-effect waves-light">{{email}}</a>
+                    </li>
+                    <li><a class="waves-effect waves-light" href="/admin_start">Início</a></li>
+                    <li><a class="waves-effect waves-light" href="/admin_ava">Avaliações</a></li>
+                    <li><a class="waves-effect waves-light" href="/admin_ped">Pedidos</a></li>
+                    <li><a class="waves-effect waves-light" href="">Financeiro</a></li>
+                    <li><a id="marcaPaginaAtual" class="waves-effect waves-light" href="/admin_card">Cardápio</a></li>
+                    <li><a class="waves-effect waves-light" href="admin_promo">Promoções</a></li>
+                    <li><a class="waves-effect waves-light" href="/admin_areas">Áreas de entrega</a></li>
+                    <li><a class="waves-effect waves-light" href="">Formas de pagamento</a></li>
+                    <li><a class="waves-effect waves-light" href="/admin_hr">Horário de funcionamento</a></li>
+                    <li><a class="waves-effect waves-light" href="/admin_users">Usuários</a></li>
+                    <li><a class="waves-effect waves-light" href="/admin_profile">Perfil</a></li>
+                    <li><a class="waves-effect waves-light" href="">Ajuda</a></li>
+                    <li><a class="waves-effect waves-light" href="">Políticas</a></li>
+                    <li><a class="waves-effect waves-light" href="">Configurações do ambiente</a></li>
+
+                    <div class="divider"></div>
+                    <li><a id="indef" class="waves-effect waves-light"></a></li>
+                </div>
+            </ul>
+
+            <div id="divCorpo">
+
+                <div id="divCardapio">
+                    <a class="btn-floating btn-medium waves-effect waves-light btnPDF"><i
+                            class="material-icons">picture_as_pdf</i></a>
+                    {{#each categ}}
+                    <h4 id="idgrupocomp" data-id="{{id}}">Grupo: <b>{{grupo}}</b></h4>
+                    {{/each}}
+                </div>
+
+                <li id="divisorCard" class="divider"></li>
+
+                <div id="divBtnCat">
+                    <button id="btnCat" class="waves-effect waves-light btn modal-trigger">Retornar</button>
+                </div>
+
+                <ul id="tabsPrinc" class="tabs">
+                    <li style="width: 49.5%" class="tab"><a style="width: 100%">Complementos</a></li>
+                </ul>
+
+                <div class="center">
+                    <a style="background-color: purple; text-shadow: 1px 1px 1px black;border-radius: 100px"
+                        class="waves-effect waves-light btn-small modal-trigger btnCateg" href="#modalComplemento">Novo
+                        complemento</a>
+                </div>
+
+                <div>
+                    <div style="width: 95%" id="test-swipe-1">
+                        <table id="tableComples" class="display cell-border nowrap compact">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th class="center">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- MODAL CRIAR COMPLEMENTO -->
+                <div id="modalComplemento" class="modal">
+                    <div id="corpoModal3" class="modal-content">
+
+                        <p id="pCriarCat">Criar Complemento</p>
+                        <i id="iconX" class="material-icons modal-close">close</i>
+
+                        <div id="divGrupoComp">
+
+                            <div style="padding-top: 20px; text-align: center" id="clones">
+
+                                <div id="divInpNomeCompModal" class="input-field clone-campos ">
+                                    <div>
+                                        <input style="margin: auto" required placeholder="Nome *" name="nome"
+                                            id="inpCompSec" class="browser-default form" type="text" maxlength="20">
+
+                                        <input style="margin: auto" placeholder="Descrição" name="desc" id="inpCompSec2"
+                                            class="browser-default form" type="text" maxlength="100">
+                                        <input inputmode="numeric" style="margin: auto" placeholder="Valor" name="valor"
+                                            id="inpCompSec3" class="browser-default form valorcriar" type="text">
+                                    </div>
+                                    {{#each categ}}
+                                    <input type="hidden" value="{{id}}" class="form" name="grupo">
+                                    {{/each}}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div id="divModalBtns">
+                            <button type="button" id="btnModalCancelar"
+                                class="waves-effect waves-light btn-small modal-close">Cancelar</button>
+                            <button id="btnModalSalvar2" class="waves-effect waves-light btn-small">Salvar</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+        </body>
+    </div>
+
+    <div>
+
+        <form class="formescondido" action="/admin_card2" method="POST">
+            <input type="hidden" value="" name="descricao">
+            <input type="hidden" value="" name="nome">
+            <input type="hidden" value="" name="valor">
+            <input type="hidden" value="" name="grupo">
+        </form>
+
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.4/jspdf.plugin.autotable.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.bootcss.com/push.js/1.0.12/push.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.4/jspdf.plugin.autotable.min.js"></script>
+<script src="/js/comeplementos.js"></script>
+
+</html>

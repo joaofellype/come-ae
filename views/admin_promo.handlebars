@@ -1,0 +1,665 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>ADM Promoções</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.css">
+
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divGeral">
+
+        <!-- NAVBAR -->
+        <header>
+            <nav id="navBar">
+                <div onclick="window.location.href='/admin_promo'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+                <div id="divIconMenu">
+                    <button style="padding: 0px;" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger"><i id="menuIconSup"
+                            class="material-icons">menu</i></button>
+                </div>
+                <div>
+                    <div id="divHorarioTopo">
+                        <select name="selc" class="selc">
+                            <option id="1" value="Fechado">Restaurante Fechado</option>
+                            <option id="2" value="Aberto">Restaurante Aberto</option>
+                            <option id="3" value="Pausado">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+            <div id="pageLinks">
+                <li><a id="nomePropEstab" class="waves-effect waves-light">{{nome}}<span
+                            class="new badge pulse countPedido"
+                            onclick="javascript:window.location.href='/admin_ped'">4</span></a></li>
+                <li><a id="emailProp" data-id="{{idrestaurante}}" class="waves-effect waves-light">{{email}}</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_start">Início</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ava">Avaliações</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light" href="">Financeiro</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_card">Cardápio</a></li>
+                <li><a id="marcaPaginaAtual" class="waves-effect waves-light" href="admin_promo">Promoções</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_areas">Áreas de entrega</a></li>
+                <li><a class="waves-effect waves-light" href="">Formas de pagamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_users">Usuários</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_hr">Horário de funcionamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light" href="">Políticas</a></li>
+                <li><a class="waves-effect waves-light" href="">Configurações do ambiente</a></li>
+
+                <div class="divider"></div>
+                <li><a id="indef" class="waves-effect waves-light"></a></li>
+            </div>
+        </ul>
+
+        <div id="divCorpo">
+            <a style="margin-right: 30px" href="#modalPromoAtivas"
+                class="btn-floating btn-medium waves-effect waves-light btnPromoAtivas modal-trigger"><i
+                    class="material-icons">settings_power</i></a>
+            <div id="divInicio">
+                <h4>Promoções</h4>
+            </div>
+
+            <div id="divisorCard" class="divider"></div>
+
+            {{!-- PORCENTAGEM --}}
+            <div class="dv-card">
+                <div class="card cardpromos">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="right" src="/views/img/icons/percent2.png">
+                    </div>
+                    <div id="corpocard" class="card-content">
+                        <span class="card-title grey-text text-darken-4"><b>Promoção por Porcentagem</b><a
+                                id="btnSaiba1" style="background-color: purple; color: white; font-weight: bold"
+                                class="waves-effect waves-light btn-small right modal-trigger"
+                                href="#modalProcentagem">Saiba Mais</a></span>
+                        <p style="color: grey">Adicione a todos os itens determinado valor de desconto.</p><br>
+                        <a id="btnSaiba2" style="background-color: purple; color: white; font-weight: bold;"
+                            class="waves-effect waves-light btn-small right modal-trigger"
+                            href="#modalProcentagem">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+
+            {{!-- VALOR --}}
+            <div class="dv-card">
+                <div class="card cardpromos">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="right" src="/views/img/icons/cash.png">
+                    </div>
+                    <div id="corpocard" class="card-content">
+                        <span class="card-title grey-text text-darken-4"><b>Promoção de Valor</b><a id="btnSaiba3"
+                                style="background-color: purple; color: white; font-weight: bold"
+                                class="waves-effect waves-light btn-small right modal-trigger" href="#modalValor">Saiba
+                                Mais</a></span>
+                        <p style="color: grey">Adicione a todos os itens determinado valor de desconto.</p><br>
+                        <a id="btnSaiba4" style="background-color: purple; color: white; font-weight: bold;"
+                            class="waves-effect waves-light btn-small right modal-trigger" href="#modalValor">Saiba
+                            Mais</a>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="fotocaminho" />
+            {{!-- FRETE --}}
+            <div class="dv-card">
+                <div class="card cardpromos">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="right" src="/views/img/icons/frete.png">
+                    </div>
+                    <div id="corpocard" class="card-content">
+                        <span class="card-title grey-text text-darken-4"><b>Promoção de Frete Grátis</b><a
+                                id="btnSaiba5" style="background-color: purple; color: white; font-weight: bold"
+                                class="waves-effect waves-light btn-small right modal-trigger" href="#modalFrete">Saiba
+                                Mais</a></span>
+                        <p style="color: grey">Determinado valor de envio para bairros e categorias selecionadas.</p>
+                        <br>
+                        <a id="btnSaiba6" style="background-color: purple; color: white; font-weight: bold;"
+                            class="waves-effect waves-light btn-small right modal-trigger" href="#modalFrete">Saiba
+                            Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal CROP IMAGE -->
+    <div id="modalCropUser" class="modal modal-fixed-footer">
+        <div class="modal-header kit-flex" style="height: 45px;">
+            <i class="material-icons purple-text text-darken-2 close-top-crop modal-close">close</i>
+            <span class="purple-text text-darken-2 kit-flex sp-top-crop">Ajustar Imagem</span>
+        </div>
+        <div class="modal-content">
+            <div id="image_demo"></div>
+        </div>
+        <div class="modal-footer kit-flex">
+            <a class="waves-effect waves-light btn-small purple darken-2 crop_image">Enviar</a>
+        </div>
+    </div>
+
+    <!-- MODAL PROMOÇÃO PORCENTAGEM -->
+    <div style="outline: none" id="modalProcentagem" class="modal mdlpromoporc">
+        <div class="header-promocao kit-flex"
+            style="height: 45px;background-color: #fafafa;position: sticky;top: 0;border-bottom: 1px solid #e1e1e1;">
+            <i style="position: absolute; right: 5px;top: 5px;"
+                class="text-darken-4 material-icons modal-close">close</i><br><br>
+            <p style="font-size: 1.5rem; color: purple;" class="center">
+                Promoção de Porcentagem</p>
+        </div>
+        <div class="modal-content">
+            <div style="text-align: justify; width: 98%;">
+                <ul style="font-size: 16px">
+                    <p style="font-size: 14px" class="left grey-text">A promoção pode ser ativa para:</p><br>
+                    <li>● Todos os produtos da(s) categoria(s) selecionada(s)</li>
+                    <li>● Produto(s) específico(s) selecionado(s)</li>
+                    <p style="font-size: 14px" class="left grey-text">Efeitos:</p><br>
+                    <li>● Selecionar <b>confirmar</b> habilitará a promoção imediatamente, ou seja, após isso já estará
+                        disponível na opção de <b>ativos</b></li>
+                </ul>
+            </div><br>
+
+            <div class="divider"></div><br>
+
+            <div class="row center">
+                <span class="kit-flex" style="color: purple; font-size: 1.3rem; margin-bottom: 10px;">Imagem da
+                    promoção</span>
+                <div class="dv-imagem-user">
+                    <label for="btninput">
+                        <img id="imgInside" src="/views/img/base.png"
+                            style="width: 150px; height: 150px; border: 2px solid purple;"
+                            class="circle responsive-img b-lazy img-user-perfil">
+                    </label>
+                    <input name="imgPerfil" accept="image/*" class="form" type="file" id="btninput">
+                    <input name="fotocaminho" class="form" type="hidden" />
+                </div>
+                <span style="font-size: 0.7rem;" class="grey-text">Alterar imagem</span>
+            </div>
+
+            <div
+                style="text-align: center; margin-bottom: -20px; padding: 10px; color: white; background-color: purple; border-radius: 4px">
+                <p id="pPromo" style="display: inline-flex;"><b class="pulse">Promoção:</b> &nbsp Todos os itens com</p>
+                <div style="display: inline-flex">
+                    <input type="text" inputmode="numeric" maxlength="3" pattern="([0-9]{3})"
+                        style="width: 45px; height: 30px; text-align: center; outline: none; border: 2px solid black; border-radius: 3px; font-weight: bold; background-color: white"
+                        class="browser-default inpValor" type="number" name="valorPorcentagem" id="inpPorc">
+                    <i class="material-icons"><img width="28px"
+                            style="background-color: black; padding-top: 1px; padding-bottom: 1px;position: relative; left: -2px; border: 2px solid black; border-radius: 0 3px 3px 0"
+                            src="/views/img/icons/percent.png" alt=""></i>
+                </div>
+                <p id="pDesc" style="display: inline-flex">de desconto.</p>
+            </div>
+
+            <br><br>
+
+            <div class="divporc1" style="display: none;">
+                <i style="float: right; padding-top: 10px; color: purple; cursor: pointer;"
+                    onclick="$('#btnSaiba1').click()" class="material-icons">sync</i>
+                <div class="divider divisorpromo"></div>
+
+                <p
+                    style="text-align: center;margin-top: 10px;margin-bottom: 10px;border-radius: 3px;color: purple; font-weight: bold">
+                    Todos os produtos das categorias abaixo</p>
+
+                <div id="divBoxSelect1">
+                    <p style="margin-left: 0px; margin-top: 5px; margin-right: 0px;">Categorias:</p>
+                    <select id="selcatspromo1" class="js-example-basic-multiple browser-default selcatspromo1"
+                        name="states[]" multiple="multiple">
+                        <option></option>
+                        {{#each categoria}}
+                        <option value="{{id}}">{{categoriaproduto}}</option>
+                        {{/each}}
+
+                    </select>
+
+                </div>
+
+                <br>
+            </div>
+            <div class="divporc2" style="display: none">
+                <i style="float: right; padding-top: 10px; color: purple; cursor: pointer;"
+                    onclick="$('#btnSaiba1').click()" class="material-icons">sync</i>
+                <div class="divider divisorpromo"></div>
+
+                <p
+                    style="text-align: center;margin-top: 10px;margin-bottom: 10px;border-radius: 3px;color: purple; font-weight: bold">
+                    Produtos específicos da categoria abaixo</p>
+
+                <div style="margin-top: 10px; margin-bottom: 10px;" id="divBoxSelect1">
+                    <p class="titleCategSel">Categoria:</p>
+                    <select id="selespecpromo1" class="browser-default selespecpromo1" name="states">
+                        <option disabled selected>Selecione</option>
+                        {{#each categoria}}
+                        <option value="{{id}}">{{categoriaproduto}}</option>
+                        {{/each}}
+
+                    </select>
+                </div>
+
+                <div id="divBoxSelect1">
+                    <p class="titleCategSel">Produtos:</p>
+                    <select id="selespecpromo4" class="js-example-basic-multiple browser-default selespecpromo4"
+                        name="states[]" multiple="multiple">
+                        <option></option>
+                    </select>
+                </div>
+
+                <br>
+            </div>
+
+            <div style="margin-bottom: 20px;" class="divider"></div>
+            <div style="display: flex; margin-bottom: 20px !important; align-items: center; justify-content: center;">
+                <p style="margin: 0px; margin-right: 5px;">Início:</p>
+                <input placeholder="Data"
+                    style="width: 85px;text-align: center;border: 2px solid purple;border-radius: 5px;padding: 3px;margin-right: 5px;height: 33px;"
+                    type="text" class="pickerinicio browser-default  porcentagem-ini1">
+                <p style="margin: 0px; margin-left: 20px;">Fim:</p>
+                <input placeholder="Data"
+                    style="width: 85px;text-align: center;border: 2px solid purple;border-radius: 5px;padding: 3px;margin-right: 5px;height: 33px; margin-left: 5px;"
+                    type="text" class="pickerfim browser-default porcentagem-fim1">
+            </div>
+
+            <div class="divider divisorpromo"></div>
+
+            <div style="margin-top: 20px; text-align: center" id="tomada1" class="switch"></div>
+            <div style="display: flex;" class="switch" id="tomada1">
+                <label>
+                    <p style="display: inline-flex; color: black"></p>
+                    <input id="checkPorcentagem" type="checkbox">
+                    <span class="lever"></span>
+                    <p style="display: inline-flex; color: black; font-weight: bold;">Confirmar</p>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PROMOÇÃO VALOR -->
+    <div style="outline: none" id="modalValor" class="modal mdlpromoval">
+        <div class="header-promocao kit-flex"
+            style="height: 45px;background-color: #fafafa;position: sticky;top: 0;border-bottom: 1px solid #e1e1e1;">
+            <i style="position: absolute; right: 5px;top: 5px;"
+                class="text-darken-4 material-icons modal-close">close</i><br><br>
+            <p style="font-size: 1.5rem; color: purple;" class="center">
+                Promoção de Valor</p>
+        </div>
+
+        <div class="modal-content">
+            <div style="text-align: justify; width: 98%;">
+                <ul style="font-size: 16px">
+                    <p style="font-size: 14px" class="left grey-text">A promoção pode ser ativa para:</p><br>
+                    <li>● Todos os produtos da(s) categoria(s) selecionada(s)</li>
+                    <li>● Produto(s) específico(s) selecionado(s)</li>
+                    <p style="font-size: 14px" class="left grey-text">Efeitos:</p><br>
+                    <li>● Selecionar <b>confirmar</b> habilitará a promoção imediatamente, ou seja, após isso já estará
+                        disponível na opção de <b>ativos</b></li>
+                </ul>
+            </div><br>
+
+            <div class="divider"></div><br>
+
+            <div class="row center">
+                <span class="kit-flex" style="color: purple; font-size: 1.3rem; margin-bottom: 10px;">Imagem da
+                    promoção</span>
+                <div class="dv-imagem-user">
+                    <label for="btninput2">
+                        <img id="imgInside2" src="/views/img/base.png"
+                            style="width: 150px; height: 150px; border: 2px solid purple;"
+                            class="circle responsive-img b-lazy img-user-perfil">
+                    </label>
+                    <input name="imgPerfil" accept="image/*" class="form" type="file" id="btninput2">
+                    <input name="fotocaminho" class="form" type="hidden" />
+                </div>
+                <span style="font-size: 0.7rem;" class="grey-text">Alterar imagem</span>
+            </div>
+
+            <div
+                style="text-align: center; margin-bottom: -20px; padding: 10px; color: white; background-color: purple; border-radius: 4px">
+                <p id="pPromo" style="display: inline-flex;"><b class="pulse">Promoção:</b> &nbsp Todos os itens com</p>
+                <div style="display: inline-flex">
+                    <input type="text" inputmode="numeric" maxlength="3" pattern="([0-9]{3})"
+                        style="width: 45px; height: 30px; text-align: center; outline: none; border: 2px solid black; border-radius: 3px; font-weight: bold; background-color: white"
+                        class="browser-default inpValor" type="number" name="promoValor" id="inpValor">
+                    <p
+                        style="background-color: black; padding-top: 1px; padding-right: 3px; padding-left: 3px; padding-bottom: 1px;position: relative; left: -2px; border: 2px solid black; border-radius: 0 3px 3px 0">
+                        R$</p>
+                </div>
+                <p id="pDesc" style="display: inline-flex">de desconto.</p>
+            </div>
+
+            <br><br>
+            <div class="divval1" style="display: none;">
+                <i style="float: right; padding-top: 10px; color: purple; cursor: pointer;"
+                    onclick="$('#btnSaiba3').click()" class="material-icons">sync</i>
+                <div class="divider divisorpromo"></div>
+
+                <p
+                    style="text-align: center;margin-top: 10px;margin-bottom: 10px;border-radius: 3px;color: purple; font-weight: bold">
+                    Todos os itens das categorias abaixo</p>
+
+                <div id="divBoxSelect1">
+                    <p style="margin-top: 6px;">Categorias:</b></p>
+                    <select id="selcatspromo2" class="js-example-basic-multiple browser-default selcatspromo2"
+                        name="states[]" multiple="multiple">
+                        <option></option>
+                        {{#each categoria}}
+                        <option value="{{id}}">{{categoriaproduto}}</option>
+                        {{/each}}
+
+                    </select>
+
+                </div>
+
+                <br>
+            </div>
+
+            <div class="divval2" style="display: none;">
+                <i style="float: right; padding-top: 10px; color: purple; cursor: pointer;"
+                    onclick="$('#btnSaiba3').click()" class="material-icons">sync</i>
+                <div class="divider divisorpromo"></div>
+
+                <p
+                    style="text-align: center;margin-top: 10px;margin-bottom: 10px;border-radius: 3px;color: purple; font-weight: bold">
+                    Produtos específicos da categoria abaixo</p>
+
+                <div id="divBoxSelect1">
+                    <p class="titleCategSel2">Categoria:</p>
+                    <select id="selespecpromo7" style="margin-bottom: 10px" class="browser-default selespecpromo7"
+                        name="states2">
+                        <option disabled selected>Selecione</option>
+                        {{#each categoria}}
+                        <option value="{{id}}">{{categoriaproduto}}</option>
+                        {{/each}}
+
+                    </select>
+                </div>
+
+                <div id="divBoxSelect1">
+                    <p class="titleCategSel">Produtos:</p>
+                    <select id="selespecpromo5" style="width: 60% !important"
+                        class="js-example-basic-multiple browser-default selespecpromo5" name="states[]"
+                        multiple="multiple">
+                        <option></option>
+                    </select>
+                </div>
+
+                <br>
+            </div>
+
+            <div style="margin-bottom: 20px;" class="divider"></div>
+            <div style="display: flex; margin-bottom: 20px !important; align-items: center; justify-content: center;">
+                <p style="margin: 0px; margin-right: 5px; font-weight: bold;">Início:</p>
+                <input placeholder="Data"
+                    style="width: 70px; text-align: center; border: 2px solid purple; border-radius: 3px; padding: 3px; margin-right: 5px;"
+                    type="text" class="pickerinicio browser-default valor-ini1">
+                <p style="margin: 0px; margin-left: 20px; font-weight: bold;">Fim:</p>
+                <input placeholder="Data"
+                    style="width: 70px; text-align: center; border: 2px solid purple; border-radius: 3px; padding: 3px; margin-left: 5px;"
+                    type="text" class="pickerfim browser-default valor-fim1">
+            </div>
+
+            <div class="divider divisorpromo"></div>
+
+            <div style="margin-top: 20px; text-align: center" id="tomada1" class="switch">
+
+            </div>
+
+            <div class="switch center" id="tomada1">
+                <label>
+                    <p style="display: inline-flex; color: black"></p>
+                    <input id="checkvalor" type="checkbox">
+                    <span class="lever"></span>
+                    <p style="display: inline-flex; color: black">Confirmar</p>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PROMOÇÃO FRETE GRATIS -->
+    <div style="outline: none" id="modalFrete" class="modal mdlpromofrete">
+        <div class="header-promocao kit-flex"
+            style="height: 45px;background-color: #fafafa;position: sticky;top: 0;border-bottom: 1px solid #e1e1e1;">
+            <i style="position: absolute; right: 5px;top: 5px;"
+                class="text-darken-4 material-icons modal-close">close</i><br><br>
+            <p style="font-size: 1.5rem; color: purple;" class="center">
+                Promoção de Frete Grátis</p>
+        </div>
+        <div class="modal-content">
+            <div style="text-align: justify; width: 98%;">
+                <ul style="font-size: 16px">
+                    <p style="font-size: 14px" class="left grey-text">A promoção pode ser ativa para:</p><br>
+                    <li>● Todos os produtos da(s) categoria(s) selecionada(s)</li>
+                    <li>● Produto(s) específico(s) selecionado(s)</li>
+                    <li>● Bairro(s) selecionado(s)</li>
+                    <p style="font-size: 14px" class="left grey-text">Efeitos:</p><br>
+                    <li>● Selecionar <b>confirmar</b> habilitará a promoção imediatamente, ou seja, após isso já estará
+                        disponível na opção de <b>ativos</b></li>
+                </ul>
+            </div><br>
+
+            <div class="divider"></div><br>
+
+            <div class="row center">
+                <span class="kit-flex" style="color: purple; font-size: 1.3rem; margin-bottom: 10px;">Imagem da
+                    promoção</span>
+                <div class="dv-imagem-user">
+                    <label for="btninput3">
+                        <img id="imgInside3" src="/views/img/base.png"
+                            style="width: 150px; height: 150px; border: 2px solid purple;"
+                            class="circle responsive-img b-lazy img-user-perfil">
+                    </label>
+                    <input name="imgPerfil" accept="image/*" class="form" type="file" id="btninput3">
+                    <input name="fotocaminho" class="form" type="hidden" />
+                </div>
+                <span style="font-size: 0.7rem;" class="grey-text">Alterar imagem</span>
+            </div>
+
+            <div
+                style="text-align: center; margin-bottom: -20px; padding: 10px; color: white; background-color: purple; border-radius: 4px">
+                <p id="pPromo" style="display: inline-flex;"><b class="pulse">Promoção:</b> &nbsp Todos os itens com</p>
+                <div style="display: inline-flex">
+                    <input type="text" inputmode="numeric" maxlength="3" pattern="([0-9]{3})"
+                        style="width: 45px; height: 30px; text-align: center; outline: none; border: 2px solid black; border-radius: 3px; font-weight: bold; background-color: white"
+                        class="browser-default inpValor" type="number" name="" id="inpFrete">
+                    <p
+                        style="background-color: black; padding-top: 1px; padding-bottom: 1px;position: relative; left: -2px; border: 2px solid black; padding-right: 3px; padding-left: 3px; border-radius: 0 3px 3px 0">
+                        R$</p>
+                </div>
+                <p id="pDesc" style="display: inline-flex">de frete.</p>
+            </div>
+
+            <br><br>
+
+            <div class="divfrete1" style="display: none;">
+                <i style="float: right; padding-top: 10px; color: purple; cursor: pointer;"
+                    onclick="$('#btnSaiba5').click()" class="material-icons">sync</i>
+                <div class="divider divisorpromo"></div>
+
+                <p
+                    style="text-align: center;margin-top: 10px;margin-bottom: 10px;border-radius: 3px;color: purple; font-weight: bold">
+                    Todos os itens das categorias abaixo</p>
+
+                <div id="divBoxSelect1">
+                    <p style="margin-top: 5px;">Categorias:</b></p>
+
+                    <select id="selcatspromo3" class="js-example-basic-multiple browser-default selcatspromo3"
+                        name="states[]" multiple="multiple">
+                        <option></option>
+                        {{#each categoria}}
+                        <option value="{{id}}">{{categoriaproduto}}</option>
+                        {{/each}}
+                    </select>
+
+                </div>
+
+                <br>
+            </div>
+
+            <div class="divfrete2" style="display: none;">
+                <div class="divider divisorpromo"></div>
+                <i style="float: right; padding-top: 10px; color: purple; cursor: pointer;"
+                    onclick="$('#btnSaiba5').click()" class="material-icons">sync</i>
+                <p
+                    style="text-align: center;margin-top: 10px;margin-bottom: 10px;border-radius: 3px;color: purple; font-weight: bold">
+                    Para todos os bairros abaixo</p>
+
+                <div style="margin-bottom: 20px;" id="divBoxSelect1">
+                    <p style="margin-top: 5px;">Bairros:</b></p>
+
+                    <select id="selbairropromo" style="width: 80%"
+                        class="js-example-basic-multiple browser-default selbairropromo" name="states[]"
+                        multiple="multiple">
+                        <option></option>
+
+                    </select>
+
+                </div>
+            </div>
+
+            <div style="margin-bottom: 20px;" class="divider"></div>
+            <div style="display: flex; margin-bottom: 20px !important; align-items: center; justify-content: center;">
+                <p style="margin: 0px; margin-right: 5px; font-weight: bold;">Início:</p>
+                <input placeholder="Data"
+                    style="width: 70px; text-align: center; border: 2px solid purple; border-radius: 3px; padding: 3px; margin-right: 5px;"
+                    type="text" class="pickerinicio browser-default ini1">
+                <p style="margin: 0px; margin-left: 20px; font-weight: bold;">Fim:</p>
+                <input placeholder="Data"
+                    style="width: 70px; text-align: center; border: 2px solid purple; border-radius: 3px; padding: 3px; margin-left: 5px;"
+                    type="text" class="pickerfim browser-default fim1">
+            </div>
+
+            <div class="divider"></div>
+
+            <div style="margin-top: 20px; text-align: center" id="tomada1" class="switch">
+
+            </div>
+
+            <div class="switch center" id="tomada1">
+                <label>
+                    <p style="display: inline-flex; color: black"></p>
+                    <input id="checkFrete" type="checkbox">
+                    <span class="lever"></span>
+                    <p style="display: inline-flex; color: black">Confirmar</p>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL VER DETALHES -->
+    <div style="outline: none; width: 70%" id="modalPromoAtivas" class="modal">
+        <i style="float: right; padding: 15px;" class="material-icons modal-close">close</i><br><br>
+        <div class="modal-content">
+            <p
+                style="font-size: 22px; text-align: center; background-color: purple; color: white; text-shadow: 1px 1px 1px black; border-radius: 3px; margin-bottom: 10px; width: 70%;">
+                Promoções Ativas</p>
+
+            <table class="display centered nowrap cell-border compact">
+                <thead>
+                    <tr>
+                        <th>Uso</th>
+                        <th>Tipo</th>
+                        <th>Valor desconto</th>
+                        <th>Data Início</th>
+                        <th>Data Fim</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- MODAL VISUALIZAR -->
+    <div id="modalVisualizar" class="modal modal-fixed-footer">
+        <div class="loader-place-modal"></div>
+        <div class="modal-header kit-flex header-visualizar">
+            <i class="material-icons modal-close">close</i>
+            <p class="fonte-primaria center">Análise de Promoção</p>
+        </div>
+        <div class="modal-content">
+            <div class="dv-informacoes">
+                <span class="kit-flex cabc-table">Dados da Promoção</span>
+                <div>
+                    <table class="striped highlight tableVisRest">
+                        <tr>
+                            <th>Uso:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>Tipo:</th>
+                            <td class="tipo"></td>
+                        </tr>
+                        <tr>
+                            <th>Valor Desconto:</th>
+                            <td class="val_desc"></td>
+                        </tr>
+                        <tr>
+                            <th>Data Inicio:</th>
+                            <td class="dataInicio"></td>
+                        </tr>
+                        <tr>
+                            <th>Data Fim:</th>
+                            <td class="dataFim"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="//cdn.datatables.net/plug-ins/1.10.20/dataRender/ellipsis.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
+<script src="/js/Funcoes/Compartilhado-REST.js"></script>
+<script src="/js/admin_promo.js"></script>
+
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Voucher</title>
+    <link rel="stylesheet" href="./views/css/placeholder-loading.css">
+    <link rel="stylesheet" href="./views/css/administracao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "c78f3f61-0180-4cb3-ba34-19cc47629567",
+    });
+  });
+</script>
+</head>
+
+<body>
+
+    <div class="loader-place"></div>
+
+    <nav class="navbar-comeae kit-flex" style="position: sticky;">
+        <div class="dv-logo-nav">
+            <i class="icon-comeae fonte-logo"></i>
+            <i class="icon-comeae_texto fonte-logo-texto"></i>
+        </div>
+        <div class="dv-identificador-nav dropdown-sair-trigger" data-target="dropdown-sair">
+            <p class="fonte-primaria nome-admin">Felipe Moreira</p>
+            <p class="cargo-admin">Programador</p>
+            <i class="material-icons">arrow_drop_down</i>
+        </div>
+        <div class="waves-effect waves-light hide-on-large-only sidenav-trigger dv-menu-nav" data-target="side-actions">
+            <i class="material-icons">menu</i>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN SAIR -->
+    <ul id='dropdown-sair' class='dropdown-content'>
+        <li><a>Sair</a></li>
+    </ul>
+
+    {{!-- SIDENAV ACOES --}}
+    <ul id="side-actions" class="sidenav side-acoes sidenav-fixed">
+        <li><a class="waves-effect" href="/resumo-adm"><i class="material-icons">home</i>Resumo</a></li>
+        <li><a class="waves-effect" href="/cadastros-adm"><i class="material-icons">format_align_center</i>Gerenciar
+                cadastros</a></li>
+        <li><a class="waves-effect" href="/promocoes-adm"><i class="material-icons">local_atm</i>Gerenciar
+                promoções</a></li>
+        <li><a class="waves-effect" href="/pedidos-adm"><i class="material-icons">view_carousel</i>Gerenciar pedidos</a>
+        </li>
+        <li><a class="waves-effect" href="/clientes-adm"><i class="material-icons">people</i>Clientes</a>
+        </li>
+        <li><a class="waves-effect" href="/produtos-adm"><i class="material-icons">local_bar</i>Produtos</a>
+        </li>
+        <li class="atual"><a class="waves-effect" href="/voucher-adm"><i
+                    class="material-icons">confirmation_number</i>Voucher</a>
+        </li>
+        <li><a class="waves-effect" href="/gerencia-adm"><i class="material-icons">group_add</i>Novo admin</a>
+        </li>
+        <li><a class="waves-effect" href="/relatorios-adm"><i class="material-icons">picture_as_pdf</i>Relatórios</a>
+        </li>
+    </ul>
+
+    <!-- MODAL VISUALIZAR -->
+    <div id="modalVisualizar" class="modal modal-fixed-footer">
+        <div class="loader-place-modal"></div>
+        <div class="modal-header kit-flex header-visualizar">
+            <i class="material-icons modal-close">close</i>
+            <p class="fonte-primaria center">Dados do Voucher</p>
+        </div>
+        <div class="modal-content">
+            <div class="dv-informacoes">
+                <div>
+                    <table class="striped highlight tableVisRest">
+                        <tr>
+                            <th>Nome:</th>
+                            <td class="nome-v">Feliz Natal</td>
+                        </tr>
+                        <tr>
+                            <th>Aplicação:</th>
+                            <td class="aplic-v">Feriados</td>
+                        </tr>
+                        <tr>
+                            <th>Descrição:</th>
+                            <td class="desc-v">Natal</td>
+                        </tr>
+                        <tr>
+                            <th>Valor:</th>
+                            <td class="valor-v">R$ 12,50</td>
+                        </tr>
+                        <tr>
+                            <th>Data Início:</th>
+                            <td class="dtinicio-v">25/12/2020</td>
+                        </tr>
+                        <tr>
+                            <th>Data Fim:</th>
+                            <td class="dtfim-v">26/12/2020</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="sec-geral">
+        <div class="dv-corpo">
+            <a class="btn-floating btn-large waves-effect waves-light white bt-vouches"><i
+                    class="material-icons">confirmation_number</i></a>
+            <div style="display: none;" class="dv-voucher-tables">
+                <div class="dv-datatables-geral">
+                    <div style="margin-top: 60px;" class="row">
+                        <div class="col s12">
+                            <ul class="tabs tabs-voucher">
+                                <li class="tab col s3"><a class="tab-inativos kit-flex"
+                                        href="#tab-inativos">Inativos</a>
+                                </li>
+                                <li class="tab col s3"><a class="tab-ativos kit-flex" href="#tab-ativos">Ativos</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tab-inativos" class="col s12">
+                            <div>
+                                <p class="center white-text fonte-primaria headers-cad">Inativos</p>
+                                <table id="tableInativos" class="display compact striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="center">Nome</th>
+                                            <th class="center">Aplicação</th>
+                                            <th class="center">Valor</th>
+                                            <th class="center">Opções</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Feliz Natal</td>
+                                            <td>Feriados</td>
+                                            <td>R$ 12,50</td>
+                                            <td>
+                                                <div class="kit-flex"><button
+                                                        class="btn-small blue kit-flex bt-action-visualizar modal-trigger inativos"
+                                                        href="#modalVisualizar"><i
+                                                            class="material-icons">visibility</i></button></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="tab-ativos" class="col s12">
+                            <div>
+                                <p class="center white-text fonte-primaria headers-cad">Ativos</p>
+                                <table id="tableAtivos" class="display compact striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="center">Nome</th>
+                                            <th class="center">Aplicação</th>
+                                            <th class="center">Valor</th>
+                                            <th class="center">Opções</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Feliz Natal</td>
+                                            <td>Feriados</td>
+                                            <td>R$ 12,50</td>
+                                            <td>
+                                                <div class="kit-flex"><button
+                                                        class="btn-small blue kit-flex bt-action-visualizar modal-trigger ativos"
+                                                        href="#modalVisualizar"><i
+                                                            class="material-icons">visibility</i></button></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row kit-flex dv-voucher-geral">
+                <div class="dv-sup-left">
+                    <div style="margin: 20px; height: auto; width: 300px; padding: 15px;" class="card dv-voucher-left">
+                        <div class="white-text geral-voucher">
+                            <span class="card-title kit-flex fonte-primaria title-voucher">Voucher</span>
+                            <div class="row">
+                                <div class="input-field">
+                                    <input placeholder="Nome do Voucher" id="nome" type="text" maxlength="30px"
+                                        class="kit-flex inp-nome inp">
+                                    <label class="white-text" for="nome">Nome</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field">
+                                    <select id="select_aplicacao" class="select_aplicacao inp">
+                                        <option value="" disabled selected>Aplicação</option>
+                                        <option value="feriados">Feriados</option>
+                                        <option value="cidades">Cidade</option>
+                                        <option value="primeira">Primeira Compra</option>
+                                        <option value="porcentagem">Porcentagem</option>
+                                    </select>
+                                    <label for="select_aplicacao">Aplicação</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field">
+                                    <input placeholder="Natal / São Paulo / Presente" id="descricao" type="text"
+                                        class="kit-flex inp-desc inp">
+                                    <label class="white-text" for="descricao">Descrição</label>
+                                </div>
+                            </div>
+                            <div class="row dv-cidades">
+                                <div class="input-field">
+                                    <select id="select_cidades" class="select_cidades inp">
+                                        <option value="" disabled selected>Selecione a cidade</option>
+                                        <option value="1">São Luis</option>
+                                        <option value="2">São Paulo</option>
+                                    </select>
+                                    <label for="select_cidades">Cidades</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field">
+                                    <input maxlength="6" type="tel" placeholder="R$" id="valor"
+                                        class="kit-flex val-inp inp">
+                                    <label class="white-text" for="valor">Valor</label>
+                                </div>
+                            </div>
+                            <div class="row kit-flex dv-datas">
+                                <div class="input-field">
+                                    <input type="text" tabindex="-1" placeholder="dd/mm/aaaa" id="dtInicio"
+                                        class="kit-flex pickerinicio inp">
+                                    <label class="white-text" for="dtInicio">Data
+                                        Início</label>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" tabindex="-1" placeholder="dd/mm/aaaa" id="dtFim"
+                                        class="kit-flex pickerfim inp">
+                                    <label class="white-text" for="dtFim">Data Fim</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button
+                                class="kit-flex white-text waves-effect waves-light btn-small fonte-primaria bt-confirm-voucher">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="rodape-mobile hide-on-large-only row center-align no-select">
+        <a href="/resumo-adm" class="col s12 m12">
+            <i class="icon-home"></i>
+            <span class="legenda-tab-menu">Inicio</span>
+        </a>
+    </footer>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"
+    integrity="sha256-D0J9D4igaYyVX/Y78Tr0yoDJsy8hi14hCEdFDakBp08=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="/js/CompartilhadoADM.js"></script>
+<script src="/js/voucher-adm.js"></script>
+
+</html>

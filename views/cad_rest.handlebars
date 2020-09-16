@@ -1,0 +1,71 @@
+<!DOCTYPE>
+<html lang="pt-br">
+
+<head>
+    <title>Cadastrar Restaurante</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_cad_rest.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="divGeral">
+
+        <div id="divSup">
+            <div onclick="window.location.href='/comeae'" class="white-text kit-in-flex dv-logo">
+                <i class="icon-comeae"></i>
+                <i class="icon-comeae_texto"></i>
+            </div>
+            <div id="divLinks">
+                <a href="/ajuda">Ajuda</a>
+                <a href="log_rest">Logar</a>
+                <a href="#nome_fantasia"><button id="btnFazerParte">Fazer Parte</button></a>
+            </div>
+        </div>
+
+        <div id="divFrase">
+            <p>Venha para o ComeÂe!</p>
+        </div>
+
+        <div id="divForm">
+            <form id="formIni" method="post" action="cad_rest" style="display: inline-block">
+                <p>Cadastre seu restaurante</p><br>
+                <div class="input-field">
+                    <input placeholder="ex: A fenda do biquíni" name="nomeFantasia" id="nome_fantasia" type="text"
+                        class="validate" required="required">
+                    <label for="nome_fantasia">Nome do estabelecimento</label>
+                    <span class="helper-text" data-error="Nome inválido ou vazio"></span>
+                </div>
+
+                <div class="input-field">
+                    <input placeholder="ex: comeae@gmail.com" alt="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                        name="emailRest" id="emailRest" type="email" class="validate" required>
+                    <label for="emailRest">Email</label>
+                    <span class="helper-text" data-error="Endereço de email inválido"></span>
+                </div>
+
+                <div class="input-field">
+                    <input placeholder="ex: (XX) XXXX-XXXX" alt="telefone" attrname="telephone1" minlength="14"
+                        maxlength="15" name="celRest" id="celRest" type="text" class="validate" required="required">
+                    <label for="celRest">Telefone</label>
+                    <span class="helper-text" data-error="Número inválido"></span>
+                </div>
+
+                <div class="center">
+                    <button type="submit" id="btnEntrarCadRest" class="waves-effect waves-light btn">Iniciar
+                        Cadastro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="/js/cad_rest.js"></script>
+
+</html>

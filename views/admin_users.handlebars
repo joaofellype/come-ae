@@ -1,0 +1,259 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>ADM Usuários</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+
+
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divGeral">
+
+        <!-- NAVBAR -->
+        <header>
+            <nav id="navBar">
+                <div onclick="window.location.href='/admin_start'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+                <div id="divIconMenu">
+                    <button style="padding: 0px;" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger"><i id="menuIconSup"
+                            class="material-icons">menu</i></button>
+                </div>
+
+                <div>
+                    <div id="divHorarioTopo">
+                        <select name="selc" class="selc">
+                            <option id="1" value="Fechado">Restaurante Fechado</option>
+                            <option id="2" value="Aberto">Restaurante Aberto</option>
+                            <option id="3" value="Pausado">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair</button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+            <div id="pageLinks">
+                <li><a id="nomePropEstab" class="waves-effect waves-light">{{nome}}<span
+                            class="new badge pulse countPedido"
+                            onclick="javascript:window.location.href='/admin_ped'">4</span></a></li>
+                <li><a id="emailProp" class="waves-effect waves-light">{{email}}</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_start">Início</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ava">Avaliações</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light" href="">Financeiro</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_card">Cardápio</a></li>
+                <li><a class="waves-effect waves-light" href="admin_promo">Promoções</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_areas">Áreas de entrega</a></li>
+                <li><a class="waves-effect waves-light" href="">Formas de pagamento</a></li>
+                <li><a id="marcaPaginaAtual" class="waves-effect waves-light" href="/admin_users">Usuários</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_hr">Horário de funcionamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light" href="">Políticas</a></li>
+                <li><a class="waves-effect waves-light" href="">Configurações do ambiente</a></li>
+
+                <div class="divider"></div>
+                <li><a id="indef" class="waves-effect waves-light"></a></li>
+            </div>
+        </ul>
+
+        <div id="divCorpo">
+            <a data-tooltip="Cadastrar" data-position="left" style="margin-right: 30px" href="#modalCadastrados"
+                class="btn-floating btn-medium waves-effect waves-light btnCadUsu tooltipped modal-trigger"><i
+                    class="material-icons">people</i></a>
+            <div id="divInicio">
+                <h4>Usuários</h4>
+            </div>
+
+            <div id="divisorCard" class="divider"></div>
+
+            <div style="width: 95%">
+                <table id="tableCad" class="display centered compact nowrap cell-border">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Perfil</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        {{!-- MODAL CADASTRADOS --}}
+        <div id="modalCadastrados" class="modal">
+
+            <div class="modal-header kit-flex" style="height: 50px;">
+                <i class="material-icons modal-close" style="position: absolute;right: 5px;top: 5px">close</i><br>
+                <p class="center fonte-primaria" style="font-size: 1.5rem;color: purple;">Cadastrar</p>
+            </div>
+            <div class="modal-content">
+                <div class="divUsers">
+                    <p style="font-weight: bold; display: inline-flex">Perfil:</p>
+                    <select
+                        style="border: 2px solid purple !important;border-radius: 3px !important;height: 40px;margin-bottom: 10px;padding: 0px !important;outline: none !important;"
+                        name="selPermissao" class="browser-default selPerfis formulario">
+                        <option value="0" selected disabled>Selecione</option>
+                        <option value="3">Proprietário</option>
+                        <option value="4">Gerente</option>
+                        <option value="5">Operador</option>
+                    </select>
+
+                    <p style="font-weight: bold; display: inline-flex">Nome:</p>
+                    <input class="browser-default inpnome formulario"
+                        style="border: 2px solid purple; border-radius: 3px; padding: 0 10px !important; height: 40px; width: 100%; padding-left: 3px; outline: none; margin-top: 5px; margin-bottom: 5px"
+                        type="text" value="" name="nome" placeholder="Nome"><br>
+
+                    <p style="font-weight: bold; display: inline-flex">Email:</p>
+                    <input class="browser-default inpemail formulario"
+                        style="border: 2px solid purple; border-radius: 3px; padding: 0 10px !important; height: 40px; width: 100%; padding-left: 3px; outline: none; margin-top: 5px; margin-bottom: 5px"
+                        type="email" value="" name="email" autocomplete="off" placeholder="Email"><br>
+
+                    <p style="font-weight: bold; display: inline-flex">Senha:</p>
+                    <input class="browser-default inpsenha formulario"
+                        style="border: 2px solid purple; border-radius: 3px; padding: 0 10px !important; height: 40px; width: 100%; padding-left: 3px; outline: none; margin-top: 5px; margin-bottom: 5px"
+                        type="password" value="" name="senha" autocomplete="off" placeholder="Senha"><br>
+
+                    <p style="font-weight: bold; display: inline-flex">Confirmar senha:</p>
+                    <input class="browser-default inpconfirm formulario"
+                        style="border: 2px solid purple; border-radius: 3px; padding: 0 10px !important; height: 40px; width: 100%; padding-left: 3px; outline: none; margin-top: 5px; margin-bottom: 5px"
+                        type="password" value="" name="confirmSenha" placeholder="Confirmar senha"><br>
+
+                    <p style="font-weight: bold; display: inline-flex;">Permissões:</p>
+                    <select class="js-example-basic-multiple browser-default selpermis formulario" name="states[]"
+                        multiple="multiple">
+                        <option value="pedido">Pedidos</option>
+                        <option value="cardapio">Cardápio</option>
+                        <option value="finan">Financeiro</option>
+                        <option value="promo">Promoções</option>
+                        <option value="entrega">Áreas de Entrega</option>
+                        <option value="pagamento">Formas de Pagamento</option>
+                        <option value="usuario">Usuários</option>
+                        <option value="funcionamento">Horário de Funcionamento</option>
+                        <option value="perfil">Perfil</option>
+                    </select><br><br>
+
+                    <div class="divoptionscadusu">
+                        <div style="display: flex; margin-bottom: 5px;">
+                            <p style="margin: 0px; margin-top: 3px;">Todas as permissões:</p>
+                            <a style="margin-left: 3px; margin-right: 10px" id="select"
+                                class="btn-floating btn-small waves-effect waves-light blue right btnSelectAll"><i
+                                    class="material-icons">select_all</i></a>
+                        </div>
+                        <div style="display: flex; margin-bottom: 5px;">
+                            <p style="margin: 0px; margin-top: 3px;">Mostrar senha:</p>
+                            <a style="margin-left: 3px; margin-right: 3px"
+                                class="btn-floating btn-small waves-effect waves-light purple right btnMostrarSenha"><i
+                                    class="material-icons">visibility</i></a>
+                        </div>
+                    </div>
+                    <input type="hidden" name="permissao" value="">
+                    <a class="waves-effect waves-light btn-small center btnSalvarPerfil kit-flex">Salvar</a>
+                </div>
+            </div>
+        </div>
+
+        {{!-- MODAL EDITAR PERFIL --}}
+        <div id="modalEditarPerfil" class="modal">
+            <div class="modal-content">
+                <i style="float: right" class="material-icons modal-close">close</i><br>
+                <p class="center"
+                    style="font-size: 22px; text-align: center; background-color: purple; color: white; text-shadow: 1px 1px 1px black; border-radius: 3px; width: 200px; margin-bottom: 20px">
+                    Editar Perfil</p>
+
+                <div class="divUsers">
+                    <input type="hidden" name="idusu" class="usuario">
+                    <p style="font-weight: bold; display: inline-flex">Perfil:</p>
+                    <select
+                        style="border: 2px solid purple !important; border-radius: 3px !important; height: 32px; margin-bottom: 10px; padding: 0px !important; outline: none;"
+                        name="selPermissao2" class="editforms browser-default selPerfis2">
+                        <option value="0" selected disabled>Selecione</option>
+                        <option value="Proprietário">Proprietário</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Operador">Operador</option>
+                    </select>
+
+                    <p style="font-weight: bold; display: inline-flex">Nome:</p>
+                    <input class="editforms browser-default inpnome2"
+                        style="border: 2px solid purple; border-radius: 3px; height: 35px; width: 100%; padding-left: 3px; outline: none; margin-top: 5px; margin-bottom: 5px"
+                        type="text" name="nome2" value="" placeholder="Nome"><br>
+
+                    <p style="font-weight: bold; display: inline-flex; margin-top: 7px;">Permissões:</p>
+                    <select class="editforms js-example-basic-multiple browser-default selpermis2" name="states2[]"
+                        multiple="multiple">
+                        <option value="pedido">Pedidos</option>
+                        <option value="cardapio">Cardápio</option>
+                        <option value="finan">Financeiro</option>
+                        <option value="promo">Promoções</option>
+                        <option value="entrega">Áreas de Entrega</option>
+                        <option value="pagamento">Formas de Pagamento</option>
+                        <option value="usuario">Usuários</option>
+                        <option value="funcionamento">Horário de Funcionamento</option>
+                        <option value="perfil">Perfil</option>
+                    </select><br><br>
+
+                    <div class="divoptionscadusu">
+                        <div style="display: flex; margin-bottom: 5px;">
+                            <p style="margin: 0px; margin-top: 3px;">Todas as permissões:</p>
+                            <a style="margin-left: 3px; margin-right: 10px" id="select"
+                                class="btn-floating btn-small waves-effect waves-light blue right btnSelectAll2"><i
+                                    class="material-icons">select_all</i></a>
+                        </div>
+                    </div>
+                    {{!-- <input type="hidden" name="permissao" value=""> --}}
+                    <a class="waves-effect waves-light btn-small center btnEditarPerfil"
+                        style="margin-top: 50px; width: 100%; background-color: purple; text-shadow: 1px 1px 1px black">Editar</a>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.bootcss.com/push.js/1.0.12/push.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="/js/Funcoes/Compartilhado-REST.js"></script>
+<script src="/js/admin_users.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+</html>

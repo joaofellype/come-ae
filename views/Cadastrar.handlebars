@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/views/css/estilo_ent_cad.css">
+  <title>Confirmação</title>
+</head>
+
+<body>
+
+  <div id="div_sup2">
+    <a href="/ent_cad"><i id="iconArrowBack2" class="material-icons">arrow_back</i></a>
+    <i onclick='window.location.href="/comeae"' class="icon-comeae right white-text" style="margin-top: 7px;"></i>
+  </div>
+
+  <div id="divPrinc2" class="row">
+
+    <div id="formCadCod2" class="col s12">
+      <p id="p_cad2">Confirme o código</p>
+      <div id="divmsg"><br>
+        <p id="msgemail">Enviado para: <b class="eml" style="color: darkorange;">{{email}}</b> </p><br>
+        <br>
+        <p id="msgemail3">Verifique o seu endereço de email e insira
+          o código recebido nos campos abaixo</p>
+      </div><br>
+
+      <div id="divCode">
+        <input required autocomplete="off" class="COD" type="text" id="inp1" maxlength="1">
+        <input required autocomplete="off" class="COD" type="text" id="inp2" maxlength="1">
+        <input required autocomplete="off" class="COD" type="text" id="inp3" maxlength="1">
+        <input required autocomplete="off" class="COD" type="text" id="inp4" maxlength="1">
+        <input required autocomplete="off" class="COD" type="text" id="inp5" maxlength="1">
+      </div><br>
+
+      <button id="btnCad" class="btn waves-effect waves-light btnValidar">Enviar</button><br>
+      <div id="divEditEmail">
+        <a id="aEditEmail" href="/ent_cad">Editar Email</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script src="/js/Cadastrar.js"></script>
+
+</html>

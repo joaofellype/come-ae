@@ -1,0 +1,678 @@
+<!DOCTYPE>
+<html lang="pt-br">
+
+<head>
+    <title>Produtos</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.css">
+</head>
+
+<body>
+
+    <div id="divGeral">
+
+        <div class="divLoader">
+            <div class="preloader-wrapper big active loader-spinner">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Aguarde...</p>
+        </div>
+
+        <!-- NAVBAR -->
+        <header>
+            <nav id="navBar">
+
+                <div onclick="window.location.href='/admin_start'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+
+                <div id="divIconMenu">
+                    <button style="padding: 0px" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger"><i id="menuIconSup"
+                            class="material-icons">menu</i></button>
+                </div>
+
+                <div>
+                    <div id="divHorarioTopo">
+                        <select name="selc" class="selc">
+                            <option id="1" value="1">Restaurante Fechado</option>
+                            <option id="2" value="2">Restaurante Aberto</option>
+                            <option id="3" value="3">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair
+                    </button>
+                </div>
+
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+            <div id="pageLinks">
+                <li><a id="nomePropEstab" class="waves-effect waves-light">{{nome}}<span class="new badge pulse"
+                            onclick="javascript:window.location.href='/admin_ped'">4</span></a></li>
+                <li><a id="emailProp" data-id="{{idrestaurante}}" data-cat="{{produto}}"
+                        class="waves-effect waves-light">{{email}}</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_start">Início</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ava">Avaliações</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light" href="">Financeiro</a></li>
+                <li><a id="marcaPaginaAtual" class="waves-effect waves-light" href="/admin_card">Cardápio</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_promo">Promoções</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_areas">Áreas de entrega</a></li>
+                <li><a class="waves-effect waves-light" href="">Formas de pagamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_users">Usuários</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_hr">Horário de funcionamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light" href="">Políticas</a></li>
+                <li><a class="waves-effect waves-light" href="/logout">Configurações do ambiente</a></li>
+                <div class="divider"></div>
+                <li><a id="indef" class="waves-effect waves-light"></a></li>
+            </div>
+        </ul>
+        <div id="divCorpo">
+            {{#each params}}
+            <div id="divCardapio">
+                <a data-tooltip="Gerar PDF" data-position="left"
+                    class="btn-floating btn-medium waves-effect waves-light btnPDF tooltipped"><i
+                        class="material-icons">picture_as_pdf</i></a>
+                <h4 id="nomeCategoria" data-id="{{id}}">Categoria: <b>{{categoriaproduto}}</b></h4>
+
+            </div>
+            {{/each}}
+
+            <div id="divBtnCat">
+                <button id="btnCat" class="waves-effect waves-light btn modal-trigger btnRetorno">Retornar</button>
+            </div>
+
+            <ul id="tabsPrinc" class="tabs">
+                <li style="width: 49.5%" class="tab"><a style="width: 100%">Produtos</a></li>
+            </ul>
+
+            <div class="center">
+                <a style="background-color: purple; text-shadow: 1px 1px 1px black;border-radius: 100px"
+                    class="waves-effect waves-light btn-small modal-trigger btnCateg" href="#modalItem">Novo produto</a>
+            </div>
+
+            <div>
+                <div style="width: 95%" id="test-swipe-1">
+                    <table id="tableCateg" class="display nowrap compact">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th class="center">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MODAL ESCOLHER COMPLEMENTOS -->
+        <div style="outline: none" id="modalEscolhaComp" class="modal">
+            <div class="modal-content">
+                <i id="iconX" class="material-icons modal-close">close</i>
+                <p id="pCriarCat">Adicionar complementos</p>
+                <div id="divSelectsComples">
+                    <select style="width: 45%; border: 2px solid purple; height: 37px; border-radius: 4px;"
+                        class="browser-default forrmcriar" name="selectcriarprod" id="selectGrupo1">
+                        <option disabled selected value="0">Selecione</option>
+                        {{#each grupocomps }}
+                        <option value="{{id}}">{{grupo}}</option>
+                        {{/each}}
+                    </select>
+
+                    <select placeholder="Selecione"
+                        class="js-example-basic-multiple browser-default tst forrmcriar select2criar" id="select2item"
+                        name="states[]" multiple="multiple">
+                    </select>
+                </div><br>
+                <div style="text-align: right">
+                    <a style="background-color: purple; text-shadow: 1px 1px 1px black"
+                        class="waves-effect waves-light btn-small btnaddcomp">Adicionar</a>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL ESCOLHER COMPLEMENTOS -->
+        <div style="outline: none" id="modalEscolhaComp1" class="modal">
+            <div class="modal-content">
+                <i id="iconX" class="material-icons modal-close">close</i>
+                <p id="pCriarCat">Adicionar complementos</p>
+                <div id="divSelectsComples">
+                    <select
+                        style="width: 45%; border: 2px solid purple; height: 37px; border-radius: 4px; outline: none;"
+                        class="browser-default forrmcriar" name="selectcriarprod" id="selectGrupo2">
+                        <option disabled selected value="0">Selecione</option>
+                        {{#each grupocomps }}
+                        <option value="{{id}}">{{grupo}}</option>
+                        {{/each}}
+                    </select>
+
+                    <select placeholder="Selecione" class="js-example-basic-multiple browser-default tst select2editar"
+                        id="select2itemEditar" name="states[]" multiple="multiple">
+                    </select>
+                </div><br>
+                <div style="text-align: right">
+                    <a style="background-color: purple; text-shadow: 1px 1px 1px black"
+                        class="waves-effect waves-light btn-small btnaddcomp1">Adicionar</a>
+                </div>
+            </div>
+        </div>
+
+        {{!-- MODAL GRUPO COMP --}}
+        <div id="modalDescComp" class="modal">
+            <div id="corpoModal" class="modal-content">
+                <p id="pCriarCat">Nome do Grupo</p>
+                <i id="iconX" class="material-icons modal-close">close</i>
+                <div
+                    style="padding: 5px; border: 1px solid gray; margin-right: 5px; margin-left: 5px; border-radius: 5px; background-color: rgba(128, 0, 128, 0.466)">
+                    <div id="divInpDescComp" class="input-field">
+                        <input readonly disabled placeholder="Nome" class="browser-default" id="input_desc" type="text"
+                            data-length="25" maxlength="25">
+                    </div>
+                    <div id="divInpDescComp" class="input-field">
+                        <input readonly disabled placeholder="Descrição" class="browser-default" id="input_desc2"
+                            type="text" data-length="25" maxlength="25">
+                    </div>
+                    <div id="divInpDescCompValor" class="input-field">
+                        <input readonly disabled placeholder="Valor" class="browser-default" id="input_desc3"
+                            type="text" data-length="25" maxlength="25">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL CRIAR COMPLEMENTO -->
+        <div id="modalComplemento" class="modal">
+            <div id="corpoModal3" class="modal-content">
+                <p id="pCriarCat">Criar Complemento</p>
+                <i id="iconX" class="material-icons modal-close">close</i>
+
+                <div id="divGrupoComp">
+
+                    <i id="toolAddGrupo" class="material-icons tooltipped" data-position="left"
+                        data-tooltip="Adicionar mais ao grupo?">add_circle</i>
+
+                    <div id="divInpNomeModal" class="input-field">
+                        <input id="grupoComp" onkeyup="tst()" class="browser-default" type="text" maxlength="20">
+                        <label id="lblGrupoComp" for="input_text">Grupo</label>
+                    </div>
+
+                    <div id="clones">
+
+                        <div id="divInpNomeCompModal" class="input-field clone-campos">
+                            <input placeholder="Nome" name="[nome][0]" onkeyup="tst()" id="inpCompSec"
+                                class="browser-default" type="text" maxlength="20">
+                            <input placeholder="Descrição" name="[desc][0]" onkeyup="tst()" id="inpCompSec2"
+                                class="browser-default" type="text" maxlength="100">
+                            <input placeholder="Valor" name="[valor][0]" onkeyup="tst()" id="inpCompSec3"
+                                class="browser-default" type="number">
+                        </div>
+
+                        <div id="cloneCampos">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="divModalBtns">
+                    <button id="btnModalCancelar" class="waves-effect waves-light btn-small">Cancelar</button>
+                    <button id="btnModalSalvar2" class="waves-effect waves-light btn-small">Salvar</button>
+                </div>
+            </div>
+        </div>
+
+        {{!-- MODAL EDITAR ITEM --}}
+        <div id="modalEditarItem" class="modal modal-fixed-footer">
+            <div style="height: 40px;position: sticky;top: 0;background-color: #fafafa;border-bottom: 1px solid #e1e1e1;z-index: 99;"
+                class="modal-header kit-flex">
+                <i style="position: absolute; right:5px; top:5px" class="material-icons modal-close">close</i>
+                <p class="titleItem fonte-primaria">Editar Item</p>
+            </div>
+
+            <div class="divDetalhes">
+                <p id="pDetalhes">Detalhes</p>
+            </div>
+            <div id="corpoModal2">
+
+                <div class="row center">
+                    <div class="dv-imagem-user">
+                        <label for="btninput2">
+                            <img id="imgInside2" src="/views/img/base.png"
+                                style="width: 150px; height: 150px; border: 2px solid purple;"
+                                class="circle responsive-img b-lazy img-user-perfil">
+                        </label>
+                        <input name="imgPerfil" accept="image/*" class="form" type="file" id="btninput2">
+                        <input name="fotocaminho" class="form valid" type="hidden" />
+                    </div>
+                    <span style="font-size: 0.7rem;" class="grey-text">Editar imagem</span>
+                </div>
+
+                <div id="divNomeCat">
+                    <div id="divNomeP" class="input-field">
+                        <input placeholder="Nome *" maxlength="55" name="nomeEdit" data-length="55" required id="nomeEdit"
+                            type="text" class="validate browser-default form">
+                    </div>
+                    <div id="divSelCat" class="input-field">
+                        <input placeholder="Categoria *" id="nomecatprodEdit" readonly required disabled type="text"
+                            class="validate browser-default validate form" name="categoriaEdit" value=""
+                            title="Categoria não editável">
+                        <input type="hidden" value="" class="form" name="idcat">
+
+                        <input type="hidden" value="" class="form" name="iddesc">
+
+                    </div>
+                </div>
+
+                <div id="divDesc1">
+                    <div id="divInterDesc1" class="input-field">
+                        <textarea placeholder="Descrição" id="textarea2" name="descricaoEdit"
+                            class="browser-default validate form" maxlength="250" data-length="250"></textarea>
+                    </div>
+                </div>
+
+                <div class="input-field" id="divPrecoPause">
+                    <input placeholder="Valor *" required name="valorEdit"
+                        class="browser-default form validate precoeditar" inputmode="numeric" type="text" id="precoEdit">
+                </div>
+
+                {{!-- /////////////// --}}
+
+                <div id="divComp">
+                    <p id="pComp">Complementos</p>
+                </div>
+
+                <div id="divComples1">
+
+                </div>
+
+                <div style="width: 100%; text-align: center;margin-top: 10px;" id="divNovoGrupo">
+                    <a href="#modalEscolhaComp1"
+                        class="waves-effect waves-light btn-small btnnovogrupo1 modal-trigger">Adicionar novo grupo</a>
+                </div>
+
+                <div id="divDisp">
+                    <p id="pDisp">Disponibilidade</p>
+                </div>
+
+                <div>
+                    <p id="pDiasEmQue">DIAS EM QUE O ITEM ESTARÁ DISPONÍVEL</p>
+                </div>
+
+                {{!-- de editar --}}
+                <div id="divDias">
+
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Dom</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Seg</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Ter</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Qua</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Qui</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Sex</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Sab</span>
+                        </label>
+                    </p>
+
+                </div>
+                <div id="divButtons">
+                    <button id="btnSalvarItemProdEdit"
+                        class="waves-effect waves-light btn-small editarProduto">Salvar</button>
+                    <button id="btnCancelarItem"
+                        class="waves-effect waves-light btn-small modal-close">Cancelar</button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- MODAL CRIAR ITEM -->
+        <div id="modalItem" class="modal modal-fixed-footer">
+            <div style="height: 40px;position: sticky;top: 0;background-color: #fafafa;border-bottom: 1px solid #e1e1e1;z-index: 99;"
+                class="modal-header kit-flex">
+                <i style="position: absolute; right:5px; top:5px" class="material-icons modal-close">close</i>
+                <p class="titleItem fonte-primaria">Criar Item</p>
+            </div>
+
+            <div class="divDetalhes">
+                <p id="pDetalhes">Detalhes</p>
+            </div>
+            <div id="corpoModal2">
+
+                <div class="row center">
+                    <div class="dv-imagem-user">
+                        <label for="btninput1">
+                            <img id="imgInside1" src="/views/img/base.png"
+                                style="width: 150px; height: 150px; border: 2px solid purple;"
+                                class="circle responsive-img b-lazy img-user-perfil">
+                        </label>
+                        <input name="imgPerfil" accept="image/*" class="form" type="file" id="btninput1">
+                        <input name="fotocaminho" class="form" type="hidden" />
+                    </div>
+                    <span style="font-size: 0.7rem;" class="grey-text">Escolher imagem</span>
+                </div>
+
+                <div id="divNomeCat">
+                    <div id="divNomeP" class="input-field">
+                        <input placeholder="Nome *" maxlength="55" name="nome" data-length="55" required id="nomeCreate"
+                            type="text" class="validate browser-default forrmcriar">
+                    </div>
+                    <div id="divSelCat" class="input-field">
+                        {{#each params}}
+                        <input placeholder="Categoria *" id="nomecatprodCreate" readonly required disabled type="text"
+                            class="validate browser-default valid forrmcriar" name="catnomee" value="{{categoriaproduto}}"
+                            title="Categoria não editável">
+                        {{/each}}
+                        {{#each params}}
+                        <input type="hidden" class="valid" value="{{id}}" name="idcateg">
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div id="divDesc1">
+                    <div id="divInterDesc1" class="input-field">
+                        <textarea placeholder="Descrição" id="textarea2" name="descricao"
+                            class="browser-default validate forrmcriar" maxlength="250" data-length="250"></textarea>
+                    </div>
+                </div>
+
+                <div class="input-field" id="divPrecoPause">
+                    <input placeholder="Valor *" required name="preco"
+                        class="browser-default forrmcriar validate precocriar" inputmode="numeric" type="text"
+                        id="precoCreate" class="validate">
+                </div>
+
+                {{!-- /////////////// --}}
+                <div id="divComp">
+                    <p id="pComp">Complementos</p>
+                </div>
+                <div id="divComples"></div>
+                <div class="divdiv"></div>
+                <div style="width: 100%; text-align: center" id="divNovoGrupo">
+                    <a href="#modalEscolhaComp"
+                        class="waves-effect waves-light btn-small btnnovogrupo modal-trigger">Adicionar novo grupo</a>
+                </div>
+                <div id="divDisp">
+                    <p id="pDisp">Disponibilidade</p>
+                </div>
+
+                <div>
+                    <p id="pDiasEmQue">DIAS EM QUE O ITEM ESTARÁ DISPONÍVEL</p>
+                </div>
+
+                {{!-- de criar --}}
+                <div id="divDias">
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Dom</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Seg</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Ter</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Qua</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Qui</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Sex</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span checado="true" id="spanDias">Sab</span>
+                        </label>
+                    </p>
+                </div>
+
+                <div id="divButtons">
+                    <button id="btnSalvarItem" class="waves-effect waves-light btn-small fonte-primaria">Salvar</button>
+                    <button id="btnCancelarItem"
+                        class="waves-effect waves-light btn-small modal-close fonte-primaria">Cancelar</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- MODAL EXIBIR ITEM -->
+    <div id="modalExibItem" class="modal modal-fixed-footer">
+        <i id="iconX" class="material-icons modal-close">close</i>
+        <br>
+        <p class="titleItem">Detalhes do Item</p>
+        <div id="corpoModal2">
+            <div id="divSupImgProd">
+                <div id="divIntroImg">
+                    <label id="lblInputImg">
+                        <img style="width: 100%; height: 100%" src="" id="imgProdExib">
+                    </label>
+                </div>
+            </div>
+
+            <div id="divNomeCat">
+                <div id="divNomeP" class="input-field">
+                    <input placeholder="Nome" readonly disabled name="nome" id="nomeShow" type="text"
+                        class="browser-default forrmcriar">
+
+                </div>
+                <div id="divSelCat" class="input-field">
+                    <input placeholder="Categoria" readonly disabled id="nomecatprodShow" type="text"
+                        class="browser-default " name="catnomee" value="">
+
+                    <input type="hidden" class="forrmcriar" value="" name="idcateg">
+                </div>
+            </div>
+
+            <div id="divDesc1">
+                <div id="divInterDesc1" class="input-field">
+                    <textarea placeholder="Descrição" readonly disabled id="textarea2" name="descricao"
+                        class="browser-default forrmcriar"></textarea>
+                </div>
+            </div>
+
+            <div class="input-field" id="divPrecoPause">
+                <input placeholder="Preço" readonly disabled name="preco"
+                    class="browser-default forrmcriar" type="text" id="precoShow">
+            </div>
+
+            {{!-- /////////////// --}}
+            <div id="divComp">
+                <p id="pComp">Complementos</p>
+            </div>
+
+            <table id="ComplementosExibir">
+                <thead>
+                    <tr>
+                        <th class="center">Grupo</th>
+                        <th class="center">Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <input type="hidden" name="adicionaisComp" />
+
+            <div id="divDisp">
+                <p id="pDisp">Disponibilidade</p>
+            </div>
+
+            <div>
+                <p id="pDiasEmQue">DIAS EM QUE O ITEM ESTARÁ DISPONÍVEL</p>
+            </div>
+
+            <div id="divDias">
+
+                <p>
+                    <label>
+                        <input readonly disabled type="checkbox" class="filled-in" checked="checked" />
+                        <span id="spanDias">Dom</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input readonly disabled type="checkbox" class="filled-in" checked="checked" />
+                        <span id="spanDias">Seg</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input readonly disabled type="checkbox" class="filled-in" checked="checked" />
+                        <span id="spanDias">Ter</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input readonly disabled type="checkbox" class="filled-in" checked="checked" />
+                        <span id="spanDias">Qua</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input readonly disabled type="checkbox" class="filled-in" checked="checked" />
+                        <span id="spanDias">Qui</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input readonly disabled type="checkbox" class="filled-in" checked="checked" />
+                        <span id="spanDias">Sex</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input readonly disabled type="checkbox" class="filled-in" checked="checked" />
+                        <span id="spanDias">Sab</span>
+                    </label>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal CROP IMAGE create -->
+    <div id="modalCropUserCreate" class="modal modal-fixed-footer">
+        <div class="modal-header kit-flex" style="height: 45px; border-bottom: 1px solid #e1e1e1;">
+            <i class="material-icons purple-text text-darken-2 close-top-crop modal-close">close</i>
+            <span class="purple-text text-darken-2 kit-flex sp-top-crop">Ajustar Imagem</span>
+        </div>
+        <div class="modal-content">
+            <div id="image_democreate"></div>
+        </div>
+        <div class="modal-footer kit-flex">
+            <a class="waves-effect waves-light btn-small purple darken-2 crop_imagecreate">Enviar</a>
+        </div>
+    </div>
+
+    <!-- Modal CROP IMAGE edit-->
+    <div id="modalCropUserEdit" class="modal modal-fixed-footer">
+        <div class="modal-header kit-flex" style="height: 45px; border-bottom: 1px solid #e1e1e1;">
+            <i class="material-icons purple-text text-darken-2 close-top-crop modal-close">close</i>
+            <span class="purple-text text-darken-2 kit-flex sp-top-crop">Ajustar Imagem</span>
+        </div>
+        <div class="modal-content">
+            <div id="image_demoedit"></div>
+        </div>
+        <div class="modal-footer kit-flex">
+            <a class="waves-effect waves-light btn-small purple darken-2 crop_imageedit">Enviar</a>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.4/jspdf.plugin.autotable.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.bootcss.com/push.js/1.0.12/push.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.4/jspdf.plugin.autotable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
+<script src="/js/produto.js"></script>
+
+</html>

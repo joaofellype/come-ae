@@ -1,0 +1,146 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>ADM Avaliações</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/views/css/placeholder-loading.css">
+</head>
+
+<body>
+
+    {{!-- <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div> --}}
+
+    <div id="divGeral">
+
+        <!-- NAVBAR -->
+        <header>
+            <nav id="navBar">
+                <div onclick="window.location.href='/admin_start'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+                <div id="divIconMenu">
+                    <button style="padding: 0px;" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger"><i id="menuIconSup"
+                            class="material-icons">menu</i></button>
+                </div>
+                <div>
+                    <div id="divHorarioTopo">
+                        <select name="selc" class="selc">
+                            <option id="1" value="Fechado">Restaurante Fechado</option>
+                            <option id="2" value="Aberto">Restaurante Aberto</option>
+                            <option id="3" value="Pausado">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair</button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+            <div id="pageLinks">
+                <li><a id="nomePropEstab" class="waves-effect waves-light">{{nome}}<span class="new badge pulse"
+                            onclick="javascript:window.location.href='/admin_ped'">4</span></a></li>
+                <li><a id="emailProp" class="waves-effect waves-light">{{email}}</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_start">Início</a></li>
+                <li><a id="marcaPaginaAtual" class="waves-effect waves-light" href="/admin_ava">Avaliações</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light" href="">Financeiro</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_card">Cardápio</a></li>
+                <li><a class="waves-effect waves-light" href="admin_promo">Promoções</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_areas">Áreas de entrega</a></li>
+                <li><a class="waves-effect waves-light" href="">Formas de pagamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_hr">Horário de funcionamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_users">Usuários</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light" href="">Políticas</a></li>
+                <li><a class="waves-effect waves-light" href="">Configurações do ambiente</a></li>
+
+                <div class="divider"></div>
+                <li><a id="indef" class="waves-effect waves-light"></a></li>
+            </div>
+        </ul>
+
+        <div id="divCorpo">
+
+            <div id="divInicio">
+                <h4>Avaliações</h4>
+            </div>
+
+            <div style="margin-left: 20px; margin-right: 20px; margin-bottom: 30px;" class="divider"></div>
+
+            <div class="left-align divMedia">
+                <p style="font-size: 20px; display: inline-flex; color: #333;">Média de avaliação: </p>
+                <p style="display: inline-flex; font-size: 35px; color: gold; text-shadow: 1px 1px 1px black"
+                    class="mediaAva"></p>
+                <i style="color: gold; font-size: 30px; text-shadow: 0 1px 0 black;" class="material-icons">star</i>
+            </div>
+
+            <div id="titleAval">
+                <div class="dv-titulo-ava">
+                    <p>Avaliações</p>
+                    <div class="linha-prim"></div>
+                </div>
+                <canvas id="aval" width="400" height="150"></canvas>
+            </div>
+
+            <div id="titleComent">
+                <div class="dv-titulo-ava">
+                    <p>Comentários</p>
+                    <div class="linha-secun"></div>
+                </div>
+            </div>
+
+            <div class="corpo-comentario"></div>
+
+            <div id="titleStars">
+                <div class="dv-titulo-ava">
+                    <p>Estrelas</p>
+                    <div class="linha-terc"></div>
+                </div>
+            </div>
+
+            <div class="corpo-estrelas">
+                <canvas id="myChart"></canvas>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+    integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+<script src="/js/Funcoes/Compartilhado-REST.js"></script>
+<script src="/js/admin_ava.js"></script>
+
+</html>

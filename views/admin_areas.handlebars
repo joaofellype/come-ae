@@ -1,0 +1,147 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>ADM Áreas</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divGeral">
+
+        <!-- NAVBAR -->
+        <header>
+            <nav id="navBar">
+                <div onclick="window.location.href='/admin_start'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+                <div id="divIconMenu">
+                    <button style="padding: 0px;" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger"><i id="menuIconSup"
+                            class="material-icons">menu</i></button>
+                </div>
+
+                <div>
+                    <div id="divHorarioTopo">
+                        <select name="selc" class="selc">
+                            <option id="1" value="Fechado">Restaurante Fechado</option>
+                            <option id="2" value="Aberto">Restaurante Aberto</option>
+                            <option id="3" value="Pausado">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair</button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+            <div id="pageLinks">
+                <li><a id="nomePropEstab" class="waves-effect waves-light">{{nome}}<span class="new badge pulse"
+                            onclick="javascript:window.location.href='/admin_ped'">4</span></a></li>
+                <li><a data-id="{{codrestaurante}}" id="emailProp" class="waves-effect waves-light">{{email}}</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_start">Início</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ava">Avaliações</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light" href="">Financeiro</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_card">Cardápio</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_promo">Promoções</a></li>
+                <li><a id="marcaPaginaAtual" class="waves-effect waves-light" href="/admin_areas">Áreas de entrega</a>
+                </li>
+                <li><a class="waves-effect waves-light" href="">Formas de pagamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_users">Usuários</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_hr">Horário de funcionamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light" href="">Políticas</a></li>
+                <li><a class="waves-effect waves-light" href="">Configurações do ambiente</a></li>
+                <div class="divider"></div>
+                <li><a id="indef" class="waves-effect waves-light"></a></li>
+            </div>
+        </ul>
+
+        <div id="divCorpo">
+
+            <div id="divInicio">
+                <h4>Áreas de Entrega</h4>
+            </div>
+
+            <li id="divisorCard2" class="divider"></li>
+            <div style="margin: 1rem auto 1rem 1.3rem; max-width: 285px;">
+                <span style="font-size: 1rem; font-weight: bold;" class="kit-flex">Cidade</span>
+                <select class="select-cidade browser-default" name="cidade-sel">
+                    <option></option>
+                    <option value="São Luis">São Luís</option>
+                    <option value="São José de Ribamar">São José de Ribamar</option>
+                </select>
+            </div>
+            <li id="divisorCard2" class="divider"></li>
+
+            <div class="divareas" style="margin: 20px 2rem;">
+
+                <table id="tableBairros" class="display tableBairros">
+                    <thead>
+                        <tr>
+                            <th>Bairro</th>
+                            <th>Habilitado</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 10px;" class="center">
+                    <a class="waves-effect waves-light btn-small btnSalvarAreas fonte-primaria kit-flex">Salvar</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.bootcss.com/push.js/1.0.12/push.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.20/dataRender/ellipsis.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="/js/Outros/jquery.mask.js"></script>
+<script src="/js/Funcoes/Compartilhado-REST.js"></script>
+<script src="/js/admin_areas.js"></script>
+
+</html>

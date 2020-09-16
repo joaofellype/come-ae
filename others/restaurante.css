@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+#divGeral {
+  /* margin: auto; */
+  max-width: 1000px;
+  padding-right: 100px;
+  /* padding: 0 0 0 25px; */
+}
+
+.dropdown-content {
+  z-index: 999999999 !important;
+}
+
+#dropcat li a {
+  color: grey;
+  padding: 6px 13px;
+}
+
+#dropcat li {
+  min-height: 35px !important;
+}
+
+#dropcat li:not(:last-child) {
+  border-bottom: 1px solid rgb(128, 128, 128, 0.2);
+}
+
+#navBar {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  background-color: purple;
+  display: flex;
+  padding-bottom: 10px;
+  width: 100%;
+  z-index: 999999999;
+  border-bottom: 1px solid grey;
+  transition: 1s;
+}
+
+.container-fixed {
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  margin-left: auto;
+  padding-left: 30px;
+}
+
+.divprinc11 {
+  width: 50% !important;
+  align-items: center !important;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#formbuscarrest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0;
+  padding-right: 5px;
+}
+
+#formbuscarrest.input-field i {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 1px black;
+  cursor: pointer;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 5px 5px 0;
+  width: 38px;
+}
+
+#btnRest {
+  margin: 0px;
+  margin-top: 6px;
+  height: 45px;
+  float: left;
+  color: white !important;
+  background-color: rgb(184, 111, 192);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.596);
+  border-radius: 5px;
+  transition: 0.1s;
+  padding: 0 36px 0 10px;
+}
+
+#divBtnRest {
+  height: 100%;
+  width: 50%;
+  margin: auto;
+  padding-left: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0;
+  padding-top: 10px;
+}
+
+#divBtnRest div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+#divBtnRest > div {
+  text-shadow: 0px 0px 3px black;
+}
+
+.divsuper {
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  padding: 0 10px;
+}
+
+#dropdowncarrinho {
+  height: 270px !important;
+  width: 320px !important;
+  margin-top: 35px !important;
+  margin-right: -20px !important;
+  border-radius: 5px;
+  cursor: default !important;
+}
+
+.contadorcarsup,
+.contadorcarinf {
+  background-color: red;
+  padding: 0px 7px;
+  border-radius: 4px;
+  margin-left: 3px;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 0px 0px 2px black;
+  margin-top: 1px;
+}
+
+.contadorcarsup {
+  display: none;
+}
+
+.location {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  background-color: rgba(128, 0, 128, 0.097);
+  float: right;
+  padding: 3px 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.localname {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.bag-fixed {
+  width: 366px;
+  height: 300px;
+  background-color: red;
+  right: 0;
+  margin-left: 10px;
+  position: fixed;
+}
+
+@media only screen and (min-width: 1367px) {
+  .divsuper {
+    max-width: calc(100% - 400px);
+    margin-left: 0;
+  }
+  .bag-fixed {
+    position: fixed;
+    right: 0;
+  }
+  #divGeral{
+    padding-right: 0px !important;
+  }
+  .container-fixed {
+    padding-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .container-fixed {
+    margin-left: 0;
+  }
+  .container-fixed {
+    max-width: calc(100% - 400px);
+  }
+  #divGeral {
+    margin-left: 0;
+  }
+  .divsuper {
+    margin-left: 0;
+    /* margin-right: 400px; */
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .divprinc11 {
+    width: 100% !important;
+    justify-content: space-evenly;
+  }
+  #divBtnRest {
+    width: 100%;
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .container-fixed {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #divBtnRest div {
+    line-height: 11px;
+    text-align: center;
+    display: block;
+  }
+  #divBtnRest div:nth-last-child(2) p:nth-last-child(1) {
+    display: none;
+  }
+  .contadorcarsup {
+    display: block;
+    position: absolute;
+    margin-left: 38px !important;
+    margin-top: -17px;
+  }
+}

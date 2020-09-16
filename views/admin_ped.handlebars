@@ -1,0 +1,334 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divGeral">
+
+        <!-- NAVBAR -->
+        <header>
+            <nav id="navBar">
+                <div onclick="window.location.href='/admin_start'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+                <div id="divIconMenu">
+                    <button style="padding: 0px;" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger"><i id="menuIconSup"
+                            class="material-icons">menu</i></button>
+                </div>
+
+                <div>
+                    <div id="divHorarioTopo">
+                        <select name="selc" class="selc">
+                            <option id="1" value="Fechado">Restaurante Fechado</option>
+                            <option id="2" value="Aberto">Restaurante Aberto</option>
+                            <option id="3" value="Pausado">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair
+                    </button>
+                </div>
+
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+            <div id="pageLinks">
+                <li><a id="nomePropEstab" data-id="{{codrestaurante}}" class="waves-effect waves-light">{{nome}}<span
+                            class="new badge pulse countPedido"
+                            onclick="javascript:window.location.href='/admin_ped'">4</span></a>
+                </li>
+                <li><a id="emailProp" class="waves-effect waves-light">{{email}}</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_start">Início</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ava">Avaliações</a></li>
+                <li><a id="marcaPaginaAtual" class="waves-effect waves-light" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light" href="">Financeiro</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_card">Cardápio</a></li>
+                <li><a class="waves-effect waves-light" href="admin_promo">Promoções</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_areas">Áreas de entrega</a></li>
+                <li><a class="waves-effect waves-light" href="">Formas de pagamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_users">Usuários</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_hr">Horário de funcionamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light" href="">Políticas</a></li>
+                <li><a class="waves-effect waves-light" href="">Configurações do ambiente</a></li>
+
+                <div class="divider"></div>
+                <li><a id="indef" class="waves-effect waves-light"></a></li>
+            </div>
+        </ul>
+
+        <div id="divCorpo">
+
+            <div id="divInicio">
+                <a href="#modalEnvios"
+                    class="btn-floating pulse btn-medium waves-effect waves-light btnEnvio modal-trigger"><i
+                        class="material-icons">motorcycle</i></a>
+                <a href="#modalHorarioEntrega"
+                    class="btn-floating btn-medium waves-effect waves-light bt-hora-entrega modal-trigger"><i
+                        class="material-icons">access_time</i></a>
+                <h4>Pedidos</h4>
+            </div>
+
+            <div style="margin-right: 15px; margin-left: 15px" class="divider"></div>
+
+            <div style="width: 95% !important; margin-top: 20px;">
+                <ul style="margin-bottom: 20px;" id="tabs-swipe-demo" class="tabs center tabsped">
+                    <li class="tab col s3 news"><a class="active" href="#test-swipe-1">NOVOS</a></li>
+                    <li class="tab col s3 preps"><a href="#test-swipe-2">EM PREPARAÇÃO</a></li>
+                    <li class="tab col s3 finals"><a href="#test-swipe-3">FINALIZADOS</a></li>
+                    <li class="tab col s3 cancel"><a href="#test-swipe-4">CANCELADOS</a></li>
+                </ul>
+                <div id="test-swipe-1">
+                    <table id="tableNovos" class="display1 centered cell-border compact nowrap">
+                        <thead>
+                            <tr>
+                                <th>COD</th>
+                                <th>Local</th>
+                                <th>Hora</th>
+                                <th>Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="test-swipe-2">
+                    <table id="tablePrep" class="display2 centered cell-border compact nowrap">
+                        <thead>
+                            <tr>
+                                <th>COD</th>
+                                <th>Local</th>
+                                <th>Valor</th>
+                                <th>Hora</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="test-swipe-3">
+                    <table id="tableFinal" class="display3 centered cell-border compact nowrap">
+                        <thead>
+                            <tr>
+                                <th>COD</th>
+                                <th>Local</th>
+                                <th>Hora</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="test-swipe-4">
+                    <table id="tableCancel" class="display7 centered cell-border compact nowrap">
+                        <thead>
+                            <tr>
+                                <th>COD</th>
+                                <th>Cancelado por</th>
+                                <th>Data</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL VER DETALHES -->
+    <div style="outline: none; width: 70%" id="modalDetalhes" class="modal modalDetalhes">
+        <i style="float: right" class="material-icons modal-close">close</i><br><br>
+        <input type="hidden" class="codusuario" value="" />
+        <div class="modal-content">
+            <p
+                style="font-size: 22px; text-align: center; background-color: purple; color: white; text-shadow: 1px 1px 1px black; border-radius: 3px;">
+                Detalhes do Pedido</p>
+
+            <table class="display4 centered nowrap responsive-table striped cell-border compact">
+                <thead>
+                    <tr>
+                        <th>COD</th>
+                        <th>Produto(s)</th>
+                        <th>Valor</th>
+                        <th>Adicionais</th>
+                        <th>Descrição</th>
+                        <th>Local</th>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                        <th>Pagamento</th>
+                        <th>Troco</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div style="outline: none; width: 70%" id="modalDetalhes1" class="modal modalDetalhes1">
+        <i style="float: right" class="material-icons modal-close">close</i><br><br>
+        <div class="modal-content">
+            <p
+                style="font-size: 22px; text-align: center; background-color: purple; color: white; text-shadow: 1px 1px 1px black; border-radius: 3px;">
+                Detalhes do Pedido</p>
+
+            <table class="display12 centered responsive-table striped nowrap cell-border compact">
+                <thead>
+                    <tr>
+                        <th>COD</th>
+                        <th>Produto(s)</th>
+                        <th>Valor</th>
+                        <th>Adicionais</th>
+                        <th>Descrição</th>
+                        <th>Local</th>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                        <th>Pagamento</th>
+                        <th>Troco</th>
+                        <th>Motivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- MODAL EM ENVIO -->
+    <div style="outline: none; width: 70%" id="modalEnvios" class="modal">
+        <div style="padding: 15px" class="modal-content">
+            <i style="float: right" class="material-icons modal-close">close</i>
+            <p
+                style="font-size: 22px; text-align: center; background-color: purple; color: white; text-shadow: 1px 1px 1px black; border-radius: 3px; width: 30%">
+                Envios</p>
+
+            <table id="tableEnvios" class="display5 centered nowrap cell-border compact">
+                <thead style="width: 100% !important">
+                    <tr>
+                        <th>COD</th>
+                        <th>Produtos</th>
+                        <th>Valor</th>
+                        <th>Descrição</th>
+                        <th>Local</th>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Modal Cancelamento -->
+    <div id="modalCancelamento" class="modal modal-fixed-footer">
+        <div class="modal-header-canc kit-flex" style="border-bottom: 1px solid #e1e1e1; height: 45px; ">
+            <h5 style="color: purple; text-align: center;" class="kit-flex fonte-primaria">Cancelamento do pedido</h5>
+        </div>
+        <div style="padding: 15px !important;" class="modal-content">
+            <div class="area-cancelamento" style="margin-top: 20px;">
+                <span class="grey-text text-darken-2 kit-flex">Digite o motivo</span>
+                <textarea
+                    style="resize: none; width: 100%; height: 150px; border-radius: 5px; padding: 10px; outline: none; box-shadow: 0px 0px 2px purple;"
+                    placeholder="Digite aqui..."></textarea>
+            </div>
+        </div>
+        <div class="modal-footer kit-flex">
+            <a style="margin: 0 5px"
+                class="modal-close waves-effect waves-light red darken-2 btn-small white-text">Cancelar</a>
+            <a style="margin: 0 5px"
+                class="waves-effect waves-light green darken-2 btn-small bt-enviar-cancelamento white-text">Enviar</a>
+        </div>
+    </div>
+
+    <!-- Modal HORARIO ENTREGA -->
+    <div id="modalHorarioEntrega" class="modal modal-fixed-footer">
+        <div class="header-modal kit-flex">
+            <i class="material-icons modal-close">close</i>
+            <span class="fonte-primaria">Horário de entrega</span>
+        </div>
+        <div class="dv-hr-entrega modal-content">
+            <span class="kit-flex">* Defina o horário de
+                entrega do seu estabelecimento com fidelidade, reclamações podem ocorrer por conta de horários não
+                cumpridos.</span>
+            <div class="dv-btns-horario kit-flex">
+                <div>
+                    <span class="kit-flex">Mínimo (minutos)</span>
+                    <input oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+                        maxlength="3" class="minimo-hr" type="number">
+                </div>
+                <div>
+                    <span class="kit-flex">Máximo (minutos)</span>
+                    <input oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+                        maxlength="3" class="maximo-hr" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer kit-flex">
+            <a class="green waves-effect waves-light btn-small bt-salvar-hr-entrega fonte-primaria">Confirmar</a>
+        </div>
+    </div>
+
+</body>
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/push.js/1.0.12/push.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<script src="/js/Funcoes/Compartilhado-REST.js"></script>
+<script src="/js/admin_ped.js"></script>
+
+</html>

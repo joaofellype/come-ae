@@ -1,0 +1,73 @@
+<!DOCTYPE>
+<html lang="pt-br">
+
+<head>
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_log_rest.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="divGeral">
+
+        <div id="divSup">
+            <div class="dv-logo kit-in-flex">
+                <i style="font-size: 3rem;" class="icon-comeae"></i>
+                <i class="icon-comeae_texto"></i>
+            </div>
+            {{!-- <a href="/restaurantes"><img src="https://i.imgur.com/0VfNgtg.png" id="imgLogo" /></a> --}}
+            <div id="divLinks">
+                <a href="#">Ajuda</a>
+                <a href="cad_rest"><button id="btnFazerParte">Cadastrar</button></a>
+            </div>
+        </div>
+
+        <div id="divFrase">
+            <p>É só entrar e gerenciar!</p>
+        </div>
+
+        <div id="divForm">
+            <div id="formIni">
+                <p>Entrar com meu restaurante</p><br>
+                <div class="input-field dv-input1">
+                    <input placeholder="" autocomplete="off" name="email" id="emailRest" type="email" class="validate"
+                        required>
+                    <label for="emailRest">Email</label>
+                    <span class="helper-text" data-error="Endereço de email inválido"></span>
+                </div>
+
+                <div class="input-field senhalog">
+                    <input autocomplete="off" placeholder="" name="senha" id="senhaRest" type="password"
+                        class="validate" required="required">
+                    <label for="senhaRest">Senha</label>
+                    <span class="helper-text" data-error="Senha inválida"></span>
+                    <i class="material-icons tooltipped btnMostrar" data-tooltip="Mostrar senha"
+                        data-position="top">visibility</i>
+                </div>
+
+                <div class="dv-esqsenha">
+                    <a class="modal-trigger esqsenha">Esqueci minha senha</a>
+                </div>
+
+                <div class="dv-log">
+                    <button id="btnEntrarCadRest" class="waves-effect waves-light btn logar">Logar</button>
+                </div>
+            </div>
+        </div>
+</body>
+
+{{#if error}}
+<script>M.toast({ html: '{{error}}&nbsp<i style="margin: 0px" class="material-icons">report</i>', classes: 'red darken-3 rounded' })</script>
+{{/if}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.all.min.js"></script> --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="/js/log_rest.js"></script>
+
+</html>

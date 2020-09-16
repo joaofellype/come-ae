@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Ajuda - ComeAê</title>
+    <link rel="stylesheet" href="./views/css/ajuda.css">
+    <link rel="stylesheet" href="./views/css/Comp/CompExterno.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="topo row sticky no-select">
+        <a class="waves-effect waves-light col s2 m1 hide-on-large-only center-align bt-acao-mobile"><i
+                class="icon-arrow-left2 white-text bt-topo-mobile botao-retorno-topo"
+                onclick="window.history.go(-1); return false;"></i></a>
+        <div onclick="window.location.href='/comeae'" class="col s8 m10 hide-on-large-only center-align"
+            id="logo-mobile">
+            <i class="icon-comeae fonte-logo"></i><i class="icon-comeae_texto fonte-logo-texto"></i>
+        </div>
+        <a class="waves-effect waves-light col s2 m1 hide-on-large-only center-align bt-acao-mobile"><i
+                class="icon-search white-text bt-topo-mobile botao"></i></a>
+        <div class="container hide-on-med-and-down">
+            <div onclick="window.location.href='/comeae'" class="col l2 hide-on-med-and-down" id="logo">
+                <div class="row">
+                    <i class="icon-comeae fonte-logo"></i><i class="icon-comeae_texto fonte-logo-texto"></i>
+                </div>
+            </div>
+            <div class="col l3 hide-on-med-and-down">
+                <form class="fm-busca" action="/busca" method="GET">
+                    <div class="autobusca input-field suffix">
+                        <input autocomplete="off" type="text" required name="search" id="buscar"
+                            class="pesquisar-topo autocomplete-busca" placeholder="Busque por restaurante/prato">
+                        <i class="icon-search white-text btn-pesquisa no-select" title="Consultar" alt="Consultar"></i>
+                    </div>
+                </form>
+            </div>
+            <div class="col l7 m5 hide-on-med-and-down no-select" id="menu">
+                <a href="/promocoes" class="col l4 item-menu waves-effect waves-light"><i
+                        class="icon-promocao"></i><span>Promoções</span></a>
+                <div class="log-check"></div>
+                <a class="col l3 item-menu waves-effect waves-light" data-target="meu_carrinho_suspenso"
+                    id="bt-topo-carrinho"><i class="icon-shopping-cart"></i><span>Carrinho</span></a>
+            </div>
+        </div>
+    </nav>
+    <nav class="hide" id="navbar-pesquisar">
+        <div class="nav-wrapper white darken-4">
+            <form class="fm-busca-mobile" action="/busca" method="GET">
+                <div class="autobusca input-field">
+                    <input autocomplete="off" id="search" name="search" class="autocomplete-busca" type="search"
+                        placeholder="Pesquisar...">
+
+                    <label class="label-icon active" for="search">
+                        <a class="inicio">
+                            <i class="material-icons purple-text retorno-seta">arrow_back</i>
+                        </a>
+                    </label>
+                    <i class="material-icons limpar-pesquisa purple-text" title="Limpar pesquisa">close</i>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    {{!-- SIDENAV RECUPERAR --}}
+    <ul id="slide-out" class="sidenav sidenav-recuperar"
+        style="min-width: 100%; min-width: 100%; background-color: purple; z-index: 9999999991;">
+        <div class="side-header">
+            <i class="material-icons white-text sidenav-close"
+                style="font-size: 2.2rem;cursor: pointer;position: absolute; right: 5px; top: 5px;">close</i>
+        </div>
+        <div class="dv-logo-side">
+            <i class="icon-comeae"></i>
+            <i class="icon-comeae_texto"></i>
+        </div>
+        <div class="dv-recu">
+            <span class="white-text">Recuperação de senha</span>
+            <form action="" class="fm-recu">
+                <div class="input-field">
+                    <input class="browser-default" placeholder="E-mail" id="emailrecu" type="email">
+                    <i class="material-icons white-text">email</i>
+                </div>
+                <div class="bt-recu">
+                    <button class="waves-effect waves-purple btn-small white">Enviar</button>
+                    <i class="material-icons">send</i>
+                </div>
+            </form>
+            <div class="bt-inicio">
+                <a class="waves-effect waves-purple btn-small white sidenav-close">Voltar</a>
+                <i class="material-icons">home</i>
+            </div>
+        </div>
+
+    </ul>
+
+    {{!-- SIDENAV LOGIN --}}
+    <ul id="slide-out" class="sidenav sidenav-login">
+        <i class="material-icons fechar-sid-login white-text sidenav-close">close</i>
+
+        <div class="dv-rest-logado white-text">
+            <span>Sessão aberta</span>
+            <div>
+                <div class="row">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="nome-estab-log"></span>
+                            <span class="email-esta-log"></span>
+                        </div>
+                        <div class="kit-flex dv-logrest">
+                            <button class="waves-effect waves-light btn-small white fonte-primaria"
+                                onclick="window.location.href='/admin_start'">Entrar</button>
+                            <button
+                                class="waves-effect waves-light btn-small red bt-sessao-sair white-text fonte-primaria">Sair</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dv-logo-side">
+            <i class="icon-comeae"></i>
+            <i class="icon-comeae_texto"></i>
+        </div>
+
+        <div class="dv-logar">
+            <span class="white-text">Identificação</span>
+            <form action="" class="fm-logar">
+                <div class="input-field">
+                    <input class="browser-default" placeholder="E-mail" id="emaillog" type="email" required>
+                    <i class="material-icons white-text">email</i>
+                </div>
+                <div class="input-field">
+                    <input class="browser-default" placeholder="Senha" id="senhalog" minlength="6" type="password"
+                        required>
+                    <i class="material-icons white-text">lock_outline</i>
+                </div>
+                <div class="bt-entrar">
+                    <button class="waves-effect waves-purple btn-small white">Entrar</button>
+                    <i class="material-icons">send</i>
+                </div>
+            </form>
+            <div class="bt-entrar-fb">
+                <a class="waves-effect waves-purple btn-small white btnFacebook">Por Facebook</a>
+                <i class="icon-facebook"></i>
+            </div>
+            <div class="bt-cadastrar">
+                <a class="waves-effect waves-purple btn-small white">Cadastrar</a>
+                <i class="material-icons">touch_app</i>
+            </div>
+            <div class="kit-flex white-text bt-recuperar">
+                <i class="material-icons">refresh</i>
+                <span>Recuperar Senha</span>
+            </div>
+        </div>
+
+        <div class="dv-verificar-code">
+            <span class="white-text">Verificação</span>
+            <span class="white-text">Enviamos seu código de verificação para o email <b
+                    class="yellow-text text-darken-3 enviado-para"></b><br> Preencha os campos abaixo com o
+                código recebido.</span>
+            <form action="" class="fm-verificar-code">
+                <div class="kit-flex inputscode">
+                    <div class="input-field">
+                        <input class="browser-default" maxlength="1" minlength="1" id="code1" inputmode="numeric"
+                            type="text" required>
+                    </div>
+                    <div class="input-field">
+                        <input class="browser-default" maxlength="1" minlength="1" id="code2" inputmode="numeric"
+                            type="text" required>
+                    </div>
+                    <div class="input-field">
+                        <input class="browser-default" maxlength="1" minlength="1" id="code3" inputmode="numeric"
+                            type="text" required>
+                    </div>
+                    <div class="input-field">
+                        <input class="browser-default" maxlength="1" minlength="1" id="code4" inputmode="numeric"
+                            type="text" required>
+                    </div>
+                    <div class="input-field">
+                        <input class="browser-default" maxlength="1" minlength="1" id="code5" inputmode="numeric"
+                            type="text" required>
+                    </div>
+                </div>
+                <div class="bt-enviar-code">
+                    <button class="waves-effect waves-purple btn-small white">Enviar</button>
+                    <i class="material-icons">check_circle</i>
+                </div>
+            </form>
+            <div class="kit-flex white-text bt-editaremail">
+                <i class="material-icons">edit</i>
+                <span>Editar Email</span>
+            </div>
+        </div>
+
+        <div class="dv-cad-email">
+            <span class="white-text">Iniciar Cadastro</span>
+            <form action="" class="fm-cad-email">
+                <div class="input-field">
+                    <input class="browser-default" placeholder="E-mail" id="emailautcad" type="email" required>
+                    <i class="material-icons white-text">email</i>
+                </div>
+                <div class="bt-aut-cadastro">
+                    <button class="waves-effect waves-purple btn-small white">Enviar</button>
+                    <i class="material-icons">check_circle</i>
+                </div>
+            </form>
+            <div class="bt-entrar-fb2">
+                <a class="waves-effect waves-purple btn-small white">Por Facebook</a>
+                <i class="icon-facebook"></i>
+            </div>
+            <div class="bt-logar">
+                <a class="waves-effect waves-purple btn-small white">Logar</a>
+                <i class="material-icons">exit_to_app</i>
+            </div>
+        </div>
+
+        <div class="dv-cadastrar">
+            <span class="white-text">Cadastro</span>
+            <form action="" class="fm-cadastrar">
+                <div class="input-field">
+                    <input class="browser-default" placeholder="Nome Completo" id="nome" type="text" required>
+                    <i class="material-icons white-text">person</i>
+                </div>
+                <div class="input-field">
+                    <input class="browser-default" maxlength="11" minlength="10" placeholder="Telefone" id="telefone"
+                        oninput="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" type="tel"
+                        required>
+                    <i class="material-icons white-text">phone</i>
+                </div>
+                <div class="input-field">
+                    <input class="browser-default valid" placeholder="E-mail" id="emailcad" type="email" required
+                        disabled>
+                    <i class="material-icons white-text disabled">email</i>
+                </div>
+                <div class="input-field">
+                    <input class="browser-default" placeholder="Senha" id="senhacad" type="password" required>
+                    <i class="material-icons white-text">lock_outline</i>
+                </div>
+                <div class="input-field">
+                    <input class="browser-default" placeholder="Confirmar Senha" id="confsenhacad" type="password"
+                        required>
+                    <i class="material-icons white-text">lock_outline</i>
+                </div>
+                <div class="dv-email-noticias kit-flex">
+                    <span class="white-text">Receber emails com notícias e novidades</span>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in check-news" checked="checked" />
+                            <span class="kit-flex"></span>
+                        </label>
+                    </p>
+                </div>
+                <div class="bt-conf-cadastrar">
+                    <button class="waves-effect waves-purple btn-small white">Cadastrar</button>
+                    <i class="material-icons">check_circle</i>
+                </div>
+            </form>
+        </div>
+
+        <div class="dv-cad-rest">
+            <span class="white-text">Cadastro Restaurante</span>
+            <form method="POST" action="/cad_rest" class="fm-cad-rest">
+                <div class="input-field">
+                    <input class="browser-default" placeholder="Nome do estabelecimento" id="nome_rest" name="nome_rest"
+                        type="text" required>
+                    <i class="material-icons white-text">restaurant</i>
+                </div>
+                <div class="input-field">
+                    <input class="browser-default" placeholder="E-mail" id="emailcad_rest" name="emailcad_rest"
+                        type="email" required>
+                    <i class="material-icons white-text">email</i>
+                </div>
+                <div class="input-field">
+                    <input class="browser-default" maxlength="11" minlength="10" placeholder="Telefone"
+                        name="telefone_rest" id="telefone_rest"
+                        oninput="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" type="tel"
+                        required>
+                    <i class="material-icons white-text">phone</i>
+                </div>
+                <div class="bt-conf-cad-rest">
+                    <button class="waves-effect waves-purple btn-small white">Cadastrar</button>
+                    <i class="material-icons">check_circle</i>
+                </div>
+            </form>
+            <div class="bt-entrar-fb2">
+                <a class="waves-effect waves-purple btn-small white">Por Facebook</a>
+                <i class="icon-facebook"></i>
+            </div>
+            <div class="bt-logar">
+                <a class="waves-effect waves-purple btn-small white">Logar</a>
+                <i class="material-icons">exit_to_app</i>
+            </div>
+        </div>
+
+    </ul>
+
+    {{!-- SIDENAV CARRINHO --}}
+    <ul id="meu_carrinho" class="sidenav sidenav-carrinho no-select">
+        <li>
+            <div class="carrinho_cabecalho">
+                <a class="fechar_carrinho cor-secundaria" title="Fechar" alt="Fechar"><i
+                        class="icon-close small"></i></a>
+                <div class="container">
+                    <span class="titulo-pedido">Seu pedido em
+                        <span class="titulo-pedido-restaurante"></span>
+                    </span>
+                    <span class="titulo-limpar-pedido">Limpar</span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="carrinho_itens_side">
+                    <div class="grey lighten-5 center-align center circulo-vazio_side no-select">
+                        <i class="icon-carrinho_vazio"></i>
+                    </div>
+                    <span class="legenda-vazio-side">
+                        Seu carrinho está vazio <br>Adicione itens
+                    </span>
+                </div>
+            </div>
+            <div class="carrinho_resumo_side row">
+                <div class="container">
+                    <div>
+                        <div class="col m6 s6">
+                            <span>Subtotal</span>
+                            <span>Taxa de Entrega</span>
+                            <span><b>Total</b></span>
+                        </div>
+                        <div class="col m6 s6 right-align carrinho_top_valores">
+                            <span class="subtotal-top">R$ 0,00</span>
+                            <span class="entrega-top">R$ 10,00</span>
+                            <span class="total-top">R$ 0,00</span>
+                        </div>
+                    </div>
+                    <a class="waves-effect waves-light btn btn-finalizar-pedido center">
+                        <i class="icon-checkmark-outline white-text"></i>
+                        <span>Finalizar pedido</span></a>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    {{!-- DROPDOWN CARRINHO --}}
+    <ul id='meu_carrinho_suspenso' class='dropdown-content'>
+        <li>
+            <div class="carrinho_cabecalho">
+                <div>
+                    <span class="titulo-pedido">Seu pedido em
+                        <span class="titulo-pedido-restaurante"></span>
+                    </span>
+                    <span class="titulo-limpar-pedido">Limpar</span>
+                </div>
+            </div>
+            <div class="carrinho_itens">
+            </div>
+            <div class="carrinho_resumo">
+                <div class="col l6">
+                    Subtotal<br>Taxa de Entrega<br><b>Total</b>
+                </div>
+                <div class="col l6 right-align carrinho_top_valores">
+                    <span class="subtotal-top">R$ 0,00</span>
+                    <span class="entrega-top">R$ 10,00</span>
+                    <span class="total-top">R$ 0,00</span>
+                </div>
+                <div class="center">
+                    <a class="waves-effect waves-light btn btn-finalizar-pedido"><i
+                            class="icon-checkmark-outline white-text"></i> <span>Finalizar pedido</span></a>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <!-- DROPDOWN PERFIL LOGADO -->
+    <ul id='dropdown-perfil-log' class='dropdown-content'>
+        <li> <i class="material-icons">receipt</i> <a href="/pedidos">Pedidos</a></li>
+        <li> <i class="material-icons">confirmation_number</i> <a href="/cupons">Cupons</a></li>
+        <li> <i class="material-icons">person</i> <a href="/dados">Dados</a></li>
+        <li> <i class="material-icons">home</i> <a href="/enderecos">Endereços</a></li>
+        <li class="bt-fav-perf-log"> <i class="material-icons">favorite</i> <a>Favoritos</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li class="bt-sair-app"> <i class="material-icons">exit_to_app</i> <a>Sair</a></li>
+    </ul>
+
+    {{!-- SIDENAV PERFIL LOGADO  --}}
+    <ul id="slide-out" class="sidenav side-perfil-log">
+
+        <i class="material-icons white-text sidenav-close">close</i>
+        <div class="dv-logo-side">
+            <i class="icon-comeae"></i>
+            <i class="icon-comeae_texto"></i>
+        </div>
+
+        <div class="white-text dv-corpo-sidelog">
+            <div onclick="window.location.href='/dados'" class="header-side kit-content">
+                <div class="kit-content">
+                    <div class="opc-img-sidelog">
+                        <img src="/views/img/base.png" alt="" class="circle responsive-img">
+                    </div>
+                    <div class="opc-sidelog">
+                        <span class="nomeUsuario"></span>
+                        <span class="grey-text text-lighten-1">Editar perfil</span>
+                    </div>
+                </div>
+                <i class="material-icons">keyboard_arrow_right</i>
+            </div>
+
+            <div class="divider opcy-2"></div>
+
+            <div onclick="window.location.href='/cupons'" class="dv-cupom  kit-content">
+                <div class="kit-content">
+                    <div>
+                        <i class="material-icons">confirmation_number</i>
+                    </div>
+                    <div class="opc-sidelog">
+                        <span>Cupons</span>
+                        <span class="grey-text text-lighten-1">Meus cupons de desconto</span>
+                    </div>
+                </div>
+                <i class="material-icons">keyboard_arrow_right</i>
+            </div>
+            <div class="divider opcy-2"></div>
+
+            <div onclick="window.location.href='/enderecos'" class="dv-enderecos  kit-content">
+                <div class="kit-content">
+                    <div>
+                        <i class="material-icons">home</i>
+                    </div>
+                    <div class="opc-sidelog">
+                        <span>Endereços</span>
+                        <span class="grey-text text-lighten-1">Meus endereços de entrega</span>
+                    </div>
+                </div>
+                <i class="material-icons">keyboard_arrow_right</i>
+            </div>
+            <div class="divider opcy-2"></div>
+
+            <div onclick="window.location.href='/pedidos'" class="dv-pedidos  kit-content">
+                <div class="kit-content">
+                    <div>
+                        <i class="material-icons">receipt</i>
+                    </div>
+                    <div class="opc-sidelog">
+                        <span>Pedidos</span>
+                        <span class="grey-text text-lighten-1">Meus pedidos</span>
+                    </div>
+                </div>
+                <i class="material-icons">keyboard_arrow_right</i>
+            </div>
+            <div class="divider opcy-2"></div>
+
+            <div class="dv-favoritos  kit-content">
+                <div class="kit-content">
+                    <div>
+                        <i class="material-icons">favorite_border</i>
+                    </div>
+                    <div class="opc-sidelog">
+                        <span>Favoritos</span>
+                        <span class="grey-text text-lighten-1">Restaurantes favoritados por mim</span>
+                    </div>
+                </div>
+                <i class="material-icons">keyboard_arrow_right</i>
+            </div>
+            <div class="divider opcy-2"></div>
+
+            <div onclick="window.location.href='/ajuda'" class="dv-ajuda  kit-content">
+                <div class="kit-content">
+                    <div>
+                        <i class="material-icons">live_help</i>
+                    </div>
+                    <div class="opc-sidelog">
+                        <span>Ajuda</span>
+                        <span class="grey-text text-lighten-1">O seu local de auxílio</span>
+                    </div>
+                </div>
+                <i class="material-icons">keyboard_arrow_right</i>
+            </div>
+            <div class="divider opcy-2"></div>
+
+            <div class="dv-sair-app  kit-content">
+                <button class="waves-effect waves-light red btn-small fonte-primaria"><i
+                        class="material-icons">exit_to_app</i>Encerrar sessão</button>
+            </div>
+
+        </div>
+    </ul>
+
+    <section class="tarja-endereco hide-on-med-and-down">
+        <div class="container">
+            <div class="endereco-cadastrado right">
+                <a href="#modalEntrada" class="cor-primaria entrega-dados modal-trigger"><i
+                        class="icon-regiao cor-secundaria"></i>
+                    <span class="cor-secundaria entrega">Entregar em:</span>
+                    <span class="ende"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="tarja-endereco-mobile hide-on-large-only">
+        <div class="container">
+            <div class="endereco-cadastrado-mobile">
+                <a href="#modalEntrada" class="cor-primaria entrega-dados-mobile modal-trigger"><i
+                        class="icon-regiao cor-secundaria"></i>
+                    <span class="cor-secundaria entrega">Entregar em:</span>
+                    <span class="ende"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-list-help">
+
+        <div class="header-busca">
+            <span class="cor-primaria">Como podemos ajudar você?</span>
+            <div class="input-field">
+                <i class="material-icons">search</i>
+                <i class="material-icons cancelarbusca" style="display: none;">close</i>
+                <input class="white-text buscarajuda" placeholder="Digite aqui a sua busca..." id="buscarajuda"
+                    type="text">
+            </div>
+        </div>
+
+        <div class="row lista-ajuda">
+            <div class="contato-comeae">
+                <span class="purple-text kit-flex back-listhelp">Cancelar</span>
+                <span class="kit-flex grey-text">É preciso entrar na sua conta para ter um atendimento
+                    personalizado</span>
+                <a href="/ent_cad" class="red-text kit-flex">Entrar</a>
+                <div id="form-help">
+                    <div class="input-field s12 select-motivo">
+                        <select id="motivo-ajuda">
+                            <option value="sem-motivo">Meu motivo não está aqui</option>
+                            <option value="pedido">Pedido</option>
+                            <option value="Pagamento">Pagamento</option>
+                            <option value="Conta e Privacidade">Conta e Privacidade</option>
+                        </select>
+                        <label>Motivo da Ajuda *</label>
+                    </div>
+                    <div class="input-field s12 select-detalhe">
+                        <select id="detalhe-motivo"></select>
+                        <label>Detalhe do Motivo *</label>
+                    </div>
+                    <div class="input-field s12">
+                        <input oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+                            id="pedido" inputmode="numeric" type="text">
+                        <label for="pedido">Pedido</label>
+                    </div>
+                    <div class="input-field s12">
+                        <input required id="nomeajuda" type="text" class="validate">
+                        <label for="nomeajuda">Nome *</label>
+                    </div>
+                    <div class="input-field s12">
+                        <input oninput="validate()" onfocus="validate()" required id="email" type="email">
+                        <label for="email">Email *</label>
+                    </div>
+                    <div class="input-field s12">
+                        <input required id="telefoneajuda" maxlength="15" minlength="14" type="tel" inputmode="numeric">
+                        <label for="telefoneajuda">Telefone *</label>
+                    </div>
+                    <div class="input-field s12">
+                        <input required id="oqaconteceu" type="text" class="validate">
+                        <label for="oqaconteceu">O que aconteceu? *</label>
+                    </div>
+                    <button class="waves-effect waves-light btn-small bt-enviar-ajuda purple darken-3"
+                        disabled>Enviar</button>
+                </div>
+            </div>
+            <div class="empty-msg">
+                <span class="cor-primaria kit-flex">Nenhum resultado encontrado</span>
+                <span class="grey-text kit-flex">Mas ainda podemos ajudar você.</span><br>
+                <a class="purple-text kit-flex bt-no-result">Enviar email para o ComeAê</a>
+            </div>
+            <div class="static-list grey-text text-darken-2">
+                <span class="cor-primaria">Pagamento</span>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header purple-text">Não consigo pagar online <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body ">
+                            <span> Se não consegue fazer o pagamento online pelo aplicativo ou site, você deve verificar
+                                se os dados cadastrados estão corretos. Se ao verificar, constatou que todos os dados
+                                estão corretos, você deve então entrar em contato com a emissora do cartão e verificar
+                                se há algum problema. Se após esses passos você verificou que tudo está correto e ainda
+                                assim não conseguir pagar online, pedimos que entre em contato com a gente.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Pagamento' data-header='Não consigo pagar online'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Tive uma cobrança indevida <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span> Se você sofreu alguma cobrança indevida e deseja solicitar o estorno do valor,
+                                envie-nos uma mensagem com os dados do pedido e comprovante da cobrança. Com essas
+                                informações poderemos avaliar o caso corretamente e prover o estorno do valor cobrado
+                                erroneamente, caso necessário.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Pagamento' data-header='Tive uma cobrança indevida'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Não consigo usar o cupom de descontos <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span> Os cupons de descontos possuem algumas regras que devem ser verificadas antes de seu
+                                uso. Por exemplo, os cupons de descontos só podem ser usados em pagamento online. Há
+                                também a regra em que o cupom só pode ser usado a partir de um pedido com valor mínimo
+                                ofertado pelo restaurante, sem contar com a taxa de entrega. E no final, você também
+                                deve checar a validade do cupom de desconto, essa informação você pode consultar no
+                                regulamento de promoção. Se Após você verificar todos os passos e tudo estiver correto e
+                                mesmo assim você não conseguir utilizar o cupom de desconto na sua compra, entre em
+                                contato conosco.
+                            </span><br><br>
+                            <span> Se estiver tudo certo e, ainda assim, você não conseguir aplicar o cupom de descontos
+                                ao seu pedido, pedimos que entre em contato com a gente.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Pagamento' data-header='Não consigo usar o cupom de descontos'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Não consigo excluir os dados do meu
+                            cartão <i class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>O armazenamento dos dados do seu cartão ficam salvos apenas no seu dispositivo -
+                                garantindo a segurança do mesmo - e jamais em um serviço externo, como o site, por
+                                exemplo.
+                            </span><br><br>
+                            <span>Ao efetuar qualquer compra pelo site através do seu cartão, assim que encerrar a sua
+                                sessão estes dados são perdidos, tudo isso para garantir que apenas você tenha acesso a
+                                essas informações.
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+                <span class="cor-primaria">Conta e Privacidade</span>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header purple-text">Quero alterar os dados da minha conta <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Você pode alterar todos os seus dados, incluindo nome, senha, CPF e endereço no site
+                                do ComeÂe, mas o email cadastrado é o modo principal de identificação dentro do sistema,
+                                sua identificação, então não podemos alterá-lo. Você pode alterar os seus dados indo
+                                tocando no seu nome na parte superior (desktop) ou em Perfil, parte inferior (mobile), e
+                                selecionando a opção Editar Perfil, nessa tela você poderá alterar os dados conforme
+                                informado.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Conta e Privacidade' data-header='Quero alterar os dados da minha conta'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Minha conta foi invadida por alguém <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se sua conta foi invadida por alguém, significa que sua senha foi comprometida. O que
+                                recomendamos é que você mude sua senha para uma mais forte, incluindo caracteres
+                                especiais, por exemplo. Mas fique tranquilo(a), mesmo com a intrusão em sua conta o
+                                invasor não terá acesso a seus dados de pagamento, pois eles ficam salvos apenas nos
+                                seus dispositivos.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Conta e Privacidade' data-header='Minha conta foi invadida por alguém'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Não encontro meu endereço <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se não consegue encontrar o seu CEP cadastrando seu endereço atraves de Perfil >
+                                Endereços, pedimos que envie uma mensagem pra nossa equipe com seu endereço correto.
+                                Assim, poderemos avaliar e estudar a melhor forma de resolver o seu problema.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Conta e Privacidade' data-header='Não encontro meu endereço'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Quero excluir uma avaliação que eu fiz
+                            <i class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se você deseja rever (editar) ou excluir uma de suas avaliações, nos envie uma
+                                mensagem que ajudaremos você.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Conta e Privacidade' data-header='Quero excluir uma avaliação que eu fiz'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Quero excluir a minha conta <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Lamentamos muito. Se você deseja cancelar sua conta, nos envie uma mensagem que
+                                podemos lhe ajudar em seu problema. Caso queira ter a conta reativada, nos mande
+                                mensagem com o email de sua conta antiga, ou crie uma conta nova com um novo email.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Conta e Privacidade' data-header='Quero excluir a minha conta'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <span class="cor-primaria">Institucional</span>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header purple-text">Quero falar com a assessoria de imprensa
+                            do ComeAê <i class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se você é jornalista ou interessado no ComeAê, entre em contato com nossa assessoria
+                                de impressa.
+                            </span><br><br>
+                            <a class="red-text">Falar com a nossa assessoria de imprensa</a>
+                        </div>
+                    </li>
+                </ul>
+                <span class="cor-primaria">Sou um restaurante</span>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header purple-text">Preciso de ajuda <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se você já possui cadastro no ComeAê, pedimos que entre em contato com o nosso suporte
+                                para lhe atender.
+                            </span><br><br>
+                            <a class="red-text">Enviar mensagem para o suporte</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Quero ser parceiro <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se você ainda não possui cadastro no ComeAê e deseja fazer parte do nosso time, entre
+                                em contato conosco agora mesmo.
+                            </span><br><br>
+                            <a href="/comeae#sec-bannerid" class="red-text">Cadastrar meu restaurante no ComeAê</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="unique-list">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header purple-text">Não consigo pagar online <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body ">
+                            <span> Se não consegue fazer o pagamento online pelo aplicativo ou site, você deve verificar
+                                se os dados cadastrados estão corretos. Se ao verificar, constatou que todos os dados
+                                estão corretos, você deve então entrar em contato com a emissora do cartão e verificar
+                                se há algum problema. Se após esses passos você verificou que tudo está correto e ainda
+                                assim não conseguir pagar online, pedimos que entre em contato com a gente.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Pagamento' data-header='Não consigo pagar online'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Tive uma cobrança indevida <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span> Se você sofreu alguma cobrança indevida e deseja solicitar o estorno do valor,
+                                envie-nos uma mensagem com os dados do pedido e comprovante da cobrança. Com essas
+                                informações poderemos avaliar o caso corretamente e prover o estorno do valor cobrado
+                                erroneamente, caso necessário.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Pagamento' data-header='Tive uma cobrança indevida'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Não consigo usar o cupom de descontos <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span> Os cupons de descontos possuem algumas regras que devem ser verificadas antes de seu
+                                uso. Por exemplo, os cupons de descontos só podem ser usados em pagamento online. Há
+                                também a regra em que o cupom só pode ser usado a partir de um pedido com valor mínimo
+                                ofertado pelo restaurante, sem contar com a taxa de entrega. E no final, você também
+                                deve checar a validade do cupom de desconto, essa informação você pode consultar no
+                                regulamento de promoção. Se Após você verificar todos os passos e tudo estiver correto e
+                                mesmo assim você não conseguir utilizar o cupom de desconto na sua compra, entre em
+                                contato conosco.
+                            </span><br><br>
+                            <span> Se estiver tudo certo e, ainda assim, você não conseguir aplicar o cupom de descontos
+                                ao seu pedido, pedimos que entre em contato com a gente.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Pagamento' data-header='Não consigo usar o cupom de descontos'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Não consigo excluir os dados do meu
+                            cartão <i class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>O armazenamento dos dados do seu cartão ficam salvos apenas no seu dispositivo -
+                                garantindo a segurança do mesmo - e jamais em um serviço externo, como o site, por
+                                exemplo.
+                            </span><br><br>
+                            <span>Ao efetuar qualquer compra pelo site através do seu cartão, assim que encerrar a sua
+                                sessão estes dados são perdidos, tudo isso para garantir que apenas você tenha acesso a
+                                essas informações.
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Quero alterar os dados da minha conta <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Você pode alterar todos os seus dados, incluindo nome, senha, CPF e endereço no site
+                                do ComeÂe, mas o email cadastrado é o modo principal de identificação dentro do sistema,
+                                sua identificação, então não podemos alterá-lo. Você pode alterar os seus dados indo
+                                tocando no seu nome na parte superior (desktop) ou em Perfil, parte inferior (mobile), e
+                                selecionando a opção Editar Perfil, nessa tela você poderá alterar os dados conforme
+                                informado.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Conta e Privacidade' data-header='Quero alterar os dados da minha conta'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Minha conta foi invadida por alguém <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se sua conta foi invadida por alguém, significa que sua senha foi comprometida. O que
+                                recomendamos é que você mude sua senha para uma mais forte, incluindo caracteres
+                                especiais, por exemplo. Mas fique tranquilo(a), mesmo com a intrusão em sua conta o
+                                invasor não terá acesso a seus dados de pagamento, pois eles ficam salvos apenas nos
+                                seus dispositivos.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Conta e Privacidade' data-header='Minha conta foi invadida por alguém'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Não encontro meu endereço <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se não consegue encontrar o seu CEP cadastrando seu endereço atraves de Perfil >
+                                Endereços, pedimos que envie uma mensagem pra nossa equipe com seu endereço correto.
+                                Assim, poderemos avaliar e estudar a melhor forma de resolver o seu problema.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Conta e Privacidade' data-header='Não encontro meu endereço'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Quero excluir uma avaliação que eu fiz
+                            <i class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se você deseja rever (editar) ou excluir uma de suas avaliações, nos envie uma
+                                mensagem que ajudaremos você.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Conta e Privacidade' data-header='Quero excluir uma avaliação que eu fiz'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Quero excluir a minha conta <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Lamentamos muito. Se você deseja cancelar sua conta, nos envie uma mensagem que
+                                podemos lhe ajudar em seu problema. Caso queira ter a conta reativada, nos mande
+                                mensagem com o email de sua conta antiga, ou crie uma conta nova com um novo email.
+                            </span><br><br>
+                            <span>Ainda precisa de ajuda?</span><br>
+                            <a data-title='Conta e Privacidade' data-header='Quero excluir a minha conta'
+                                class="red-text help-plus">Enviar email para o ComeAê</a>
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <div class="collapsible-header purple-text">Quero falar com a assessoria de imprensa
+                            do ComeAê <i class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se você é jornalista ou interessado no ComeAê, entre em contato com nossa assessoria
+                                de impressa.
+                            </span><br><br>
+                            <a class="red-text">Falar com a nossa assessoria de imprensa</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Preciso de ajuda <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se você já possui cadastro no ComeAê, pedimos que entre em contato com o nosso suporte
+                                para lhe atender.
+                            </span><br><br>
+                            <a class="red-text">Enviar mensagem para o suporte</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header purple-text">Quero ser parceiro <i
+                                class="material-icons">expand_more</i></div>
+                        <div class="collapsible-body">
+                            <span>Se você ainda não possui cadastro no ComeAê e deseja fazer parte do nosso time, entre
+                                em contato conosco agora mesmo.
+                            </span><br><br>
+                            <a href="/comeae#sec-bannerid" class="red-text">Cadastrar meu restaurante no ComeAê</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="rodape-mobile hide-on-large-only row center-align no-select">
+        <a href="/comeae" class="col s3 m3">
+            <i class="icon-home cor-secundaria"></i>
+            <span class="legenda-tab-menu cor-secundaria">Inicio</span>
+        </a>
+        <a class="col s3 m3 waves-effect waves-light log-check-mobile"></a>
+        <a class="col s3 m3 waves-effect waves-light" data-target="meu_carrinho" id="bt-tab-carrinho">
+            <i class="icon-shopping-cart"></i>
+            <span class="legenda-tab-menu cor-primaria">Carrinho</span>
+        </a>
+        <a class="col s3 m3 waves-effect waves-light pedidos-mobile">
+            <i class="icon-pedidos"></i>
+            <span class="legenda-tab-menu cor-primaria">Pedidos</span>
+        </a>
+    </footer>
+
+    <!-- Modal ENTRADA -->
+    <div id="modalEntrada" class="modal">
+        <div>
+            <p>Local atual:<b class="locatual"></b></p>
+        </div>
+        <div class="modal-content center">
+            <img src="/views/img/local.png" width="128px">
+            <p class="cor-secundaria fonte-primaria forte">Qual a sua localização?</p>
+        </div>
+        <div class="dv-cep-loc">
+            <span class="center grey-text forte opcy-6">Digite um CEP</span>
+            <div class="input-field">
+                <input onblur="pesquisacep(this.value)" maxlength="9" placeholder="CEP" id="cep-mdl-loc" type="tel"
+                    class="validate forte cor-secundaria">
+            </div>
+        </div>
+        <div class="divlocselect">
+            <div class="selectsend">
+                <select class="js-example-basic-single selectUF" name="state">
+                    <option selected value="">UF</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+                <select disabled class="js-example-basic-single selectLOC" name="state">
+                    <option selected value="">Local</option>
+                    <option value="São Luís">São Luís</option>
+                    <option value="São José de Ribamar">São José de Ribamar</option>
+                </select>
+                <select disabled class="js-example-basic-single selectBAIRRO" name="state">
+                    <option selected value="">Bairro</option>
+                </select>
+            </div>
+        </div>
+        <div class="dv-bt-confloc">
+            <button disabled
+                class="waves-effect green waves-light btn-small fonte-primaria btnconfirmLOC">Confirmar</button>
+        </div>
+        <div class="nao-sei-cep">
+            <span class="kit-flex cor-secundaria sem-cep">Não sei
+                meu CEP</span>
+        </div>
+
+        <div class="dv-end-save">
+            <div class="divider"></div>
+            <div class="dv-enderecos-geral">
+                <span class="forte cor-secundaria kit-flex fonte-primaria">Onde deseja receber?</span>
+            </div>
+            <div class="opcs-end-mdl">
+                <span class="forte cor-secundaria modal-trigger" href="#modalEnderecosEdit">Editar endereços</span>
+            </div>
+        </div>
+    </div>
+
+    {{!-- MODAL EDITAR ENDERECOS INPUTS --}}
+    <div id="editarEndereco" data-id="" class="modal modal-fixed-footer">
+        <div class="loaderModalEditEnd white">
+            <span class="purple-text text-darken-2">Aguarde...</span>
+        </div>
+        <div id="form-modal-end">
+            <div class="header-modal kit-flex">
+                <i class="material-icons modal-close purple-text text-darken-2">close</i>
+                <span class="kit-flex purple-text text-darken-2 fonte-primaria">Endereço</span>
+            </div>
+            <div class="modal-content">
+                <span class="grey-text">* Se não houver <b>Nº</b> ou <b>Complemento</b>
+                    deixe o campo em branco! *</span>
+                <div class="divider"></div>
+                <div>
+                    <div class="input-field s3">
+                        <input required maxlength="9" placeholder="XXXXX-XXX" class="cep1" id="cep" inputmode="numeric"
+                            type="text" class="validate">
+                        <label for="cep">CEP *</label>
+                    </div>
+                    <div class="input-field s3">
+                        <input required placeholder="Endereço" class="rua1" id="rua" type="text" class="validate">
+                        <label for="rua">Rua *</label>
+                    </div>
+                    <div class="input-field s3">
+                        <input maxlength="6" placeholder="Nº" id="numero" type="text" class="validate numlocal">
+                        <label for="numero">Nº</label>
+                    </div>
+                    <div class="input-field s3">
+                        <input required placeholder="Bairro" id="bairro" type="text" class="validate">
+                        <label for="bairro">Bairro *</label>
+                    </div>
+                    <div class="input-field s3">
+                        <input required placeholder="Cidade" id="cidade" type="text" class="validate">
+                        <label for="cidade">Cidade *</label>
+                    </div>
+                    <div class="input-field selectUF-Modal">
+                        <select id="UF-Endereco">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                        <label>UF *</label>
+                    </div>
+                    <div class="input-field s3">
+                        <input placeholder="Complemento" id="complemento" type="text" class="validate">
+                        <label for="complemento">Complemento</label>
+                    </div>
+                    <div class="switch-principal switch">
+                        <label>
+                            <input class="princiapal" type="checkbox">
+                            <span class="lever"></span>
+                            Endereço principal
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer kit-flex">
+                <button
+                    class="modal-close waves-effect waves-light btn-small red darken-2 fonte-primaria">Cancelar</button>
+                <button type="submit"
+                    class="waves-effect waves-light btn-small green darken-2 fonte-primaria bt-confirm-edit">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR ENDERECOS VISUAL -->
+    <div id="modalEnderecosEdit" class="modal">
+        <div class="header-modal kit-flex fonte-primaria forte">
+            <i class="material-icons cor-secundaria modal-close">close</i>
+            <span class="cor-secundaria">Endereço a editar</span>
+        </div>
+        <div class="modal-content">
+            <div class="dv-corpo-endvisu">
+                <p class="grey-text ">* Você
+                    pode acessar melhor seus endereços indo até <b>Perfil</b> > <b>Endereços</b>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal FAVORITOS -->
+    <div id="modalFavoritos" class="modal modalFavoritos bottom-sheet">
+        <div class="modal-content">
+            <i class="material-icons modal-close">close</i>
+            <span>Meus favoritos</span>
+            <ul class="collection ul-favoritos">
+            </ul>
+        </div>
+    </div>
+
+    <!-- MODAL PEDIDOS -->
+    <div id="modalPedidos3" class="modal modal-fixed-footer">
+        <div class="loadermodal">
+            <p>Aguarde...</p>
+        </div>
+        <div class="modal-header kit-flex">
+            <div>
+                <i class="material-icons modal-close">close</i>
+                <p class="fonte-primaria tipoModal"></p>
+            </div>
+        </div>
+        <div class="modal-content corpo-pedido">
+            <div></div>
+            <div class="imgproduto">
+                <img src="" class="imgProduto materialboxed">
+            </div>
+            <div>
+                <p class="nameprincitem"></p>
+                <div>
+                    <p class="descricaoProduto"></p>
+                </div>
+                <div>
+                    <p>R$&nbsp;</p>
+                    <p class="valorprodmd1">19,00</p>
+                </div>
+                <a class="dv-nomeestab" href="">
+                    <div>
+                        <i class="material-icons">store</i>
+                        <p class="nomeestab">Pizza Hut</p>
+                    </div>
+                    <div>
+                        <p>50-60 min</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tudo"></div>
+
+            <div class="divobservacao">
+                <p>Observação</p>
+                <textarea class="textobservacao" placeholder="Sem cebola, sem tomate, sem pepino..." name="" id=""
+                    cols="30" rows="10"></textarea>
+            </div>
+
+        </div>
+        <div class="modal-footer rodape-pedido">
+            <div>
+                <i class="material-icons btnmenosprod">expand_more</i>
+                <input class="qntprodutomodal browser-default"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+                    inputmode="numeric" maxlength="3" type="text" value="1">
+                <i class="material-icons btnmaisprod">expand_less</i>
+            </div>
+            <div class="btnconfirmarped waves-effect waves-light">
+                <p>ADICIONAR</p>
+                <p>R$ &nbsp;</p>
+                <p class="valortotprodmd1"></p>
+            </div>
+        </div>
+
+        <div></div>
+    </div>
+</body>
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.bootcss.com/push.js/1.0.12/push.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="/js/Outros/jquery.mask.js"></script>
+<script src="../js/ajuda.js"></script>
+<script src="/js/Funcoes/FuncoesPedido.js"></script>
+<script src="/js/Funcoes/Compartilhados.js"></script>
+
+</html>

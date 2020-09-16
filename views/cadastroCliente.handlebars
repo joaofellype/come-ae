@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="/views/css/cadastroCliente.css">
+  <title>Cadastro - ComeAê</title>
+</head>
+
+<body>
+
+  <a href="/ent_cad"><i id="iconArrowBack2" class="material-icons">arrow_back</i></a>
+
+  <div onclick="window.location.href='/comeae'" class="kit-in-flex white-text right dv-logo">
+    <i class="icon-comeae"></i>
+    <i class="icon-comeae_texto"></i>
+  </div>
+
+  <div id="divPrinc2" class="row">
+
+    <div id="formCadCod2" autocomplete="off" class="col s12">
+      <p id="p_cad2">Efetuar Cadastro</p>
+
+      <div>
+        <div class="input-field s12">
+          <input id="nomeCompleto" value="{{name}}" name="nome" type="text" class="validate" required>
+          <label for="nomeCompleto">Nome Completo *</label>
+        </div>
+        <input type="hidden" class="idFacebook" value="{{id}}" />
+        <div class="input-field s12">
+          <input id="telefone" name="telefone" type="tel" maxlength="15" minlength="14" required>
+          <label for="telefone">Telefone *</label>
+        </div>
+
+        <div class="input-field s12">
+          <input id="email" name="email" value="{{email}}" type="email" autocomplete="off" class="valid" required
+            disabled readonly>
+          <label for="email">Email *</label>
+        </div>
+
+        <div class="input-field s12 senhacad">
+          <input id="senha" name="senha" type="password" autocomplete="off" required>
+          <label for="senha">Senha *</label>
+          <i class="material-icons btnMostrar">visibility</i>
+        </div>
+        <div class="input-field s12">
+          <input id="confirmarSenha" name="confirmSenha" type="password" required>
+          <label for="confirmarSenha">Confirmar Senha *</label>
+        </div>
+
+        <div class="divemailsepromos kit-flex">
+          <span>Receber emails com novidades e promoções </span>
+          <p class="kit-flex">
+            <label class="kit-in-flex">
+              <input type="checkbox" class="filled-in" checked="checked" />
+              <span></span>
+            </label>
+          </p>
+        </div>
+
+        <p>Concordo com os
+          <a href="/termos" target="_blank">Termos de
+            uso</a> e a
+          <a href="/politicas" target="_blank">Política de
+            Privacidade</a>
+        </p>
+
+      </div>
+
+      <button id="btnPross" class="btn waves-effect waves-light btnConfirma">Prosseguir</button><br>
+
+    </div>
+
+  </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"
+  integrity="sha384-HvrlHqr3++BlwNouVSD2moaD5yS3hrzxutGPh1PGl9LVdJ9eCODHtA2mb0Rn8aD8" crossorigin="anonymous"></script>
+<script src="/js/cadastroCliente.js"></script>
+
+</html>

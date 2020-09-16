@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Relatórios</title>
+    <link rel="stylesheet" href="./views/css/placeholder-loading.css">
+    <link rel="stylesheet" href="./views/css/administracao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="loader-place"></div>
+
+    <nav class="navbar-comeae kit-flex" style="position: sticky;">
+        <div class="dv-logo-nav">
+            <i class="icon-comeae fonte-logo"></i>
+            <i class="icon-comeae_texto fonte-logo-texto"></i>
+        </div>
+        <div class="dv-identificador-nav dropdown-sair-trigger" data-target="dropdown-sair">
+            <p class="fonte-primaria nome-admin">Felipe Moreira</p>
+            <p class="cargo-admin">Programador</p>
+            <i class="material-icons">arrow_drop_down</i>
+        </div>
+        <div class="waves-effect waves-light hide-on-large-only sidenav-trigger dv-menu-nav" data-target="side-actions">
+            <i class="material-icons">menu</i>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN SAIR -->
+    <ul id='dropdown-sair' class='dropdown-content'>
+        <li><a>Sair</a></li>
+    </ul>
+
+    {{!-- SIDENAV ACOES --}}
+    <ul id="side-actions" class="sidenav side-acoes sidenav-fixed">
+        <li><a class="waves-effect" href="/resumo-adm"><i class="material-icons">home</i>Resumo</a></li>
+        <li><a class="waves-effect" href="/cadastros-adm"><i class="material-icons">format_align_center</i>Gerenciar
+                cadastros</a></li>
+        <li><a class="waves-effect" href="/promocoes-adm"><i class="material-icons">local_atm</i>Gerenciar
+                promoções</a></li>
+        <li><a class="waves-effect" href="/pedidos-adm"><i class="material-icons">view_carousel</i>Gerenciar pedidos</a>
+        </li>
+        <li><a class="waves-effect" href="/clientes-adm"><i class="material-icons">people</i>Clientes</a>
+        </li>
+        <li><a class="waves-effect" href="/produtos-adm"><i class="material-icons">local_bar</i>Produtos</a>
+        </li>
+        <li><a class="waves-effect" href="/voucher-adm"><i class="material-icons">confirmation_number</i>Voucher</a>
+        </li>
+        <li><a class="waves-effect" href="/gerencia-adm"><i class="material-icons">group_add</i>Novo
+                admin</a>
+        </li>
+        <li><a class="atual" class="waves-effect" href="/relatorios-adm"><i
+                    class="material-icons">picture_as_pdf</i>Relatórios</a>
+        </li>
+    </ul>
+
+    <section class="sec-geral">
+        <div class="dv-corpo">
+            <div class="row">
+                <div class="dv-corpo-opcs">
+
+                    <div class="dv-rest-rel">
+                        <span class="kit-flex txt-rest-rel">Restaurante</span>
+                        <select class="select-rest-rel browser-default" name="opc-rest">
+                            <option value=""></option>
+
+                        </select>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="kit-flex dv-de-ate-txt">
+                        <span>De</span>
+                        <span>Até</span>
+                    </div>
+                    <div class="dv-data-rel kit-flex">
+                        <input class="browser-default pickerinicio datepicker" placeholder="Data" type="text">
+                        <input class="browser-default pickerfim datepicker" placeholder="Data" type="text">
+                        <p class="kit-flex">
+                            <label>
+                                <input type="checkbox" class="filled-in checktodos" id="checktodos" />
+                                <span></span>
+                            </label>
+                            <label for="checktodos">
+                                <span>Tudo</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="dv-dia-solo kit-flex">
+                        <span>Dia específico:</span>
+                        <input class="browser-default picker-dia datepicker" placeholder="Data" type="text">
+                    </div>
+                    <div class="divider"></div>
+
+                    <div class="dv-opc">
+                        <span class="kit-flex txt-opc">Opções</span>
+                        <select class="select-opc browser-default" name="opc">
+                            <option value=""></option>
+                            <option value="qnt_ven_bairro" class="gp1">Quantidade de vendas por bairro</option>
+                            <option value="qnt_ven_forma" class="gp1">Quantidade de vendas por formas de pagamento
+                            </option>
+                            <option value="qnt_ven_turno" class="gp1">Quantidade de vendas por turno</option>
+                            <option value="prod-mais-ven" class="gp2">20 produtos que mais vendem</option>
+                            <option value="prod-menos-ven" class="gp2">20 produtos que menos vendem</option>
+                        </select>
+                    </div>
+
+                    <div class="dv-btn-gerar-rel">
+                        <button class="waves-light waves-effect btn-small kit-flex bt-gerar-rel">
+                            <span class="fonte-primaria">Gerar</span>
+                            <i class="material-icons">picture_as_pdf</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="rodape-mobile hide-on-large-only row center-align no-select">
+        <a href="/resumo-adm" class="col s12 m12">
+            <i class="icon-home"></i>
+            <span class="legenda-tab-menu">Inicio</span>
+        </a>
+    </footer>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"
+    integrity="sha256-D0J9D4igaYyVX/Y78Tr0yoDJsy8hi14hCEdFDakBp08=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"
+    integrity="sha256-gJWdmuCRBovJMD9D/TVdo4TIK8u5Sti11764sZT1DhI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.13/jspdf.plugin.autotable.min.js"
+    integrity="sha256-1gTovbU9vikIejcyjJKJce/HMA0eRnSWOed8ekl0Jgs=" crossorigin="anonymous"></script>
+<script src="/js/CompartilhadoADM.js"></script>
+<script src="/js/relatorios-adm.js"></script>
+
+</html>

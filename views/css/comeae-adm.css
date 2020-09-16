@@ -1,0 +1,1259 @@
+/* Fontes */
+@font-face {
+  font-family: "Isidora Alt W00 Bold";
+  src: url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.eot");
+  src: url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.woff2")
+      format("woff2"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.woff") format("woff"),
+    url("svsv/fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.ttf")
+      format("truetype"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.svg#Isidora")
+      format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.eot");
+  src: url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.woff2") format("woff2"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.woff") format("woff"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.ttf")
+      format("truetype"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.svg#Ubuntu")
+      format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("./fonts/icomoon_comeae/icomoon.eot?egt8k8");
+  src: url("./fonts/icomoon_comeae/icomoon.eot?egt8k8#iefix")
+      format("embedded-opentype"),
+    url("./fonts/icomoon_comeae/icomoon.ttf?egt8k8") format("truetype"),
+    url("./fonts/icomoon_comeae/icomoon.woff?egt8k8") format("woff"),
+    url("./fonts/icomoon_comeae/icomoon.svg?egt8k8#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.fonte-primaria {
+  font-family: "Isidora Alt W00 Bold";
+}
+.fonte-secundaria {
+  font-family: "Ubuntu";
+}
+/* Icones */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-shopping-cart:before {
+  content: "\e937";
+}
+.icon-files:before {
+  content: "\e933";
+}
+.icon-editar2:before {
+  content: "\e92e";
+}
+.icon-remover2:before {
+  content: "\e900";
+}
+.icon-remover:before {
+  content: "\e901";
+}
+.icon-close:before {
+  content: "\e902";
+}
+.icon-cancel_presentation:before {
+  content: "\e903";
+}
+.icon-cancel:before {
+  content: "\e904";
+}
+.icon-logout:before {
+  content: "\e905";
+}
+.icon-arrow_forward_ios:before {
+  content: "\e906";
+}
+.icon-arrow_forward:before {
+  content: "\e907";
+}
+.icon-arrow_back_ios:before {
+  content: "\e908";
+}
+.icon-arrow_back:before {
+  content: "\e909";
+}
+.icon-trash:before {
+  content: "\e90a";
+}
+.icon-cart:before {
+  content: "\e936";
+}
+.icon-editar2:before {
+  content: "\e92e";
+}
+.icon-remover2:before {
+  content: "\e900";
+}
+.icon-remover:before {
+  content: "\e901";
+}
+.icon-close:before {
+  content: "\e902";
+}
+.icon-cancel_presentation:before {
+  content: "\e903";
+}
+.icon-cancel:before {
+  content: "\e904";
+}
+.icon-logout:before {
+  content: "\e905";
+}
+.icon-arrow_forward_ios:before {
+  content: "\e906";
+}
+.icon-arrow_forward:before {
+  content: "\e907";
+}
+.icon-arrow_back_ios:before {
+  content: "\e908";
+}
+.icon-arrow_back:before {
+  content: "\e909";
+}
+.icon-trash:before {
+  content: "\e90a";
+}
+.icon-document-list1:before {
+  content: "\e930";
+}
+.icon-document-text:before {
+  content: "\e931";
+}
+.icon-document-text1:before {
+  content: "\e932";
+}
+.icon-wallet2:before {
+  content: "\e92f";
+}
+.icon-file-text-o:before {
+  content: "\e934";
+}
+.icon-editar:before {
+  content: "\e92d";
+}
+.icon-fechar:before {
+  content: "\ea0f";
+}
+.icon-arrow-left2:before {
+  content: "\ea40";
+}
+.icon-editar3:before {
+  content: "\e90b";
+}
+.icon-remover3:before {
+  content: "\e9ad";
+}
+.icon-fechar:before {
+  content: "\ea0f";
+}
+.icon-arrow-left2:before {
+  content: "\ea40";
+}
+.icon-pedidos:before {
+  content: "\e90c";
+}
+.icon-wallet:before {
+  content: "\e90d";
+}
+.icon-gears:before {
+  content: "\e90e";
+}
+.icon-wallet1:before {
+  content: "\e90f";
+}
+.icon-map-pin:before {
+  content: "\e910";
+}
+.icon-map:before {
+  content: "\e911";
+}
+.icon-document-list:before {
+  content: "\e912";
+}
+.icon-mail-envelope-closed:before {
+  content: "\e913";
+}
+.icon-heart-outlined:before {
+  content: "\e914";
+}
+.icon-heart:before {
+  content: "\e915";
+}
+.icon-location-pin:before {
+  content: "\e916";
+}
+.icon-location:before {
+  content: "\e917";
+}
+.icon-send:before {
+  content: "\e918";
+}
+.icon-checkmark-outline:before {
+  content: "\e919";
+}
+.icon-rotate-left:before {
+  content: "\e91a";
+}
+.icon-user-plus:before {
+  content: "\e91b";
+}
+.icon-home:before {
+  content: "\e91c";
+}
+.icon-phone:before {
+  content: "\e91d";
+}
+.icon-unlock:before {
+  content: "\e91e";
+}
+.icon-lock:before {
+  content: "\e91f";
+}
+.icon-apple:before {
+  content: "\e920";
+}
+.icon-googleplay:before {
+  content: "\e921";
+}
+.icon-instagram:before {
+  content: "\e922";
+}
+.icon-twitter:before {
+  content: "\e923";
+}
+.icon-facebook:before {
+  content: "\e924";
+}
+.icon-regiao:before {
+  content: "\e925";
+}
+.icon-promocao:before {
+  content: "\e926";
+}
+.icon-carrinho:before {
+  content: "\e927";
+}
+.icon-perfil:before {
+  content: "\e928";
+}
+.icon-comeae:before {
+  content: "\e929";
+}
+.icon-comeae_texto:before {
+  content: "\e935";
+}
+.icon-carrinho_vazio:before {
+  content: "\e92a";
+}
+.icon-search:before {
+  content: "\e92b";
+}
+.icon-help-circle:before {
+  content: "\e92c";
+}
+.icon-bubble:before {
+  content: "\e96e";
+}
+.icon-bubbles:before {
+  content: "\e96f";
+}
+.icon-star-empty:before {
+  content: "\e9d7";
+}
+.icon-star-half:before {
+  content: "\e9d8";
+}
+.icon-star-full:before {
+  content: "\e9d9";
+}
+/* Reset */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu";
+  font-size: 0.9rem;
+  background-color: purple;
+}
+/* Layout > Topo */
+.topo {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(129, 0, 126);
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+  z-index: 99999;
+}
+#logo {
+  padding-right: 0 !important;
+  height: 60px !important;
+  overflow: hidden;
+  cursor: pointer;
+}
+.fonte-logo {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 4.4rem;
+  padding-right: 5px;
+  padding-left: 2px;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.21);
+  flex: 1;
+}
+.fonte-logo-texto {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 2.4rem;
+  font-size: 1.1rem;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.21);
+  flex: 2;
+}
+#logo-mobile {
+  overflow: hidden !important;
+  height: 60px !important;
+  cursor: pointer;
+}
+#logo-mobile .fonte-logo {
+  display: inline-block;
+  font-size: 2.2rem;
+  line-height: 4.4rem;
+  padding-right: 5px;
+  height: 60px;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.21);
+  flex: 1;
+}
+#logo-mobile .fonte-logo-texto {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 2.4rem;
+  font-size: 1.6rem;
+  height: 60px;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.21);
+  flex: 2;
+}
+.bt-acao-mobile {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.bt-topo-mobile {
+  vertical-align: middle;
+  line-height: 4.4rem;
+  height: 100%;
+}
+::placeholder {
+  color: rgb(223, 164, 229) !important;
+}
+.input-field {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 60px !important;
+}
+
+/* layout SWAL */
+.swal2-container {
+  z-index: 999999999;
+}
+
+/* LAYOUT MODAL FAVORITOS */
+#modalFavoritos > div > ul > div > li {
+  padding-left: 0px !important;
+}
+#modalFavoritos > div > ul > div > li > div.ph-col-4-mod {
+  flex: 0 1 auto;
+  height: 67px;
+  padding-right: 0 !important;
+  max-width: 70px;
+  padding-top: 15px !important;
+}
+#modalFavoritos > div > ul > div > li > div.ph-col-8-mod {
+  flex: auto;
+  height: 62px;
+  padding-left: 0 !important;
+}
+#modalFavoritos > div > ul > div > li > div.ph-col-8-mod > div {
+  margin-top: 3px;
+}
+
+#modalFavoritos > div > ul > div > li > div.ph-col-4-mod > img {
+  max-width: 70%;
+  margin: 0;
+  margin-left: 5px;
+  border-radius: 50px !important;
+}
+#modalFavoritos {
+  max-width: 70%;
+  margin: auto;
+  z-index: 999999999 !important;
+}
+#modalFavoritos .modal-content > i {
+  font-size: 2rem;
+  right: 5px;
+  top: 5px;
+  position: absolute;
+  color: purple;
+  cursor: pointer;
+}
+#modalFavoritos .modal-content > span {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  color: purple;
+  letter-spacing: 1px;
+  font-family: "Isidora Alt W00 Bold";
+  text-transform: capitalize;
+}
+.item-favorito {
+  min-height: 65px !important;
+  cursor: pointer;
+  display: flex;
+  padding-right: 50px !important;
+}
+.dv-titulo-fav,
+.dv-categoria-fav {
+  width: 100%;
+  font-weight: bold;
+  font-size: 0.9rem !important;
+}
+.dv-categoria-fav {
+  margin-top: 3px;
+}
+.dv-titulo-fav {
+  display: flex;
+}
+.situacao-favorito {
+  text-transform: uppercase !important;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 0.9rem !important;
+}
+.situacao-favorito.aberto {
+  color: rgb(53, 230, 100) !important;
+}
+.situacao-favorito.fechado {
+  color: rgb(235, 28, 9) !important;
+}
+.situacao-favorito.pausado {
+  color: rgb(22, 190, 182) !important;
+}
+.nome-favorito {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 0.9rem !important;
+}
+.categoria-favorito {
+  background-color: #333;
+  padding: 3px 6px;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9rem !important;
+  font-weight: normal;
+}
+.bt-favorito-modal > i {
+  color: purple;
+  padding-top: 6px;
+  margin-top: 10px;
+}
+.modal-fav-aguarde {
+  height: 70px;
+  font-size: 1.3rem;
+  color: purple;
+  font-weight: bold;
+}
+.vazio-favoritos {
+  padding-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: purple;
+}
+.coracao-quebrado {
+  width: 4rem;
+}
+.dv-geral-favorito {
+  width: 100%;
+}
+
+#modalFavoritos > div > ul > li > img {
+  margin-top: 10px;
+}
+
+/* Layout > SideNav > Login/Cadastrar */
+.sidenav-login {
+  z-index: 99999999 !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  background-color: purple !important;
+}
+.sidenav-login .dv-logo-side,
+.side-perfil-log .dv-logo-side {
+  margin: 3rem 0 2rem 0;
+  text-align: center;
+}
+.dv-logo-side > i:first-child,
+.dv-logo-side > i:last-child {
+  font-size: 6rem;
+  color: white;
+  display: block;
+}
+.dv-logo-side > i:last-child {
+  font-size: 2rem;
+}
+
+.fechar-sid-login {
+  position: absolute;
+  font-size: 2.2rem !important;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+.kit-flex,
+.kit-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kit-content {
+  justify-content: space-between;
+}
+
+.dv-logar,
+.dv-cadastrar,
+.dv-cad-email,
+.dv-verificar-code,
+.dv-cad-rest {
+  max-width: 270px;
+  margin: auto;
+  margin-top: 1rem;
+}
+.dv-cadastrar,
+.dv-cad-email,
+.dv-verificar-code,
+.dv-cad-rest {
+  display: none;
+}
+.dv-logar > span,
+.dv-cadastrar > span,
+.dv-cad-email > span,
+.dv-verificar-code > span,
+.dv-cad-rest > span {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+.dv-verificar-code > span:nth-child(2) {
+  font-size: 0.8rem;
+}
+
+.fm-verificar-code > div {
+  margin: 2rem 0;
+}
+
+.fm-verificar-code > div > div.input-field {
+  text-align: center;
+}
+.fm-verificar-code > div > div.input-field > input {
+  width: 95%;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 70px;
+  color: #f9a825;
+  outline: none;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.fm-logar div.input-field > input,
+.fm-cadastrar div.input-field > input,
+.fm-cad-rest div.input-field > input,
+.fm-cad-email div.input-field > input {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50px;
+  padding: 0 50px 0 20px;
+  color: white;
+  outline: none;
+  font-size: 1rem;
+}
+
+.fm-cadastrar div.input-field > input:disabled {
+  border-color: #ffffff38 !important;
+  color: #ffffff38 !important;
+}
+
+.fm-logar div.input-field > input.invalid,
+.fm-cadastrar div.input-field > input.invalid,
+.fm-cad-rest div.input-field > input.invalid,
+.fm-cad-email div.input-field > input.invalid {
+  border: 2px solid #f44336 !important;
+}
+.fm-logar div.input-field > input.valid,
+.fm-cadastrar div.input-field > input.valid,
+.fm-cad-rest div.input-field > input.valid,
+.fm-cad-email div.input-field > input.valid {
+  border: 2px solid #4caf50 !important;
+}
+
+.fm-cadastrar div.input-field > i.disabled {
+  color: #ffffff38 !important;
+}
+
+.fm-logar div.input-field > i,
+.fm-cadastrar div.input-field > i,
+.fm-cad-rest div.input-field > i,
+.fm-cad-email div.input-field > i {
+  position: absolute;
+  right: 18px;
+  top: 13px;
+}
+
+.fm-logar .bt-entrar,
+.fm-cadastrar .bt-conf-cadastrar,
+.fm-cad-rest .bt-conf-cad-rest,
+.fm-cad-email .bt-aut-cadastro,
+.fm-verificar-code .bt-enviar-code,
+.dv-logar .bt-entrar-fb,
+.dv-cad-email .bt-entrar-fb2,
+.dv-cad-rest .bt-entrar-fb2,
+.dv-cad-email .bt-logar,
+.dv-cad-rest .bt-logar,
+.dv-logar .bt-cadastrar {
+  position: relative;
+}
+.fm-logar .bt-entrar > button,
+.fm-cadastrar .bt-conf-cadastrar > button,
+.fm-cad-rest .bt-conf-cad-rest > button,
+.fm-cad-email .bt-aut-cadastro > button,
+.fm-verificar-code .bt-enviar-code > button,
+.dv-logar .bt-entrar-fb > a,
+.dv-cad-email .bt-entrar-fb2 > a,
+.dv-cad-rest .bt-entrar-fb2 > a,
+.dv-cad-email .bt-logar > a,
+.dv-cad-rest .bt-logar > a,
+.dv-logar .bt-cadastrar > a {
+  height: 50px;
+  width: 100%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: purple;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.dv-logar .bt-entrar-fb > i,
+.dv-cad-email .bt-entrar-fb2 > i,
+.dv-cad-rest .bt-entrar-fb2 > i,
+.dv-cad-email .bt-logar > i,
+.dv-cad-rest .bt-logar > i,
+.dv-logar .bt-cadastrar > i,
+.fm-verificar-code .bt-enviar-code > i {
+  position: absolute;
+  left: 18px;
+  top: 13px;
+  z-index: 1;
+  color: purple !important;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.dv-logar .bt-cadastrar > i,
+.dv-cad-email .bt-logar > i,
+.fm-verificar-code .bt-enviar-code > i {
+  font-size: x-large;
+  font-weight: normal;
+}
+
+.fm-logar .bt-entrar > i,
+.fm-cadastrar .bt-conf-cadastrar > i,
+.fm-cad-rest .bt-conf-cad-rest > i,
+.fm-cad-email .bt-aut-cadastro > i {
+  position: absolute;
+  left: 18px;
+  top: 13px;
+  z-index: 1;
+  color: purple !important;
+}
+.dv-logar .bt-recuperar,
+.dv-verificar-code .bt-editaremail {
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.dv-logar .bt-recuperar > i,
+.dv-verificar-code .bt-editaremail > i {
+  font-size: 1.3rem !important;
+  margin-right: 3px;
+}
+.fm-logar input::placeholder,
+.fm-cadastrar input::placeholder,
+.fm-cad-rest input::placeholder,
+.fm-cad-email input::placeholder {
+  color: white !important;
+}
+
+.fm-cadastrar [type="checkbox"].filled-in:checked + span:not(.lever):after {
+  border: 2px solid white !important;
+  background-color: white !important;
+}
+.fm-cadastrar [type="checkbox"].filled-in:checked + span:not(.lever):before {
+  border-right: 2px solid purple !important;
+  border-bottom: 2px solid purple !important;
+}
+.fm-cadastrar
+  [type="checkbox"].filled-in:not(:checked)
+  + span:not(.lever):after {
+  border: 2px solid white !important;
+}
+.fm-cadastrar [type="checkbox"] + span:not(.lever) {
+  padding-left: 20px;
+  height: 20px;
+}
+
+.dv-email-noticias {
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+.dv-email-noticias > span {
+  font-size: 0.7rem;
+  font-size: 0.7rem;
+  margin-right: 7px;
+}
+.dv-email-noticias > p {
+  padding-top: 3px;
+}
+
+.swal2-actions:not(.swal2-loading) .swal2-styled {
+  opacity: 1 !important;
+  pointer-events: all;
+}
+
+.swal2-actions:not(.swal2-loading) .swal2-styled.disabled {
+  opacity: 0.5 !important;
+  pointer-events: none;
+}
+
+/* Layout > Cores */
+.rest_sts {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.cor-primaria {
+  color: rgb(29, 33, 38);
+}
+.cor-secundaria {
+  color: rgb(129, 0, 126);
+}
+.rodape {
+  color: rgb(194, 194, 194);
+}
+/* Layout > Linhas */
+.linha-titulo-primaria {
+  border-top: 5px solid rgb(129, 0, 126);
+}
+.linha-titulo-secundaria {
+  border-top: 5px solid rgb(184, 111, 191);
+}
+.linha-titulo-terciaria {
+  border-top: 5px solid rgb(223, 164, 229);
+}
+.linha-titulo {
+  width: 2.9rem;
+}
+/* Layout > Tipografia */
+.titulo-home {
+  font-family: "Isidora Alt W00 Bold";
+  font-size: 1.7rem;
+  margin-bottom: 0.001rem;
+  margin-top: 20px;
+}
+.texto-direita {
+  text-align: right;
+}
+.subtitulo {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Layout > RodapÃ© */
+#acesse li a {
+  color: grey !important;
+  opacity: .5;
+}
+#acesse li a:hover {
+  opacity: 1;
+}
+.rodape {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: rgb(246, 246, 246);
+  border-top: rgb(238, 238, 238) solid 7px;
+  box-shadow: 1px #666;
+  bottom: 0;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0 !important;
+}
+.fonte-logo-rodape {
+  display: inline-block;
+  font-size: 2.2rem;
+  line-height: 3.5rem;
+  padding-right: 5px;
+}
+.fonte-logo-texto-rodape {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1rem;
+  font-size: 1.5rem;
+  margin-top: -25px;
+  margin-right: 0.8rem !important;
+}
+.rodape li {
+  cursor: pointer;
+}
+.rodape li:hover {
+  color: rgb(112, 112, 112);
+}
+.dados-rodape {
+  padding: 0 !important;
+  margin-right: 20px !important;
+}
+.rodape-mobile {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  bottom: 0;
+  height: 50px !important;
+  justify-content: space-around;
+  background: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.24);
+  z-index: 9998;
+  margin-bottom: -1px !important;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rodape-mobile i {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.rodape-mobile .legenda-tab-menu {
+  font-size: 0.7rem;
+}
+.rodape-mobile a {
+  color: rgb(29, 33, 38);
+}
+
+/* lAYOUT ADMINISTRAÇÃO PAINEL */
+input[type="email"]:focus {
+  border-color: purple !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+input.invalid[type="email"],
+input.invalid[type="email"]:focus,
+input.invalid[type="password"],
+input.invalid[type="password"]:focus {
+  border-color: #f44336 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+input.valid[type="email"],
+input.valid[type="email"]:focus,
+input.valid[type="password"],
+input.valid[type="password"]:focus {
+  border-color: #4caf50 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+@media only screen and (max-width: 992px) {
+  #modalEntrada {
+    min-height: -webkit-fill-available !important;
+    height: 480px;
+    width: 100% !important;
+    top: 0% !important;
+    z-index: 999999999 !important;
+  }
+  #modalFavoritos {
+    max-width: 100%;
+    margin: auto;
+    z-index: 999999999 !important;
+  }
+}
+
+@media only screen and (max-height: 425px) {
+  .carrinho_resumo_side {
+    padding-top: 0px !important;
+  }
+  .carrinho_resumo_side > .container {
+    display: flex !important;
+    line-height: 1rem;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 9px;
+  }
+  .btn-finalizar-pedido {
+    margin-top: 0px !important;
+    margin-left: 10px !important;
+    width: 80% !important;
+  }
+}
+
+/* iPAD > Landscape*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .fonte-logo-texto {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2.4rem;
+    font-size: 0.9rem;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.21);
+    flex: 2;
+  }
+  .input-field.suffix i {
+    position: absolute;
+    width: 3rem;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    top: 25px;
+    right: -40px;
+  }
+  .pesquisar-topo {
+    flex-grow: 2;
+    font-family: "Ubuntu";
+    font-size: 0.7rem !important;
+    border: none !important;
+    border-radius: 3px !important;
+    padding-left: 10px !important;
+    padding-right: 25px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    max-height: 30px !important;
+    width: 90% !important;
+    background-color: rgba(240, 222, 255, 0.5) !important;
+    color: rgb(255, 255, 255);
+  }
+  .bt-app i {
+    float: left;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.7rem;
+    width: 20%;
+  }
+  .bt-app .fonte-baixar {
+    float: left;
+    font-size: 0.8rem;
+    line-height: 0.5rem;
+    margin-top: 0.6rem;
+    width: 65%;
+    text-align: left;
+  }
+  .bt-app .fonte-store {
+    float: left;
+    width: 65%;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+    text-align: left;
+  }
+  .bt-app:hover {
+    border: solid 3px rgb(112, 112, 112);
+    color: rgb(112, 112, 112);
+  }
+  #acesse li {
+    font-size: 0.7rem;
+  }
+  .logo-restaurante {
+    display: inline-block;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(214, 214, 214);
+  }
+  .dados-restaurante {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 0.7rem;
+  }
+  .estrela-restaurante {
+    color: rgb(229, 178, 38);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .nota-restaurante {
+    color: rgb(229, 178, 38);
+    font-size: 0.7rem;
+  }
+  .situacao-restaurante-aberto {
+    color: rgb(0, 133, 60);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante-fechado {
+    color: rgb(255, 75, 75);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .titulo-restaurante {
+    display: block;
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1rem;
+    line-height: 1rem;
+    width: 100%;
+    max-height: 49px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .categoria-restaurante {
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    background-color: rgb(29, 33, 38);
+    color: white;
+    margin-top: 2px;
+    float: left;
+  }
+}
+/* iPAD PRO > Portrait */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+  .fonte-logo-texto {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2.4rem;
+    font-size: 0.9rem;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.21);
+    flex: 2;
+  }
+  .bt-app i {
+    float: left;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.7rem;
+    width: 20%;
+  }
+  .bt-app .fonte-baixar {
+    float: left;
+    font-size: 0.8rem;
+    line-height: 0.5rem;
+    margin-top: 0.6rem;
+    width: 65%;
+    text-align: left;
+  }
+  .bt-app .fonte-store {
+    float: left;
+    width: 65%;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+    text-align: left;
+  }
+  .bt-app:hover {
+    border: solid 3px rgb(112, 112, 112);
+    color: rgb(112, 112, 112);
+  }
+  .input-field.suffix i {
+    position: absolute;
+    width: 3rem;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    top: 25px;
+    right: -40px;
+  }
+  .pesquisar-topo {
+    flex-grow: 2;
+    font-family: "Ubuntu";
+    font-size: 0.7rem !important;
+    border: none !important;
+    border-radius: 3px !important;
+    padding-left: 10px !important;
+    padding-right: 25px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    max-height: 30px !important;
+    width: 90% !important;
+    background-color: rgba(240, 222, 255, 0.5) !important;
+    color: rgb(255, 255, 255);
+  }
+  #acesse li {
+    font-size: 0.7rem;
+  }
+  .logo-restaurante {
+    display: inline-block;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(214, 214, 214);
+  }
+  .dados-restaurante {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 0.7rem;
+  }
+  .estrela-restaurante {
+    color: rgb(229, 178, 38);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .nota-restaurante {
+    color: rgb(229, 178, 38);
+    font-size: 0.7rem;
+  }
+  .situacao-restaurante-aberto {
+    color: rgb(0, 133, 60);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante-fechado {
+    color: rgb(255, 75, 75);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .titulo-restaurante {
+    display: block;
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1rem;
+    line-height: 1rem;
+    width: 100%;
+    max-height: 49px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .categoria-restaurante {
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    background-color: rgb(29, 33, 38);
+    color: white;
+    margin-top: 2px;
+    float: left;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+  .titulo-home {
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1.9rem;
+    margin-bottom: 0.001rem;
+    margin-top: 20px;
+  }
+  .logo-restaurante {
+    display: inline-block;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(214, 214, 214);
+  }
+  .dados-restaurante {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 0.7rem;
+  }
+  .estrela-restaurante {
+    color: rgb(229, 178, 38);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .nota-restaurante {
+    color: rgb(229, 178, 38);
+    font-size: 0.7rem;
+  }
+  .situacao-restaurante-aberto {
+    color: rgb(0, 133, 60);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante-fechado {
+    color: rgb(255, 75, 75);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .titulo-restaurante {
+    display: block;
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1rem;
+    line-height: 1rem;
+    width: 100%;
+    max-height: 49px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .categoria-restaurante {
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    background-color: rgb(29, 33, 38);
+    color: white;
+    margin-top: 2px;
+    float: left;
+  }
+}

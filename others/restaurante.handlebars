@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="pt-br">
+    <title>Restaurante</title>
+    <link rel="stylesheet" href="/views/css/restaurante.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="navBar">
+        <div class="container-fixed">
+            <div class="divprinc11">
+                <div style="display: flex; justify-content: center; align-items: center; margin-top: 7px;">
+                    <img style="width: 100px; margin: 0 5px 0 4px;" src="/views/img/logowhite.png" class="imglogo">
+                </div>
+                <form id="formbuscarrest" class="input-field" method="GET" action="/searchrest">
+                    <input name="search" id="btnRest" type="text" required="" class="searchtop"
+                        placeholder="Busque por restaurante ou prato" oninput="$('.formbuscarrest').submit()">
+                    <i class="material-icons btnsearch">search</i>
+                </form>
+            </div>
+
+            <div id="divBtnRest" class="input-field">
+                <div>
+                    <i class="material-icons">new_releases</i>
+                    <p>Promoções</p>
+                </div>
+                <div class="divlog">
+                </div>
+                <div class="carrinho dropdown-trigger" data-target="dropdowncarrinho">
+                    <i class="material-icons">shopping_cart</i>
+                    <p class="contadorcarsup"></p>
+                    <p>Carrinho</p>
+                    <p class="contadorcarinf"></p>
+                </div>
+            </div>
+        </div>
+        <div style="width: 400px;"></div>
+    </div>
+
+
+    <div class="divsuper">
+        <div id="divGeral">
+
+            <div class="location modal-trigger" href="#modalEntrada">
+                <i style="color: purple; font-size: 17px; margin-top: -1px;" class="material-icons">location_on</i>
+                <p style="color: purple;">Entregar em:trtr </p>
+                <p class="localname">R Tangará 3 Cond.Bonavita</p>
+            </div>
+
+            <div>
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; width: 100%;padding: 10px 0;">
+                    <div style="display: flex; justify-content: left; align-items: center; width: 60%;">
+                        <div style="width: 100px; height: 100px; background-color: red;">
+                            <img src="/views/img/base.png" style="width: 100%; border-radius: 5px;">
+                        </div>
+                        <div style="margin-left: 10px;">
+                            <p style="font-size: 30px; font-weight: bold;">China in Box - São Luis</p>
+                            <div style="display: flex; justify-content: left; align-items: center;">
+                                <i class="material-icons">star</i>
+                                <p>4.9</p>
+                                <p>● Aberto ●</p>
+                                <p>45 - 90 Min</p>
+                            </div>
+                            <p
+                                style="background-color: rgb(75, 75, 75);display: inline;justify-content: center;align-items: center;padding: 0px 3px 1px 3px;border-radius: 3px;color: white;">
+                                Chinesa</p>
+                        </div>
+                    </div>
+                    <div style="width: 40%; ">
+                        <p
+                            style="font-weight: bold; font-size: 15px; display: table; margin: auto; background-color: rgb(128, 0, 128, .5); color: white; padding: 0px 4px; border-radius: 3px;">
+                            Horário de Entrega</p>
+                        <div style="display: flex; justify-content: space-evenly; align-items: center;">
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <div>
+                                    <p>Segunda</p>
+                                    <p>Terça</p>
+                                    <p>Quarta</p>
+                                    <p>Quinta</p>
+                                </div>
+                                <div style="margin-left: 10px;">
+                                    <p>11:00 às 22:45</p>
+                                    <p>11:00 às 22:45</p>
+                                    <p>11:00 às 22:45</p>
+                                    <p>11:00 às 22:45</p>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: center; align-items: center; margin-top: -23px;">
+                                <div>
+                                    <p>Sexta</p>
+                                    <p>Sábado</p>
+                                    <p>Domingo</p>
+                                </div>
+                                <div style="margin-left: 10px;">
+                                    <p>11:00 às 22:45</p>
+                                    <p>11:00 às 22:45</p>
+                                    <p>11:00 às 22:45</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam minus totam, sint neque
+                        nostrumhghgh
+                        quos dolor reprehenderit repellat. Natus maxime iste tenetur, voluptatum ullam quo excepturi
+                        consequuntur itaque deserunt quis?</p>
+                </div>
+            </div>
+
+           
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; background-color: rgb(75, 75, 75, .2); max-width: 1100px;">
+                    <div>
+                        <a class='dropdown-trigger btn-small dropcat' href="#" data-target='dropcat'><i
+                                class="material-icons">list</i> Filtrar psdsdsor Categoria</a>
+                    </div>
+                    <div></div>
+                </div>
+
+
+        </div>
+
+        <div class="bag-fixed">
+        </div>
+    </div>
+
+    <!-- Dropdown categoria -->
+    <ul id='dropcat' class='dropdown-content'>
+        <li><a href="#">Yakissobas</a></li>
+        <li><a href="#">Camarão</a></li>
+        <li><a href="#">Entradas</a></li>
+        <li><a href="#">Frangos</a></li>
+        <li><a href="#">Arroz</a></li>
+        <li><a href="#">Carnes</a></li>
+        <li><a href="#">Sobremesas</a></li>
+    </ul>
+
+</body>
+
+<script>
+    var position = $(window).scrollTop();
+    let vdelay = 15;
+    let i1 = 0, i2 = 0;
+
+    $(window).on('resize change load scroll', function () {
+
+        var scroll = $(window).scrollTop();
+
+        if (scroll == 0) {
+            $('#navBar').attr('style', 'position: initial !important')
+        } else {
+            $('#navBar').attr('style', 'position: fixed !important')
+        }
+
+        if ($(window).width() > 700) {
+            $(".divprinc11").slideDown(100);
+        }
+
+        if ($(window).width() <= 700 && scroll < position - vdelay || scroll == 0) {
+            for (i1 == i1; i1 < 1; i1++ , i2 -= i1) {
+                $(".divprinc11").slideDown(100);
+            }
+        }
+        if ($(window).width() <= 700 && scroll > position) {
+            for (i2 == i2; i2 < 1; i2++ , i1 -= i2) {
+                $(".divprinc11").slideUp(100);
+            }
+        }
+
+        position = scroll;
+
+        if ($('.contadorcarsup').html() != '') {
+            $('.contadorcarsup').css('padding', '2px 7px')
+        }
+        if ($('.contadorcarinf').html() != '') {
+            $('.contadorcarinf').css('padding', '2px 7px')
+        }
+
+    })
+
+    setTimeout(function () {
+        vdelay = 0
+    }, 1000)
+
+    $(document).ready(function () {
+        $('.dropcat').dropdown();
+    })
+</script>
+
+</html>

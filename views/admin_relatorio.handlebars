@@ -1,0 +1,171 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divGeral">
+        <header>
+            <nav id="navBar">
+                <div onclick="window.location.href='/comeae'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+                <div id="divIconMenu">
+                    <button style="padding: 0px;" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger">
+                        <i id="menuIconSup" class="material-icons">menu</i>
+                    </button>
+                </div>
+                <div>
+                    <div id="divHorarioTopo">
+                        <select class="selc">
+                            <option id="1" value="Fechado">Restaurante Fechado</option>
+                            <option id="2" value="Aberto">Restaurante Aberto</option>
+                            <option id="3" value="Pausado">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+            <div id="pageLinks">
+                <li><a id="nomePropEstab" data-id="{{codrestaurante}}" class="waves-effect waves-light"><b
+                            class="nmlocal">{{nome}}</b><span class="new badge pulse countPedido"
+                            onclick="javascript:window.location.href='/admin_ped'"></span></a>
+                </li>
+                <li><a id="emailProp" class="waves-effect waves-light">{{email}}</a></li>
+                <li><a id="marcaPaginaAtual" class="waves-effect waves-light trigger-loader"
+                        href="/admin_start">Início</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_ava">Avaliações</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Financeiro</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_card">Cardápio</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="admin_promo">Promoções</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_areas">Áreas de entrega</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Formas de pagamento</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_hr">Horário de funcionamento</a>
+                </li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_users">Usuários</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_relatorio">Relatório</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Políticas</a></li>
+                <li style="display: none">
+                    <a style="background-color: rgb(128, 0, 128); text-shadow: 1px 1px 1px black;"
+                        class="waves-effect waves-light trigger-loader" href="/admin_forms">Novos Formulários
+                        <span style="text-shadow: none !important" class="new badge pulse"
+                            onclick="javascript:window.location.href='/admin_forms'">4</span>
+                    </a>
+                </li>
+                <div class="divider"></div>
+            </div>
+        </ul>
+
+        <div id="divCorpo">
+
+            <div id="divInicio">
+                <h4>Relatório</h4>
+            </div>
+
+            <li id="divisorCard2" class="divider"></li>
+
+            <div class="dv-corpo-opcs">
+
+                <div class="kit-flex dv-de-ate-txt">
+                    <span>De</span>
+                    <span>Até</span>
+                </div>
+                <div class="dv-data-rel kit-flex">
+                    <input class="browser-default pickerinicio datepicker" placeholder="Data" type="text">
+                    <input class="browser-default pickerfim datepicker" placeholder="Data" type="text">
+                    <p class="kit-flex">
+                        <label>
+                            <input type="checkbox" class="filled-in checktodos" id="checktodos" />
+                            <span></span>
+                        </label>
+                        <label for="checktodos">
+                            <span>Tudo</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="divider"></div>
+                <div class="dv-dia-solo kit-flex">
+                    <span>Dia específico:</span>
+                    <input class="browser-default picker-dia datepicker" placeholder="Data" type="text">
+                </div>
+                <div class="divider"></div>
+
+                <div class="dv-opc">
+                    <span class="kit-flex txt-opc">Opções</span>
+                    <select class="select-opc browser-default" name="opc">
+                        <option value=""></option>
+                        <option value="qnt_ven_bairro" class="gp1">Quantidade de vendas por bairro</option>
+                        <option value="qnt_ven_forma" class="gp1">Quantidade de vendas por formas de pagamento</option>
+                        <option value="qnt_ven_turno" class="gp1">Quantidade de vendas por turno</option>
+                        <option value="prod-mais-ven" class="gp2">20 produtos que mais vendem</option>
+                        <option value="prod-menos-ven" class="gp2">20 produtos que menos vendem</option>
+                    </select>
+                </div>
+
+                <div class="dv-btn-gerar-rel">
+                    <button class="waves-light waves-effect btn-small kit-flex bt-gerar-rel">
+                        <span class="fonte-primaria">Gerar</span>
+                        <i class="material-icons">picture_as_pdf</i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.bootcss.com/push.js/1.0.12/push.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"
+    integrity="sha256-gJWdmuCRBovJMD9D/TVdo4TIK8u5Sti11764sZT1DhI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.13/jspdf.plugin.autotable.min.js"
+    integrity="sha256-1gTovbU9vikIejcyjJKJce/HMA0eRnSWOed8ekl0Jgs=" crossorigin="anonymous"></script>
+<script src="/js/Funcoes/Compartilhado-REST.js"></script>
+<script src="/js/admin_relatorio.js"></script>
+
+</html>

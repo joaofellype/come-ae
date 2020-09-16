@@ -1,0 +1,820 @@
+/* Layout > PromoÃ§Ãµes */
+#promocoes {
+  margin-top: 20px !important;
+  margin-bottom: 5rem !important;
+}
+#promocoes .row .col {
+  padding-left: 0 !important;
+  padding-right: 8px !important;
+}
+#promocoes .row .col:last {
+  padding-right: 0;
+}
+.item-promocao {
+  margin-top: 10px;
+  border-radius: 5px;
+  min-height: 150px;
+  width: 99%;
+  background-color: grey;
+}
+.item-promocao > a > img {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+}
+
+/* Layout > Cardápio */
+.item-cardapio {
+  background-color: white;
+  border-radius: 5px !important;
+  width: 99%;
+  height: 150px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.categoria-cardapio {
+  font-size: 1.3rem;
+  margin-top: 5px;
+  font-weight: bold;
+  border-left: 2px solid rgba(128, 0, 128, 0.2);
+  padding-left: 5px;
+}
+.group-cardapio {
+  display: inline-block;
+  width: 100%;
+}
+.img-cardapio {
+  display: inline-flex;
+  border-radius: 3px;
+  margin-top: 32px;
+  margin-left: 10px;
+  width: 85px;
+  height: 85px !important;
+  background-color: rgb(214, 214, 214);
+  float: right;
+  margin-right: 10px;
+}
+.img-cardapio::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  width: 500%;
+  margin-left: -250%;
+  -webkit-animation: phAnimation 0.8s linear infinite;
+  animation: phAnimation 0.8s linear infinite;
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 46%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0) 54%
+    )
+    50% 50%;
+}
+.dados-restaurante {
+  display: inline-block;
+  width: 45%;
+  height: 100px;
+  margin-top: 10px;
+  margin-left: 10px;
+  vertical-align: top;
+  font-size: 0.7rem;
+}
+.estrela-restaurante {
+  color: rgb(229, 178, 38);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.nota-restaurante {
+  color: rgb(229, 178, 38);
+  font-size: 0.8rem;
+}
+.situacao-restaurante.aberto {
+  color: rgb(0, 133, 60);
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.situacao-restaurante.fechado {
+  color: rgb(255, 75, 75);
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.situacao-restaurante.pausado {
+  color: rgb(17, 173, 245);
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.titulo-cardapio {
+  display: block;
+  font-family: "Isidora Alt W00 Bold";
+  font-size: 1rem;
+  line-height: 1.1rem;
+  width: 100%;
+  max-height: 49px;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.titulo-descricao {
+  display: block;
+  line-height: 1.1rem;
+  width: 100%;
+  max-height: 49px;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 0.95rem;
+}
+.titulo-valor,
+.titulo-valor-promo {
+  display: block;
+  width: 100%;
+  max-height: 49px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 1rem;
+  position: absolute;
+  left: 10px;
+  text-decoration: line-through;
+  bottom: 10px;
+}
+.titulo-valor-promo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: green;
+  text-decoration: none;
+  bottom: 30px;
+}
+.categoria-restaurante {
+  display: block;
+  width: fit-content;
+  width: -moz-fit-content;
+  border-radius: 3px;
+  padding: 3px 4px 3px 4px !important;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  background-color: rgb(29, 33, 38);
+  color: white;
+  margin-top: 3px !important;
+}
+#restaurantes {
+  margin-top: 20px !important;
+}
+#restaurantes .row .col {
+  padding-left: 0 !important;
+  padding-right: 0px !important;
+}
+#restaurantes .card {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0),
+    0 1px 5px 0 rgba(0, 0, 0, 0.22);
+  margin-bottom: 0;
+}
+.btn-vejamais-pratos {
+  font-family: "Isidora Alt W00 Bold";
+  font-size: 1.2rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+  background-color: rgb(184, 111, 191) !important;
+  padding: 3px 20px 3px 20px !important;
+  height: auto !important;
+  margin-top: 10px !important;
+  min-width: 280px;
+}
+#restaurantes .lista-restaurantes .card {
+  margin-top: 5px !important;
+  margin-bottom: 0 !important;
+  border: 1px solid #f2f2f2 !important;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05) !important;
+  padding-top: 0;
+}
+.item-restaurante {
+  padding-top: 20px;
+}
+.item-restaurante > div:first-child > div > div:last-child {
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+.item-restaurante > div:first-child > div > div:nth-child(2) {
+  height: 40px !important;
+}
+
+/* Layout > Restaurantes */
+.item-restaurante {
+  background-color: white;
+  border-radius: 5px !important;
+  width: 99%;
+  height: 120px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.logo-restaurante {
+  display: inline-block;
+  border-radius: 3px;
+  margin-top: 22px;
+  margin-left: 10px;
+  width: 100px !important;
+  height: 100px !important;
+  background-color: rgb(214, 214, 214);
+}
+.logo-restaurante::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  width: 500%;
+  margin-left: -250%;
+  -webkit-animation: phAnimation 0.8s linear infinite;
+  animation: phAnimation 0.8s linear infinite;
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 46%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0) 54%
+    )
+    50% 50%;
+}
+.dados-restaurante {
+  display: inline-block;
+  width: 55%;
+  height: 100px;
+  margin-top: 10px;
+  margin-left: 10px;
+  vertical-align: top;
+  font-size: 0.8rem;
+}
+.estrela-restaurante {
+  color: rgb(229, 178, 38);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.nota-restaurante {
+  color: rgb(229, 178, 38);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.situacao-restaurante.aberto {
+  color: rgb(0, 133, 60);
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.situacao-restaurante.fechado {
+  color: rgb(255, 75, 75);
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.situacao-restaurante.pausado {
+  color: rgb(17, 173, 245);
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.titulo-restaurante {
+  display: block;
+  font-family: "Isidora Alt W00 Bold";
+  font-size: 1rem;
+  line-height: 1.1rem;
+  width: 100%;
+  max-height: 49px;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.categoria-restaurante {
+  display: block;
+  width: fit-content;
+  width: -moz-fit-content;
+  border-radius: 3px;
+  padding: 3px 4px 3px 4px !important;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  background-color: rgb(29, 33, 38);
+  color: white;
+  margin-top: 3px !important;
+}
+#restaurantes {
+  margin-top: 20px !important;
+}
+#restaurantes .row .col {
+  padding-left: 0 !important;
+  padding-right: 0px !important;
+}
+#restaurantes .lista-pratos .card {
+  margin-top: 5px !important;
+  margin-bottom: 0 !important;
+  border: 1px solid #f2f2f2 !important;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05) !important;
+  padding-top: 0;
+  height: 150px;
+}
+.btn-vejamais-restaurantes {
+  font-family: "Isidora Alt W00 Bold";
+  font-size: 1.2rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+  background-color: rgb(184, 111, 191) !important;
+  padding: 3px 20px 3px 20px !important;
+  height: auto !important;
+  margin-top: 10px !important;
+  min-width: 280px;
+}
+
+/* Layout > Vai comer o que? */
+.img-comer {
+  width: 95%;
+  border-radius: 50%;
+  background-color: rgb(29, 33, 38);
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-comer img {
+  border-radius: 50%;
+  cursor: pointer;
+}
+.container {
+  max-width: 1000px !important;
+}
+#vai-comer {
+  margin-top: -45px;
+}
+
+/* Layout > Resultado Busca > Vazio */
+.busca-vazia {
+  padding: 20px 0 0 0;
+}
+.busca-vazia img {
+  width: 150px;
+  display: flex;
+  margin: auto;
+  transition: 0.3s;
+}
+.busca-vazia span {
+  display: flex;
+  color: #929292;
+  font-size: 1.4rem;
+  justify-content: center;
+  text-shadow: 1px 1px 1px #5f5d5d;
+  transition: 0.3s;
+}
+
+/* LIMITACOES */
+.central .container {
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 1900px) {
+  .central .container {
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #modalEntrada,
+  #modalPedidos3 {
+    min-height: -webkit-fill-available !important;
+    height: 480px;
+    width: 100% !important;
+    top: 0% !important;
+    z-index: 999999999 !important;
+  }
+  .carrinho_fixo {
+    display: none !important;
+  }
+  .central .container {
+    margin-left: auto;
+  }
+  #modalFavoritos {
+    max-width: 100% !important;
+    margin: auto !important;
+    z-index: 999999999 !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .item-promocao > a > img {
+    height: 170px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .item-promocao > a > img {
+    height: 220px !important;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .item-promocao > a > img {
+    height: 180px !important;
+  }
+}
+
+@media only screen and (max-height: 420px) {
+  .carrinho_resumo_side {
+    padding-top: 0px !important;
+  }
+  .carrinho_resumo_side > .container {
+    display: flex !important;
+    line-height: 1rem;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 9px;
+  }
+  .btn-finalizar-pedido {
+    margin-top: 0px !important;
+    margin-left: 10px !important;
+    width: 80% !important;
+  }
+  .busca-vazia img {
+    width: 130px;
+  }
+  .busca-vazia span {
+    font-size: 1.2rem;
+  }
+}
+
+/* iPAD > Landscape*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .logo-restaurante {
+    display: inline-block;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100px !important;
+    height: 100px !important;
+    background-color: rgb(214, 214, 214);
+  }
+  .fonte-logo-texto {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2.4rem;
+    font-size: 0.9rem;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.21);
+    flex: 2;
+  }
+  .img-cardapio {
+    display: inline-flex;
+    border-radius: 3px;
+    margin-top: 25px;
+    margin-left: 10px;
+    width: 95px;
+    height: 95px !important;
+    background-color: rgb(214, 214, 214);
+    float: right;
+    margin-right: 10px;
+  }
+  .input-field.suffix i {
+    position: absolute;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    right: -40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    left: 95%;
+    top: 14px;
+  }
+  .pesquisar-topo {
+    flex-grow: 2;
+    font-family: "Ubuntu";
+    font-size: 0.7rem !important;
+    border: none !important;
+    border-radius: 3px !important;
+    padding-left: 10px !important;
+    padding-right: 25px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    max-height: 30px !important;
+    width: 90% !important;
+    background-color: rgba(240, 222, 255, 0.5) !important;
+    color: rgb(255, 255, 255);
+  }
+  .bt-app i {
+    float: left;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.7rem;
+    width: 20%;
+  }
+  .bt-app .fonte-baixar {
+    float: left;
+    font-size: 0.8rem;
+    line-height: 0.5rem;
+    margin-top: 0.6rem;
+    width: 65%;
+    text-align: left;
+  }
+  .bt-app .fonte-store {
+    float: left;
+    width: 65%;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+    text-align: left;
+  }
+  .bt-app:hover {
+    border: solid 3px rgb(112, 112, 112);
+    color: rgb(112, 112, 112);
+  }
+  #acesse li {
+    font-size: 0.7rem;
+  }
+  .dados-restaurante {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 0.7rem;
+  }
+  .estrela-restaurante {
+    color: rgb(229, 178, 38);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .nota-restaurante {
+    color: rgb(229, 178, 38);
+    font-size: 0.7rem;
+  }
+  .situacao-restaurante.aberto {
+    color: rgb(0, 133, 60);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante.fechado {
+    color: rgb(255, 75, 75);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante.pausado {
+    color: rgb(17, 173, 245);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .titulo-restaurante {
+    display: block;
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1rem;
+    line-height: 1rem;
+    width: 100%;
+    max-height: 49px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .categoria-restaurante {
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    background-color: rgb(29, 33, 38);
+    color: white;
+    margin-top: 2px;
+    float: left;
+  }
+}
+/* iPAD PRO > Portrait */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+  .fonte-logo-texto {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2.4rem;
+    font-size: 0.9rem;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.21);
+    flex: 2;
+  }
+  .img-cardapio {
+    display: inline-flex;
+    border-radius: 3px;
+    margin-top: 25px;
+    margin-left: 10px;
+    width: 95px;
+    height: 95px !important;
+    background-color: rgb(214, 214, 214);
+    float: right;
+    margin-right: 10px;
+  }
+  .bt-app i {
+    float: left;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.7rem;
+    width: 20%;
+  }
+  .bt-app .fonte-baixar {
+    float: left;
+    font-size: 0.8rem;
+    line-height: 0.5rem;
+    margin-top: 0.6rem;
+    width: 65%;
+    text-align: left;
+  }
+  .bt-app .fonte-store {
+    float: left;
+    width: 65%;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+    text-align: left;
+  }
+  .bt-app:hover {
+    border: solid 3px rgb(112, 112, 112);
+    color: rgb(112, 112, 112);
+  }
+  .input-field.suffix i {
+    position: absolute;
+    width: 3rem;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    top: 25px;
+    right: -40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    left: 95%;
+    top: 14px;
+  }
+  .pesquisar-topo {
+    flex-grow: 2;
+    font-family: "Ubuntu";
+    font-size: 0.7rem !important;
+    border: none !important;
+    border-radius: 3px !important;
+    padding-left: 10px !important;
+    padding-right: 25px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    max-height: 30px !important;
+    width: 90% !important;
+    background-color: rgba(240, 222, 255, 0.5) !important;
+    color: rgb(255, 255, 255);
+  }
+  #acesse li {
+    font-size: 0.7rem;
+  }
+  .dados-restaurante {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    margin-top: 8px;
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 0.7rem;
+  }
+  .estrela-restaurante {
+    color: rgb(229, 178, 38);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .nota-restaurante {
+    color: rgb(229, 178, 38);
+    font-size: 0.7rem;
+  }
+  .situacao-restaurante.aberto {
+    color: rgb(0, 133, 60);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante.fechado {
+    color: rgb(255, 75, 75);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante.pausado {
+    color: rgb(17, 173, 245);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .titulo-restaurante {
+    display: block;
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1rem;
+    line-height: 1rem;
+    width: 100%;
+    max-height: 49px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .categoria-restaurante {
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    background-color: rgb(29, 33, 38);
+    color: white;
+    margin-top: 2px;
+    float: left;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+  .titulo-home {
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1.9rem;
+    margin-bottom: 0.001rem;
+    margin-top: 20px;
+  }
+  .img-cardapio {
+    display: inline-flex;
+    border-radius: 3px;
+    margin-top: 25px;
+    margin-left: 10px;
+    width: 95px;
+    height: 95px !important;
+    background-color: rgb(214, 214, 214);
+    float: right;
+    margin-right: 10px;
+  }
+  .dados-restaurante {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 0.7rem;
+  }
+  .estrela-restaurante {
+    color: rgb(229, 178, 38);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .nota-restaurante {
+    color: rgb(229, 178, 38);
+    font-size: 0.7rem;
+  }
+  .situacao-restaurante.aberto {
+    color: rgb(0, 133, 60);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante.fechado {
+    color: rgb(255, 75, 75);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante.pausado {
+    color: rgb(17, 173, 245);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .titulo-restaurante {
+    display: block;
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1rem;
+    line-height: 1rem;
+    width: 100%;
+    max-height: 49px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .categoria-restaurante {
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    background-color: rgb(29, 33, 38);
+    color: white;
+    margin-top: 2px;
+    float: left;
+  }
+}

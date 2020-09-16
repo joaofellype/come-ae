@@ -1,0 +1,563 @@
+* {
+  margin: 0 auto;
+  padding-bottom: 0;
+  background-color: transparent;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Ubuntu";
+}
+
+/* Fontes */
+@font-face {
+  font-family: "Isidora Alt W00 Bold";
+  src: url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.eot");
+  src: url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.woff2")
+      format("woff2"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.woff") format("woff"),
+    url("svsv/fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.ttf")
+      format("truetype"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.svg#Isidora")
+      format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.eot");
+  src: url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.woff2") format("woff2"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.woff") format("woff"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.ttf")
+      format("truetype"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.svg#Ubuntu")
+      format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("./fonts/icomoon_comeae/icomoon.eot?egt8k8");
+  src: url("./fonts/icomoon_comeae/icomoon.eot?egt8k8#iefix")
+      format("embedded-opentype"),
+    url("./fonts/icomoon_comeae/icomoon.ttf?egt8k8") format("truetype"),
+    url("./fonts/icomoon_comeae/icomoon.woff?egt8k8") format("woff"),
+    url("./fonts/icomoon_comeae/icomoon.svg?egt8k8#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Icones */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-comeae:before {
+  content: "\e929";
+}
+.icon-comeae_texto:before {
+  content: "\e935";
+}
+
+.kit-flex,
+.kit-in-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kit-in-flex {
+  display: inline-flex;
+}
+
+/* LOADER */
+.divLoader {
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+.divLoader > div {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+}
+.divLoader > p {
+  font-size: 20px;
+  color: purple;
+  text-shadow: 1px 1px 1px grey;
+  position: absolute;
+  top: 55%;
+  left: 44.5%;
+}
+
+.spinner-blue,
+.spinner-blue-only {
+  border-color: transparent !important;
+  background-image: url("https://i.imgur.com/R7rmpqY.png") !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*  */
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid purple;
+}
+
+#spanRadio {
+  color: black;
+  font-weight: bold;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+  background-color: purple;
+}
+
+#formIni {
+  text-align: center;
+  width: 80%;
+}
+
+#divEstados label.active,
+#divEspecialidade label.active {
+  color: rgb(0, 0, 0) !important;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#formIni input + label {
+  color: rgb(0, 0, 0) !important;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#formIni input:focus {
+  border-bottom: 1px solid rgb(129, 0, 126) !important;
+  box-shadow: 0 1px 0 0 rgb(129, 0, 126) !important;
+}
+
+#formIni input.valid,
+#formIni .select-wrapper input.select-dropdown.valid {
+  border-bottom: 1px solid #4caf50 !important;
+  -webkit-box-shadow: 0 1px 0 0 #4caf50 !important;
+  box-shadow: 0 1px 0 0 #4caf50 !important;
+}
+
+#formIni input.invalid,
+#formIni .select-wrapper input.select-dropdown.invalid {
+  border-bottom: 1px solid #f44336 !important;
+  -webkit-box-shadow: 0 1px 0 0 #f44336 !important;
+  box-shadow: 0 1px 0 0 #f44336 !important;
+}
+/*  */
+
+#formIni .dropdown-content li > span {
+  background-color: purple !important;
+  color: white !important;
+}
+
+#formIni .dropdown-content li > span span {
+  color: white !important;
+}
+#formIni [type="checkbox"] + span:not(.lever):before {
+  border: 2px solid white;
+  border-radius: 2px;
+}
+#formIni [type="checkbox"]:checked + span:not(.lever):before {
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid lawngreen;
+  border-bottom: 2px solid lawngreen;
+}
+
+/* HEADER */
+
+#divSup {
+  background-color: white;
+  height: 100px;
+  padding-top: 28px;
+  padding-left: 30px;
+}
+
+#divSup > div:nth-child(1) {
+  color: purple;
+  margin-top: 3px;
+  margin-left: -6px;
+  cursor: pointer;
+}
+#divSup > div:nth-child(1) > i:nth-child(1) {
+  font-size: 3rem;
+}
+
+/*  */
+
+#imgLogo {
+  width: 100px;
+  /* text-align: center; */
+}
+
+#divLinks {
+  margin-right: 40px;
+  padding-top: 7px;
+  height: 45px;
+  width: 320px;
+  float: right;
+  display: inline-flex;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: rgba(0, 0, 0, 0.37) !important;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: rgba(0, 0, 0, 0.37) !important;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: rgba(0, 0, 0, 0.37) !important;
+  opacity: 1;
+}
+
+#divLinks p {
+  font-size: 2.7vh;
+  color: purple;
+  font-weight: bold;
+}
+
+#pProp,
+#pRest {
+  background-image: linear-gradient(to right, white, purple, purple, white);
+  border-right: 0px;
+  color: white;
+  height: 42px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: -10px;
+  font-family: "Isidora Alt W00 Bold" !important;
+  padding-top: 3px;
+}
+
+#uf {
+  width: 50px;
+  text-transform: uppercase;
+}
+#num {
+  width: 70px;
+}
+
+#formIni .select-wrapper input.select-dropdown {
+  width: 150px !important;
+}
+
+#Grupo4 > div > label {
+  top: -8px;
+  margin-left: 10px;
+}
+#Grupo4 > div > div > svg {
+  background-color: white !important;
+  z-index: 999;
+}
+
+#divNomeFantasia,
+#divEmailLocal,
+#divTelLocal,
+#divCNPJ,
+#divEndLocal,
+#divNumLocal,
+#divBairroLocal,
+#divCidadeLocal,
+#divNomeCompleto,
+#divCPF,
+#divTelProp,
+#divEmailProp,
+#divEstados,
+#divEspecialidade {
+  margin-top: 30px;
+}
+
+#btnEntrarCadRest {
+  height: 45px;
+  width: 80%;
+  color: white;
+  font-weight: bold;
+  background-color: purple;
+  font-size: 17px;
+  text-shadow: 1px 1px 1px black;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px 0.4px black;
+}
+
+#divImgRest > input {
+  display: none;
+}
+
+#imgRest {
+  cursor: pointer;
+}
+
+#btnCriarConta {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  height: 45px;
+  width: 50%;
+  font-size: 1.6rem;
+  background-color: purple;
+  text-transform: capitalize !important;
+  font-family: "Isidora Alt W00 Bold" !important;
+  border-radius: 30px;
+}
+#btnCriarConta:hover {
+  transition: 0.3s;
+  background-color: rgb(153, 0, 153);
+}
+
+/* IMAGEM UPLOAD */
+
+#divImgRest {
+  border: 2px solid purple;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  border-radius: 100px;
+}
+
+#divImgRest > label > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* LAYOUT > UPLOAD > IMG > USUARIO > TOPO */
+.bt-sw-nova,
+.bt-sw-visu,
+.bt-sw-del {
+  margin: 10px auto;
+  border-radius: 30px;
+}
+.dv-imagem-user > input {
+  display: none;
+}
+.dv-imagem-user > label > img {
+  cursor: pointer;
+  overflow: hidden;
+}
+.cr-slider::-webkit-slider-runnable-track {
+  /* background: rgba(0, 0, 0, 0.5) !important; */
+}
+.cr-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: purple !important;
+}
+.cr-slider:focus {
+  outline: none;
+}
+
+/* LAYOUT > MODAL > CROP > IMG-USUARIO  */
+.close-top-crop {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+.sp-top-crop {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+#modalCropUser {
+  top: 8% !important;
+  min-height: 85% !important;
+}
+#modalCropUser .croppie-container .cr-slider-wrap {
+  margin: 10px auto 10px auto !important;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+#modalCropUser .modal-content {
+  padding: 24px 0 24px 0 !important;
+}
+#modalCropUser .croppie-container {
+  height: auto !important;
+}
+#modalCropUser .croppie-container .cr-boundary {
+  border-radius: 10px !important;
+}
+/*  */
+
+#divTelProp {
+  height: 50px;
+  width: 200px;
+}
+
+#divEmailProp {
+  height: 50px;
+  width: 300px;
+}
+
+#divLabel {
+  width: 100%;
+  /* background-color: darkgoldenrod; */
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+#divInputs div {
+  display: flex;
+}
+
+#divInputs input {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#selecEstados {
+  width: 100%;
+  /* padding: 10px; */
+  font-size: 16px;
+  border-radius: 5px;
+  height: 34px;
+  background: url(/views/img/icons/icon_arrow.png) no-repeat right #ddd;
+  -webkit-appearance: none;
+  background-position: 95% 50%;
+  border: none;
+  outline: none;
+  background-color: white;
+  box-shadow: 0px 0px 1px 0.5px grey;
+  height: 40px;
+}
+
+#selecEspecialidade {
+  width: 100%;
+  /* padding: 10px; */
+  font-size: 16px;
+  border-radius: 5px;
+  height: 34px;
+  background: url(/views/img/icons/icon_past.png) no-repeat right #ddd;
+  -webkit-appearance: none;
+  background-position: 95% 50%;
+  border: none;
+  outline: none;
+  background-color: white;
+  box-shadow: 0px 0px 1px 0.5px grey;
+  height: 40px;
+}
+
+@media only screen and (max-width: 993px) {
+  #modalCropUser {
+    width: 100% !important;
+    min-height: -webkit-fill-available !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    top: 0% !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #btnCriarConta {
+    width: 80%;
+  }
+  #divSup {
+    padding-top: 10px;
+    padding-left: 20px;
+    transition: 0.3s;
+  }
+  #divLinks {
+    width: 175px;
+    margin-right: 0px;
+    padding-top: 15px;
+    transition: 0.3s;
+  }
+  #divLinks p {
+    font-size: 2.5vh;
+    transition: 0.3s;
+  }
+  #formIni {
+    width: 95%;
+  }
+  #divInputs input {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  #pProp,
+  #pRest {
+    border-radius: 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #btnCriarConta {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  #divInputs div {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .input-field {
+    position: initial !important;
+  }
+  #divInputs div input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #divInputs {
+    width: 100%;
+    padding-right: 22px;
+    margin: 0px;
+  }
+  #divLinks > a{
+    text-decoration: underline;
+    text-decoration-color: purple;
+  }
+  #cep,
+  #tel,
+  #cpf,
+  #num,
+  #uf,
+  #tel2 {
+    width: 50%;
+    float: left;
+  }
+  #formIni .select-wrapper input.select-dropdown {
+    width: 100% !important;
+  }
+  #Grupo4 > div > div {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 106% !important;
+  }
+  #Grupo4 > div > label {
+    position: relative;
+    top: -60px;
+    float: left;
+  }
+  #btnCriarConta {
+    width: 90%;
+  }
+}

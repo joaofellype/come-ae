@@ -1,0 +1,1093 @@
+
+/* Layout > Avaliações */
+.item-avaliacoes {
+  background-color: white;
+  border-radius: 5px !important;
+  width: 99%;
+  display: flex !important;
+  justify-content: space-between;
+  height: 80px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.dv-vazio-ava {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: purple;
+  font-weight: bold;
+  background-color: #8000800f;
+  padding: 40px 0;
+  border-radius: 3px;
+}
+.item-avaliacoes > .ph-col-4-mod .ph-row:last-child {
+  justify-content: flex-end;
+}
+.dados-avaliacoes-direito {
+  display: inline-block;
+  width: 30%;
+  height: 58px;
+  margin: 10px 10px 10px 0;
+  vertical-align: top;
+  font-size: 0.8rem;
+  text-align: right;
+}
+.dados-avaliacoes-esquerdo {
+  display: inline-block;
+  width: 70%;
+  height: 58px;
+  margin: 10px;
+  vertical-align: top;
+  font-size: 0.8rem;
+  text-align: left;
+}
+.estrela-avaliacoes {
+  color: rgb(229, 178, 38);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.nota-avaliacoes {
+  color: rgb(229, 178, 38);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.btn-vejamais-avaliacoes {
+  font-family: "Isidora Alt W00 Bold";
+  font-size: 1.2rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+  background-color: white !important;
+  color: white !important;
+  padding: 3px 20px 3px 20px !important;
+  height: auto !important;
+  margin-top: 10px !important;
+  min-width: 280px;
+}
+.titulo-avaliacoes {
+  display: block;
+  font-family: "Isidora Alt W00 Bold";
+  font-size: 1rem;
+  line-height: 1.1rem;
+  width: 100%;
+  max-height: 49px;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.titulo-feedback {
+  display: block;
+  line-height: 1.1rem;
+  width: 100%;
+  color: rgb(128, 128, 128);
+  max-height: 49px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.titulo-data {
+  display: block;
+  width: 100%;
+  margin-top: -2px;
+  max-height: 49px;
+}
+#avaliacoes {
+  margin-top: 20px !important;
+}
+#avaliacoes .row .col {
+  padding-left: 0 !important;
+  padding-right: 0px !important;
+}
+#avaliacoes .card {
+  margin-top: 5px !important;
+  margin-bottom: 0 !important;
+  border: 1px solid #f2f2f2 !important;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Layout > Filtro > Busca */
+#filtro-busca {
+  margin-top: 10px;
+}
+#filtrobusca li {
+  min-height: 22px;
+  padding: 0 5px;
+}
+#filtrobusca li a {
+  padding: 5px 10px 5px 10px;
+  color: rgb(87, 87, 87);
+  font-family: "Ubuntu";
+  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.541);
+  border-bottom-style: dotted;
+}
+
+#filtrobusca li:last-child a {
+  border-bottom: none;
+  border-bottom-style: none;
+}
+
+#filtro-busca .row > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(237, 237, 237, 1);
+  padding: 3px;
+}
+
+#btn-filtrobusca i {
+  font-weight: bold;
+  margin: 3px 4px 0px 0;
+}
+
+#btn-filtrobusca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 6px;
+  font-family: "Ubuntu" !important;
+  text-transform: none;
+  background-color: transparent;
+  box-shadow: none;
+  color: #4e4d4d;
+  font-weight: bold;
+}
+
+#btn-filtrobusca.active {
+  background-color: #80808024;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Layout > Cabecalho Restaurante */
+#cabecalho {
+  margin-top: 20px;
+}
+#cabecalho .row .col {
+  padding-left: 0 !important;
+  padding-right: 0px !important;
+}
+#cabecalho .card {
+  margin-top: 5px !important;
+  margin-bottom: 0 !important;
+  border: 1px solid #f2f2f2 !important;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05) !important;
+}
+.info-bloco-primario > div {
+  display: inline-block;
+  height: 100px;
+  margin-right: 5px;
+  vertical-align: top;
+  font-size: 0.7rem;
+}
+
+.info-cabecalho {
+  display: flex;
+}
+
+.descricao-restaurante {
+  display: block;
+  line-height: 1.1rem;
+  width: 100%;
+  max-height: 49px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 1rem;
+}
+.descricao-restaurante.active,
+.titulo-nomerestaurante.active {
+  max-height: none;
+  -webkit-line-clamp: inherit;
+}
+
+.info-bloco-primario {
+  width: 65%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.div-col-hora {
+  display: none;
+}
+.div-col-hora .collapsible-header > span {
+  margin: 3px auto 3px auto;
+}
+.info-bloco-secundario,
+.info-collapsible-hora {
+  display: inline-block;
+  width: 35%;
+  margin-left: 0px;
+  vertical-align: top;
+  font-size: 0.7rem;
+}
+.info-bloco-secundario > span,
+.info-collapsible-hora > span {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.info-bloco-secundario > div,
+.info-collapsible-hora > div {
+  display: flex;
+  justify-content: flex-end;
+}
+.info-bloco-secundario > div > div > div:first-child,
+.info-collapsible-hora > div > div > div:first-child {
+  display: inline-grid;
+  margin-right: 5px;
+  line-height: 1.3rem;
+}
+.info-collapsible-hora > div:first-child > div:first-child {
+  margin-right: 5px;
+}
+.info-bloco-secundario > div > div > div:last-child,
+.info-collapsible-hora > div > div > div:last-child {
+  display: inline-grid;
+  line-height: 1.3rem;
+}
+.info-bloco-secundario > div > div:first-child > div:last-child,
+.info-collapsible-hora > div > div:first-child > div:last-child {
+  margin-right: 10px;
+}
+.div-col-hora .collapsible {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  box-shadow: none;
+}
+.div-col-hora > ul > li > .collapsible-body {
+  padding: 20px 0 20px 0 !important;
+  border-bottom-color: rgba(128, 0, 128, 0.3);
+  box-shadow: 0px 2px 0px 0px #80808024;
+  border-radius: 10px;
+}
+.div-col-hora > ul > li > .collapsible-header {
+  justify-content: left;
+  align-items: center;
+  background-color: transparent;
+  border-bottom: none;
+  padding: 0px;
+  background-color: #800080;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+  border-radius: 3px;
+  border-style: double;
+  border-radius: 20px;
+}
+.div-col-hora > ul > li > .collapsible-header i {
+  margin-right: 0;
+  position: absolute;
+}
+.div-col-hora > ul > li > .collapsible-body > .info-collapsible-hora {
+  width: 100%;
+  font-size: 0.9rem;
+}
+.div-col-hora > ul > li > .collapsible-body > .info-collapsible-hora > div {
+  justify-content: center;
+}
+.titulo-nomerestaurante {
+  font-size: 2rem;
+  line-height: 2rem;
+  width: 100%;
+  max-height: 56px;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-family: "Isidora Alt W00 Bold";
+  transition: 0.3s;
+}
+.estrela-inforest {
+  color: rgb(229, 178, 38);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.nota-inforest {
+  color: rgb(229, 178, 38);
+  font-size: 1rem;
+  font-weight: bold;
+}
+.minutos-inforest {
+  color: rgb(106, 109, 107);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.especialidade-inforest {
+  display: inline-flex;
+  border-radius: 3px;
+  padding: 3px 4px 3px 4px !important;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  background-color: rgb(29, 33, 38);
+  color: white;
+  margin-top: 3px !important;
+}
+.img-restaurante {
+  display: inline-flex;
+  border-radius: 3px;
+  transition: 0.5s;
+  width: 120px;
+  height: 15px;
+  background-color: rgb(214, 214, 214);
+  float: left;
+  margin-right: 10px;
+}
+.img-restaurante::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  width: 500%;
+  margin-left: -250%;
+  -webkit-animation: phAnimation 0.8s linear infinite;
+  animation: phAnimation 0.8s linear infinite;
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 46%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0) 54%
+    )
+    50% 50%;
+}
+.cabecalho-loading > div:first-child {
+  flex-flow: nowrap !important;
+}
+.cabecalho-loading > div:first-child > div {
+  width: 100%;
+  margin-left: 10px;
+}
+.cabecalho-loading > div:nth-child(2) > div {
+  justify-content: flex-end;
+}
+.cabecalho-loading > div:nth-child(2) > div > div:last-child {
+  height: 55px;
+}
+
+.rest-favorito {
+  margin-top: 4px;
+  font-size: 2rem !important;
+  cursor: pointer;
+  margin-left: 7px;
+  color: purple;
+  pointer-events: all;
+}
+.rest-favorito.disabled {
+  pointer-events: none;
+  color: rgba(128, 128, 128, 0.5);
+}
+
+/* Layout > Cardápio */
+.dv-vazio-cardapio {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: green;
+  font-weight: bold;
+  background-color: #00800010;
+  padding: 40px 0;
+  border-radius: 3px;
+}
+.item-cardapio {
+  background-color: white;
+  border-radius: 5px !important;
+  width: 99%;
+  height: 150px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.categoria-cardapio {
+  font-size: 1.3rem;
+  margin-top: 5px;
+  font-weight: bold;
+  border-left: 2px solid rgba(128, 0, 128, 0.2);
+  padding-left: 5px;
+}
+.group-cardapio {
+  display: inline-block;
+  width: 100%;
+}
+.img-cardapio {
+  display: inline-flex;
+  border-radius: 3px;
+  margin-top: 25px;
+  margin-left: 10px;
+  width: 95px;
+  height: 95px !important;
+  background-color: rgb(214, 214, 214);
+  float: right;
+  margin-right: 10px;
+}
+.img-cardapio::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  width: 500%;
+  margin-left: -250%;
+  -webkit-animation: phAnimation 0.8s linear infinite;
+  animation: phAnimation 0.8s linear infinite;
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 46%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0) 54%
+    )
+    50% 50%;
+}
+.dados-restaurante {
+  display: inline-block;
+  width: 45%;
+  height: 100px;
+  margin-top: 10px;
+  margin-left: 10px;
+  vertical-align: top;
+  font-size: 0.7rem;
+}
+.estrela-restaurante {
+  color: rgb(229, 178, 38);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.nota-restaurante {
+  color: rgb(229, 178, 38);
+  font-size: 0.8rem;
+}
+.situacao-restaurante-aberto {
+  color: rgb(0, 133, 60);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.situacao-restaurante-fechado {
+  color: rgb(255, 75, 75);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.titulo-cardapio {
+  display: block;
+  font-family: "Isidora Alt W00 Bold";
+  font-size: 1rem;
+  line-height: 1.1rem;
+  width: 100%;
+  max-height: 49px;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.titulo-descricao {
+  display: block;
+  line-height: 1.1rem;
+  width: 100%;
+  max-height: 49px;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 0.95rem;
+}
+.titulo-valor {
+  display: block;
+  line-height: 1.1rem;
+  width: 100%;
+  max-height: 49px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 1rem;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+.categoria-restaurante {
+  display: inline-flex;
+  border-radius: 3px;
+  padding: 3px 4px 3px 4px !important;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  background-color: rgb(29, 33, 38);
+  color: white;
+  margin-top: 3px !important;
+}
+#restaurantes {
+  margin-top: 20px !important;
+}
+#restaurantes .row .col {
+  padding-left: 0 !important;
+  padding-right: 0px !important;
+}
+#restaurantes .card {
+  margin-top: 5px !important;
+  margin-bottom: 0 !important;
+  border: 1px solid #f2f2f2 !important;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05) !important;
+}
+.item-restaurante {
+  padding-top: 20px;
+}
+.item-restaurante > div:first-child > div > div:last-child {
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+.item-restaurante > div:first-child > div > div:nth-child(2) {
+  height: 40px !important;
+}
+
+/* LIMITACOES */
+
+.central .container {
+  margin-left: 20px;
+}
+
+/* Layout > Vai comer o que? */
+.img-comer {
+  width: 95%;
+  border-radius: 50%;
+  background-color: rgb(29, 33, 38);
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-comer img {
+  border-radius: 50%;
+  cursor: pointer;
+}
+.container {
+  max-width: 1000px !important;
+}
+#vai-comer {
+  margin-top: 0px;
+}
+
+/* Layout > OwlCarousel */
+.owl-dots {
+  text-align: center;
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  height: 10px !important;
+  margin-bottom: 10px !important;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 999999;
+}
+.owl-dots span {
+  display: inline-block;
+  background-color: #eff0f1;
+  width: 7px;
+  height: 7px;
+  margin-right: 5px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.owl-dots .active span {
+  background-color: rgb(173, 173, 173);
+  width: 7px;
+  height: 7px;
+  vertical-align: middle;
+}
+
+@media only screen and (min-width: 1900px) {
+  .central .container {
+    margin-left: auto;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .item-carrinho {
+    max-width: 1000px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .circulo-vazio {
+    margin-top: 6%;
+  }
+  #modalPedidos3,
+  #modalEntrada {
+    /* min-height: -webkit-fill-available !important; */
+    height: 480px;
+    width: 100% !important;
+    top: 0% !important;
+    z-index: 999999999 !important;
+    min-height: 100% !important;
+  }
+  .carrinho_fixo {
+    display: none !important;
+  }
+  .central .container {
+    margin-left: auto;
+  }
+  #modalFavoritos {
+    max-width: 100% !important;
+    margin: auto !important;
+    z-index: 999999999 !important;
+  }
+}
+
+@media only screen and (max-width: 773px) {
+  .cabecalho-loading > div:nth-child(2) {
+    display: none;
+  }
+  .info-bloco-secundario {
+    display: none;
+  }
+  .div-col-hora {
+    display: block;
+    padding-top: 10px;
+  }
+  .info-bloco-primario > div,
+  .info-bloco-primario {
+    width: 100%;
+  }
+  .img-restaurante {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .titulo-nomerestaurante {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #filtro-busca .row > div {
+    display: block;
+    border-radius: 5px;
+  }
+  .info-bloco-primario > div {
+    margin-right: 0px;
+    height: 100%;
+  }
+  .div-btn-buscacardapio input {
+    width: 100% !important;
+  }
+  .div-btn-buscacardapio {
+    display: flex;
+    justify-content: center;
+  }
+  .info-bloco-primario {
+    display: inline-grid;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+  }
+  .especialidade-inforest {
+    margin: auto;
+  }
+  .img-restaurante {
+    margin-right: 0px;
+    width: 150px;
+  }
+  #cabecalho {
+    margin-bottom: 20px;
+  }
+  .cabecalho-loading > div:first-child {
+    flex-flow: column !important;
+    align-items: center;
+  }
+  .cabecalho-loading > div:first-child > img {
+    width: 150px !important;
+  }
+  .cabecalho-loading > div:first-child > div {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
+  .cabecalho-loading > div:nth-child(2) > div {
+    justify-content: flex-end;
+  }
+  .cabecalho-loading > div:nth-child(2) {
+    display: none;
+  }
+  .cabecalho-loading > div:nth-child(2) > div > div:last-child {
+    height: 55px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .div-col-hora > ul > li > .collapsible-body > .info-collapsible-hora {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-height: 420px) {
+  .carrinho_resumo_side {
+    padding-top: 0px !important;
+  }
+  .carrinho_resumo_side > .container {
+    display: flex !important;
+    line-height: 1rem;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 9px;
+  }
+  .btn-finalizar-pedido {
+    margin-top: 0px !important;
+    margin-left: 10px !important;
+    width: 80% !important;
+  }
+}
+
+/* iPAD > Landscape*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1108px) and (orientation: landscape) {
+  .fonte-logo-texto {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2.5rem;
+    font-size: 0.9rem;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.21);
+    flex: 2;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .input-field.suffix i {
+    position: absolute;
+    width: 3rem;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    top: 25px;
+    right: -40px;
+  }
+  .btn-pesquisa {
+    top: 23px !important;
+  }
+  .pesquisar-topo {
+    flex-grow: 2;
+    font-family: "Ubuntu";
+    font-size: 0.7rem !important;
+    border: none !important;
+    border-radius: 3px !important;
+    padding-left: 10px !important;
+    padding-right: 25px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    max-height: 30px !important;
+    width: 90% !important;
+    background-color: rgba(240, 222, 255, 0.5) !important;
+    color: rgb(255, 255, 255);
+  }
+  .bt-app i {
+    float: left;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.7rem;
+    width: 20%;
+  }
+  .bt-app .fonte-baixar {
+    float: left;
+    font-size: 0.8rem;
+    line-height: 0.5rem;
+    margin-top: 0.6rem;
+    width: 65%;
+    text-align: left;
+  }
+  .bt-app .fonte-store {
+    float: left;
+    width: 65%;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+    text-align: left;
+  }
+  .bt-app:hover {
+    border: solid 3px rgb(112, 112, 112);
+    color: rgb(112, 112, 112);
+  }
+  #acesse li {
+    font-size: 0.7rem;
+  }
+  .img-cardapio {
+    display: inline-flex;
+    border-radius: 3px;
+    margin-top: 25px;
+    margin-left: 10px;
+    width: 95px;
+    height: 95px !important;
+    background-color: rgb(214, 214, 214);
+    float: right;
+    margin-right: 10px;
+  }
+  .dados-restaurante {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 0.7rem;
+  }
+  .estrela-restaurante {
+    color: rgb(229, 178, 38);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .nota-restaurante {
+    color: rgb(229, 178, 38);
+    font-size: 0.7rem;
+  }
+  .situacao-restaurante-aberto {
+    color: rgb(0, 133, 60);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante-fechado {
+    color: rgb(255, 75, 75);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .titulo-restaurante {
+    display: block;
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1rem;
+    line-height: 1rem;
+    width: 100%;
+    max-height: 49px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .categoria-restaurante {
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    background-color: rgb(29, 33, 38);
+    color: white;
+    margin-top: 2px;
+    float: left;
+  }
+}
+/* iPAD PRO > Portrait */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+  .fonte-logo-texto {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2.4rem;
+    font-size: 0.9rem;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.21);
+    flex: 2;
+  }
+  .bt-app i {
+    float: left;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.7rem;
+    width: 20%;
+  }
+  .bt-app .fonte-baixar {
+    float: left;
+    font-size: 0.8rem;
+    line-height: 0.5rem;
+    margin-top: 0.6rem;
+    width: 65%;
+    text-align: left;
+  }
+  .bt-app .fonte-store {
+    float: left;
+    width: 65%;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+    text-align: left;
+  }
+  .bt-app:hover {
+    border: solid 3px rgb(112, 112, 112);
+    color: rgb(112, 112, 112);
+  }
+  .input-field.suffix i {
+    position: absolute;
+    width: 3rem;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    top: 25px;
+    right: -40px;
+  }
+  .pesquisar-topo {
+    flex-grow: 2;
+    font-family: "Ubuntu";
+    font-size: 0.7rem !important;
+    border: none !important;
+    border-radius: 3px !important;
+    padding-left: 10px !important;
+    padding-right: 25px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    max-height: 30px !important;
+    width: 90% !important;
+    background-color: rgba(240, 222, 255, 0.5) !important;
+    color: rgb(255, 255, 255);
+  }
+  #acesse li {
+    font-size: 0.7rem;
+  }
+  .img-cardapio {
+    display: inline-flex;
+    border-radius: 3px;
+    margin-top: 25px;
+    margin-left: 10px;
+    width: 95px;
+    height: 95px !important;
+    background-color: rgb(214, 214, 214);
+    float: right;
+    margin-right: 10px;
+  }
+  .dados-restaurante {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 0.7rem;
+  }
+  .estrela-restaurante {
+    color: rgb(229, 178, 38);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .nota-restaurante {
+    color: rgb(229, 178, 38);
+    font-size: 0.7rem;
+  }
+  .situacao-restaurante-aberto {
+    color: rgb(0, 133, 60);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante-fechado {
+    color: rgb(255, 75, 75);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .titulo-restaurante {
+    display: block;
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1rem;
+    line-height: 1rem;
+    width: 100%;
+    max-height: 49px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .categoria-restaurante {
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    background-color: rgb(29, 33, 38);
+    color: white;
+    margin-top: 2px;
+    float: left;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+  .titulo-home {
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1.9rem;
+    margin-bottom: 0.001rem;
+    margin-top: 20px;
+  }
+  .img-cardapio {
+    display: inline-flex;
+    border-radius: 3px;
+    margin-top: 25px;
+    margin-left: 10px;
+    width: 95px;
+    height: 95px !important;
+    background-color: rgb(214, 214, 214);
+    float: right;
+    margin-right: 10px;
+  }
+  .dados-restaurante {
+    display: inline-block;
+    width: 47%;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 0.7rem;
+  }
+  .estrela-restaurante {
+    color: rgb(229, 178, 38);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .nota-restaurante {
+    color: rgb(229, 178, 38);
+    font-size: 0.7rem;
+  }
+  .situacao-restaurante-aberto {
+    color: rgb(0, 133, 60);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .situacao-restaurante-fechado {
+    color: rgb(255, 75, 75);
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  .titulo-restaurante {
+    display: block;
+    font-family: "Isidora Alt W00 Bold";
+    font-size: 1rem;
+    line-height: 1rem;
+    width: 100%;
+    max-height: 49px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .categoria-restaurante {
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    background-color: rgb(29, 33, 38);
+    color: white;
+    margin-top: 2px;
+    float: left;
+  }
+}

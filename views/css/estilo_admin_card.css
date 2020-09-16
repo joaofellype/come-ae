@@ -1,0 +1,3742 @@
+/* Fontes */
+@font-face {
+  font-family: "Isidora Alt W00 Bold";
+  src: url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.eot");
+  src: url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.woff2")
+      format("woff2"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.woff") format("woff"),
+    url("svsv/fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.ttf")
+      format("truetype"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.svg#Isidora")
+      format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.eot");
+  src: url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.woff2") format("woff2"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.woff") format("woff"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.ttf")
+      format("truetype"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.svg#Ubuntu")
+      format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("./fonts/icomoon_comeae/icomoon.eot?egt8k8");
+  src: url("./fonts/icomoon_comeae/icomoon.eot?egt8k8#iefix")
+      format("embedded-opentype"),
+    url("./fonts/icomoon_comeae/icomoon.ttf?egt8k8") format("truetype"),
+    url("./fonts/icomoon_comeae/icomoon.woff?egt8k8") format("woff"),
+    url("./fonts/icomoon_comeae/icomoon.svg?egt8k8#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Icones */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-comeae:before {
+  content: "\e929";
+}
+.icon-comeae_texto:before {
+  content: "\e935";
+}
+
+/* PREDEFS */
+
+.fonte-primaria {
+  font-family: "Isidora Alt W00 Bold";
+}
+.fonte-secundaria {
+  font-family: "Ubuntu";
+}
+
+.kit-flex,
+.kit-in-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kit-in-flex {
+  display: inline-flex;
+}
+
+/* LAYOUT MODAL VISUALIZAR */
+#modalVisualizar .modal-fixed-footer .modal-footer {
+  z-index: 1000 !important;
+}
+.tableVisRest tr td {
+  text-align: left;
+  width: 50%;
+}
+.tableVisRest tr th {
+  text-align: right;
+  width: 50%;
+}
+.tableVisRest {
+  margin: 15px 0;
+}
+.cabc-table {
+  height: 50px;
+  font-size: 1.4rem;
+  color: #f44336;
+  background-color: #fafafa;
+  /* border-bottom: 1px solid #e1e1e1; */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+#modalVisualizar {
+  min-height: -webkit-fill-available !important;
+  top: 0 !important;
+}
+
+/* width */
+#modalVisualizar .modal-content::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+#modalVisualizar .modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+#modalVisualizar .modal-content::-webkit-scrollbar-thumb {
+  background: rgba(128, 0, 128, 0.7);
+}
+/* Handle on hover */
+#modalVisualizar .modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 0, 128, 0.9);
+}
+
+#modalVisualizar .modal-content {
+  padding: 0px 24px 56px 24px !important;
+}
+.dv-informacoes > div {
+  margin: auto;
+}
+
+.header-visualizar {
+  height: 50px;
+  position: sticky;
+  border-bottom: 1px solid #e1e1e1;
+}
+.header-visualizar > i {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: purple;
+}
+.header-visualizar > p {
+  color: purple;
+  font-size: 1.5rem;
+}
+
+/* LAYOUT HORARIO ENTREGA INICIO */
+.hr-entrega-show {
+  margin: 30px;
+  justify-content: flex-start;
+}
+.hr-entrega-show > span:nth-child(1) {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: bold;
+}
+.hr-entrega-show > span:nth-child(2) {
+  color: purple;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 0 5px;
+}
+
+/* LAYOUT MODAL HORARIO DE ENTREGA */
+#modalHorarioEntrega {
+  width: 350px !important;
+  outline: none !important;
+}
+#modalHorarioEntrega > .header-modal {
+  position: sticky;
+  top: 0;
+  height: 45px;
+  border-bottom: 1px solid #e1e1e1;
+}
+#modalHorarioEntrega > .header-modal > i {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: purple;
+  cursor: pointer;
+}
+#modalHorarioEntrega > .header-modal > span {
+  font-size: 1.4rem;
+  color: purple;
+}
+.bt-salvar-hr-entrega {
+  height: 35px !important;
+  border-radius: 30px !important;
+  max-width: 150px !important;
+  text-transform: initial !important;
+  font-size: 1rem !important;
+  padding-top: 2px !important;
+}
+
+.dv-hr-entrega > span {
+  font-weight: bold;
+  color: #4c4c4c;
+  text-align: center;
+}
+.dv-btns-horario {
+  margin-top: 2rem;
+}
+.dv-btns-horario > div {
+  max-width: 130px;
+}
+.dv-btns-horario > div > span {
+  color: purple;
+  font-weight: bold;
+}
+.dv-btns-horario > div > input {
+  width: -webkit-fill-available !important;
+  box-shadow: none !important;
+  margin: auto !important;
+  border: 2px solid purple !important;
+  padding: 0 10px !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  color: purple !important;
+  border-radius: 10px !important;
+  height: 45px !important;
+}
+
+.bt-hora-entrega {
+  position: absolute;
+  right: 5.4rem;
+  background-color: #333;
+}
+.bt-hora-entrega.inicio {
+  background-color: #333 !important;
+  position: initial !important;
+}
+.bt-hora-entrega:hover {
+  background-color: rgba(51, 51, 51, 0.9) !important;
+}
+
+/* LAYOUT > UPLOAD > IMG > USUARIO > TOPO */
+.dv-imagem-user > input {
+  display: none;
+}
+.dv-imagem-user > label > img {
+  cursor: pointer;
+  overflow: hidden;
+}
+.cr-slider::-webkit-slider-runnable-track {
+  /* background: rgba(0, 0, 0, 0.5) !important; */
+}
+.cr-slider::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: purple !important;
+}
+.cr-slider:focus {
+  outline: none;
+}
+
+/* LAYOUT > MODAL > CROP > IMG-USUARIO  */
+.close-top-crop {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+.sp-top-crop {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#modalCropUserCreate .modal-footer,
+#modalCropUser .modal-footer,
+#modalCrop .modal-footer,
+#modalCropUserEdit .modal-footer {
+  z-index: 99;
+}
+
+#modalCropUserCreate,
+#modalCropUser,
+#modalCrop,
+#modalCropUserEdit {
+  top: 8% !important;
+  min-height: 85% !important;
+}
+#modalCropUserCreate .modal-content,
+#modalCropUser .modal-content,
+#modalCrop .modal-content,
+#modalCropUserEdit .modal-content {
+  padding: 24px 0 24px 0 !important;
+}
+#modalCropUserCreate .croppie-container,
+#modalCropUser .croppie-container,
+#modalCrop .croppie-container,
+#modalCropUserEdit .croppie-container {
+  height: auto !important;
+}
+#modalCropUserCreate .croppie-container .cr-boundary,
+#modalCropUser .croppie-container .cr-boundary,
+#modalCrop .croppie-container .cr-boundary,
+#modalCropUserEdit .croppie-container .cr-boundary {
+  border-radius: 10px !important;
+}
+
+/* LAYOUT ADMIN AREAS */
+
+.btnSalvarAreas {
+  background-color: purple !important;
+  text-transform: capitalize !important;
+  font-weight: bold;
+  width: 155px;
+  font-size: 1.3rem !important;
+  border-radius: 30px !important;
+  height: 40px !important;
+  display: flex !important;
+}
+
+/* LAYOUT ADMIN USERS */
+.btnSalvarPerfil {
+  margin-top: 20px;
+  width: 200px;
+  background-color: purple !important;
+  text-shadow: 1px 1px 1px black;
+  height: 43px !important;
+  display: flex !important;
+  border-radius: 30px !important;
+}
+
+/* LAYOUT RELATORIOS */
+
+.dv-corpo-opcs {
+  max-width: 290px;
+  width: auto;
+  padding: 15px 0;
+}
+.dv-de-ate-txt {
+  margin-left: 0;
+  width: 80%;
+}
+.dv-de-ate-txt > span {
+  font-size: 1.1rem;
+  margin: auto;
+  color: purple;
+  font-weight: bold;
+}
+.dv-data-rel .pickerinicio,
+.dv-data-rel .pickerfim {
+  height: 28px;
+  width: 100%;
+  padding: 0 3px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  margin: 0;
+  margin-right: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+.dv-data-rel > p > label:nth-child(1) {
+  padding-top: 10px;
+  margin-left: 2px;
+}
+.dv-data-rel > p > label:nth-child(1) > span {
+  padding-left: 24px;
+}
+.dv-data-rel > p > label:nth-child(2) > span {
+  font-weight: bold;
+  color: purple;
+}
+.dv-dia-solo {
+  margin: 1rem 0;
+}
+.dv-dia-solo > span {
+  color: purple;
+  font-weight: bold;
+}
+.dv-dia-solo > input {
+  height: 28px;
+  width: auto;
+  padding: 0 3px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  margin: 0;
+  margin-right: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+.dv-opc > .txt-opc {
+  font-size: 1.1rem;
+  margin: auto;
+  color: purple;
+  font-weight: bold;
+}
+.dv-btn-gerar-rel > button {
+  width: 100%;
+  height: 45px;
+  margin-top: 1rem;
+  border-radius: 30px;
+  text-transform: initial;
+  background-color: purple !important;
+}
+.dv-btn-gerar-rel > button > span {
+  font-size: 1.5rem;
+}
+.dv-btn-gerar-rel > button > i {
+  position: absolute;
+  right: 1rem;
+  font-size: 1.7rem;
+  margin-top: 2px;
+}
+
+/* LAYOUT ADMIN - AVALIACAO */
+
+.msg-cmt{
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
+.corpo-estrelas{
+  margin-bottom: 20px; margin-top: 20px
+}
+.lazy-comentarios .ph-col-8.big{
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+.lazy-comentarios .ph-col-4.big{
+  margin-left: 1rem;
+}
+.lazy-comentarios .ph-col-10.big{
+  margin-left: 1rem;
+  height: 3rem;
+}
+.lazy-comentarios .ph-col-5{
+  margin-left: 1rem;
+}
+.lazy-comentarios .ph-col-7{
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.lazy-comentarios .ph-col-12-mod, .lazy-comentarios .ph-row{
+  margin: 0;
+}
+
+.corpo-comentario {
+  background-color: rgba(128, 0, 128, 0.075);
+  width: 82%;
+  max-height: 600px;
+  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px 0.4px rgba(128, 128, 128, 0.4);
+  overflow-y: auto;
+  margin: auto !important;
+  margin-top: 20px !important;
+  transition: .3s;
+}
+.dv-card-comentario {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.dv-card-comentario > .card {
+  background-color: white;
+}
+.dv-identificador-cmt {
+  display: flex;
+}
+.dv-identificador-cmt > i {
+  margin: 0;
+  color: rgba(51, 51, 51, 0.9);
+}
+.dv-identificador-cmt > span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  margin: 0;
+  justify-content: left;
+  align-items: center;
+  color: rgba(51, 51, 51, 0.9);
+}
+.dv-avaliacao-cmt {
+  display: flex;
+}
+.dv-avaliacao-cmt > i {
+  font-size: 19px;
+  text-shadow: none;
+  margin: 0;
+}
+
+/* layout navbar */
+
+.logo-nav {
+  position: absolute;
+  margin-top: -4px;
+  left: 15px;
+  text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.3);
+  animation-name: example;
+  animation-duration: 4s;
+}
+.icon-comeae {
+  font-size: 3rem;
+}
+.icon-comeae_texto {
+  font-size: 1.4rem;
+}
+
+/* divLoader */
+.divLoader {
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+.divLoader > p {
+  font-size: 20px;
+  color: purple;
+  text-shadow: 1px 1px 1px grey;
+  position: absolute;
+  top: 55%;
+  left: 44.5%;
+}
+.loader-spinner {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+}
+
+.spinner-blue,
+.spinner-blue-only {
+  border-color: transparent !important;
+  background-image: url("https://i.imgur.com/R7rmpqY.png") !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* LAYOUT ADMIN AREAS */
+.valor-local {
+  height: 30px;
+  border: 2px solid purple;
+  border-radius: 5px;
+  outline: none;
+  background-color: white;
+  width: 60px;
+}
+
+/*  */
+
+#titleAval,
+#titleComent,
+#titleStars {
+  width: 90%;
+  margin-top: 20px;
+}
+
+.dv-titulo-ava {
+  text-align: left;
+}
+
+.dv-titulo-ava > p {
+  font-size: 30px;
+  color: #333;
+  margin: 0;
+}
+
+.linha-prim,
+.linha-secun,
+.linha-terc {
+  height: 5px;
+  background: purple;
+  width: 40px;
+  margin-left: 0;
+}
+.linha-secun {
+  background: rgba(128, 0, 128, 0.7);
+}
+.linha-terc {
+  background: rgba(128, 0, 128, 0.5);
+}
+
+.divider-inicio {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+* {
+  margin: 0 auto;
+  padding-bottom: 0;
+  background-color: transparent;
+  font-family: "Ubuntu";
+}
+
+#divGeral {
+  width: auto;
+  margin: auto;
+}
+
+th.dt-center,
+td.dt-center {
+  text-align: center;
+}
+
+#divInicio > h4,
+#corpocard > span > b {
+  font-family: "Isidora Alt W00 Bold";
+}
+
+.actionsbtn {
+  text-align: center !important;
+}
+
+#tblHr tbody input {
+  border: 2px solid purple;
+  height: 35px;
+  padding-left: 3px;
+  border-radius: 3px;
+  outline: none;
+  text-align: center;
+  width: 90%;
+}
+
+main,
+footer,
+#divCorpo {
+  padding-left: 300px;
+}
+
+#tblHr > thead:nth-child(1) > tr > th:nth-child(2),
+#tblHr > thead:nth-child(1) > tr > th:nth-child(3),
+#tblHr > thead:nth-child(1) > tr > th:nth-child(4),
+#tblHr > thead:nth-child(1) > tr > th:nth-child(1) {
+  background: linear-gradient(to right, #7e2d7e, #642764);
+  color: white;
+  border-radius: 0px;
+  text-shadow: 1px 1px 1px black;
+}
+#tblHr > thead:nth-child(1) > tr > th:nth-child(3) {
+  background: linear-gradient(to right, #642764, #4b204b);
+}
+#tblHr > thead:nth-child(1) > tr > th:nth-child(4) {
+  background: linear-gradient(to right, #4b204b, #341933);
+}
+#tblHr > thead:nth-child(1) > tr > th:nth-child(1) {
+  background: linear-gradient(#7e2d7e, #7e2d7e);
+}
+
+#tblHr > thead:nth-child(1) > tr,
+#tblHr > thead:nth-child(2) > tr {
+  background-color: rgba(128, 0, 128, 0.1);
+  color: black;
+  border-top: 1px solid rgba(128, 0, 128, 0.15);
+}
+#tblHr > thead:nth-child(2) > tr {
+  border-top: none;
+  border-bottom: 1px solid rgba(128, 0, 128, 0.15);
+}
+
+#tblHr > thead:nth-child(1) > tr > th:nth-child(1),
+#tblHr > thead:nth-child(1) > tr > th:nth-child(2),
+#tblHr > thead:nth-child(1) > tr > th:nth-child(3),
+#tblHr > thead:nth-child(2) > tr > th:nth-child(1),
+#tblHr > thead:nth-child(2) > tr > th:nth-child(3),
+#tblHr > thead:nth-child(2) > tr > th:nth-child(5) {
+  border-right: 1px solid rgba(128, 0, 128, 0.15) !important;
+  /* border-top: 1px solid rgba(128, 0, 128, 0.15) !important; */
+}
+
+.btnsavehr {
+  background: linear-gradient(to right, #800080, #642764, #800080);
+  width: 40%;
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 4px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+  transition: 0.3s;
+}
+.btnsavehr:hover {
+  background: linear-gradient(to right, #530553, #7e347e, #530553);
+  transform: scale(1.05, 1.05);
+}
+
+.semanadia {
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 3px 3px 0;
+  text-shadow: 1px 1px 3px black;
+  height: 35px;
+  padding-top: 6px;
+  cursor: pointer;
+}
+
+#tableForms > tbody > tr > td {
+  font-weight: bold;
+}
+
+#tableForms_wrapper
+  > div.dataTables_scroll
+  > div.dataTables_scrollHead
+  > div
+  > table
+  > thead
+  > tr
+  > th.sorting_disabled {
+  text-align: center;
+}
+
+#tableForms > tbody > tr > td:nth-child(2) {
+  text-align: center;
+}
+
+#modalForms div p:first-child,
+#modalSolic div p:first-child {
+  font-weight: bold;
+  margin-right: 5px;
+}
+#modalForms p {
+  margin: 0px;
+  font-size: 18px;
+}
+
+.dataTables_wrapper
+  .dataTables_scroll
+  div.dataTables_scrollBody
+  > table
+  > tbody
+  > tr
+  > td {
+  cursor: pointer !important;
+}
+
+#tableBairros [type="checkbox"]:checked + span:not(.lever):before {
+  background-color: transparent;
+  border-right-color: purple;
+  border-bottom-color: purple;
+}
+
+#tableBairros [type="checkbox"] + span:not(.lever):before {
+  background-color: white;
+  border-radius: 3px;
+}
+
+#tableBairros_wrapper .dataTables_filter input {
+  margin: 0 !important;
+}
+
+.editNome:hover,
+.btnSave:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.divUsers {
+  padding: 20px;
+  padding-top: 0px !important;
+  width: 100% !important;
+  border: none !important;
+  border-radius: 3px;
+  margin-bottom: 20px !important;
+}
+
+#tblHr tbody input {
+  font-size: 13px;
+  padding: 0px;
+}
+
+#tblHr > tbody > tr:nth-child(1) > td:nth-child(3),
+#tblHr > tbody > tr:nth-child(1) > td:nth-child(5),
+#tblHr > tbody > tr:nth-child(2) > td:nth-child(3),
+#tblHr > tbody > tr:nth-child(2) > td:nth-child(5),
+#tblHr > tbody > tr:nth-child(3) > td:nth-child(3),
+#tblHr > tbody > tr:nth-child(3) > td:nth-child(5),
+#tblHr > tbody > tr:nth-child(4) > td:nth-child(3),
+#tblHr > tbody > tr:nth-child(4) > td:nth-child(5),
+#tblHr > tbody > tr:nth-child(5) > td:nth-child(3),
+#tblHr > tbody > tr:nth-child(5) > td:nth-child(5),
+#tblHr > tbody > tr:nth-child(6) > td:nth-child(3),
+#tblHr > tbody > tr:nth-child(6) > td:nth-child(5),
+#tblHr > tbody > tr:nth-child(7) > td:nth-child(5),
+#tblHr > tbody > tr:nth-child(7) > td:nth-child(3) {
+  border-right: 1px solid rgba(128, 0, 128, 0.3);
+}
+
+#modalValor > div > div:nth-child(12) > span > span.selection > span,
+#modalValor > div > div:nth-child(16) > span > span.selection > span,
+#divBoxSelect1 > span > span.selection > span,
+#modalFrete > div > div:nth-child(12) > span > span.selection > span,
+#modalFrete > div > div:nth-child(13) > span > span.selection > span,
+#divCorpo > div:nth-child(3) > div:nth-child(1) > span > span.selection > span {
+  border: 2px solid purple;
+}
+
+#modalDetalhes > div > p {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+#divIconMenu {
+  width: 65px;
+  float: right;
+  margin-right: 5px;
+  height: 100%;
+  transition: 0.1s;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  display: none;
+}
+
+#sidenav-1 {
+  background-color: #333;
+  margin-top: 65px;
+}
+
+#divImgRest {
+  height: 150px;
+}
+
+#imgRest {
+  width: 100%;
+  height: 100%;
+}
+
+#toolAddGrupo {
+  float: right;
+  color: purple;
+  text-shadow: 0.5px 0.5px 0.1px black;
+  cursor: pointer;
+}
+
+#lblNomeCatg {
+  padding-left: 5px;
+  margin-top: -4px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+  background-color: purple !important;
+  color: black !important;
+  height: 29px !important;
+  border-radius: 3px !important;
+  border: none !important;
+  background-color: white !important;
+  outline: none !important;
+  padding-left: 3px !important;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.438) !important;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+  /* border: 0.5px solid grey !important; */
+  box-shadow: 0 0 1px 3px rgba(128, 0, 128, 0.363) !important;
+}
+
+::placeholder {
+  color: gray !important;
+  opacity: 1;
+}
+
+.textValor {
+  outline: none;
+  border: 2px solid purple;
+  border-radius: 3px;
+  height: 30px;
+  padding-bottom: 2px;
+  width: 90px;
+  background-color: white;
+  text-align: center;
+}
+
+#btnNovoGrupo,
+#btnaddcomp {
+  width: 100%;
+  height: 100%;
+  background-color: purple;
+  color: white;
+  border-radius: 0 0 3px 3px;
+  font-weight: 500;
+}
+
+#marcaPaginaAtual {
+  background-color: white;
+  color: black !important;
+  font-weight: 700;
+}
+
+#pageLinks li a {
+  color: white;
+  font-size: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: #f4f4f4;
+  height: 6px !important;
+}
+
+span.badge.new {
+  background-color: white !important;
+  color: purple !important;
+  font-weight: bold !important;
+  cursor: pointer;
+}
+
+span.badge.new:after {
+  content: "" !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bebebe;
+}
+
+/* layout vendas */
+
+.div-vendas {
+  width: 90%;
+  margin-top: 20px;
+}
+.div-vendas > p {
+  font-size: 30px;
+  text-align: center;
+  background-color: purple;
+  color: white;
+  border-radius: 3px;
+  text-shadow: 1px 1px 1px black;
+}
+
+#vendas {
+  width: 400px;
+  height: 150px;
+}
+
+#divIconMenu button {
+  margin-left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: purple;
+}
+
+#navBar {
+  background-color: white;
+  padding-top: 7px;
+  width: 100%;
+  /* top: 0;   ATIVAR AMBOS CASO QUEIRA A NAVBAR RESISTENTE A ROLAGEM, OU SEJA, FIXA NO TOP */
+  /* position: fixed; */
+}
+
+.divCardStatus {
+  margin: 30px;
+  text-align: center;
+  margin-bottom: 30px !important;
+}
+
+.divCardStatus .left {
+  margin: 0;
+}
+
+.divNameCard {
+  width: auto;
+  height: 50%;
+  display: inline-flex;
+  margin: 0px;
+}
+
+.divIconCard {
+  width: 20%;
+  margin: 0px;
+  padding-top: 5px;
+  display: inline-flex;
+}
+
+.iconCardStart {
+  font-size: 27px;
+  text-align: center;
+  text-shadow: 0px 1px 2px black;
+}
+
+.textCardStart {
+  font-size: 25px;
+  text-align: center;
+  padding-left: 5px !important;
+  text-shadow: 0px 0px 3px black;
+  margin: 0px;
+}
+
+.numCardStart {
+  font-size: 30px;
+  text-shadow: 0px 0px 3px black;
+}
+
+.divMedia {
+  /* margin-left: 60px; */
+  width: 90%;
+}
+
+ul.dropdown-content.select-dropdown li span {
+  color: black;
+  font-weight: 500;
+  background-color: white;
+  text-align: center;
+}
+
+ul.dropdown-content.select-dropdown li span:hover {
+  background-color: purple;
+  color: white;
+}
+
+.sel2 {
+  background-color: red !important;
+}
+
+ul.dropdown-content.select-dropdown {
+  border-radius: 4px;
+  box-shadow: 0px 0px 1px 1px rgba(51, 51, 51, 0.856);
+}
+
+.select-dropdown {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: none !important;
+}
+
+/* .dataTables_length .select-wrapper .select-dropdown {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid grey;
+} */
+
+.dataTables_length select {
+  color: black !important;
+  height: 29px !important;
+  border-radius: 3px !important;
+  border: none !important;
+  background-color: white !important;
+  outline: none !important;
+  padding-left: 3px !important;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.438) !important;
+  margin-bottom: 10px !important;
+}
+
+.dataTables_length select:focus {
+  box-shadow: 0 0 1px 3px rgba(128, 0, 128, 0.363) !important;
+}
+
+#divHorarioTopo {
+  width: 220px;
+  height: 50px;
+  border: 1px solid gray !important;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-right: 65px;
+  right: 0;
+  position: absolute;
+  z-index: 99;
+}
+
+#divHorarioTopo select {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+#divCardapio {
+  height: 50px;
+  margin: 30px;
+}
+
+#divCardapio p {
+  text-align: justify;
+}
+
+#divInicio {
+  margin: 20px;
+}
+
+.cardInicio {
+  display: inline-flex;
+  margin-left: 7px !important;
+  margin-right: 7px !important;
+  padding: 5px 15px 5px 15px;
+  flex-wrap: wrap;
+  width: 218px;
+  transition: 0.3s !important;
+}
+
+.cardInicio:hover {
+  transform: scale(1.07, 1.07);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+#divInicio p {
+  font-size: 18px;
+  color: rgba(128, 128, 128, 0.877);
+}
+
+#divisorCard {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+#divisorCard2 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#divBtnCat {
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#btnCat {
+  width: 230px;
+  height: 45px;
+  margin-top: 25px;
+  border-radius: 7px;
+  margin-left: 30px;
+  background-color: purple;
+}
+
+#btnComp {
+  width: 200px;
+  height: 45px;
+  margin-top: 25px;
+  border-radius: 7px;
+  margin-left: 10px;
+  background-color: purple;
+}
+
+#pReordenarCard {
+  float: right;
+  margin-right: 30px;
+  font-size: 17px;
+  margin-top: 35px;
+  color: purple;
+}
+
+#divSupCat {
+  height: 90px;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid gray !important;
+  border-bottom-width: 0px;
+  border: 1px solid gray !important;
+}
+
+#divMiddleCat {
+  height: 70px;
+  border: 1px solid gray;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+}
+
+#divMin {
+  height: 30px;
+  width: 75px;
+  float: left;
+
+  margin: auto;
+  /* background-color: darkcyan; */
+  padding-top: 4px;
+  margin-left: 15px;
+  /* margin-top: 0px; */
+}
+
+#divMax {
+  height: 30px;
+  /* background-color: red; */
+  text-align: center;
+  width: 81px;
+  margin: auto;
+  float: left;
+  padding-top: 4px;
+  /* margin-left: 20px; */
+  /* margin-top: 0px; */
+}
+
+#divInfCat {
+  height: 70px;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid gray !important;
+  padding-top: 23px;
+  padding-left: 27px;
+}
+
+#pEditarCat {
+  float: right;
+  font-size: 15px;
+  color: purple;
+  font-weight: bold;
+  margin-right: 20px;
+  border: none;
+  box-shadow: none;
+  margin-top: 34px;
+  cursor: pointer;
+}
+
+#pCategoria {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 29px;
+  float: left;
+  margin-left: 29px;
+}
+
+#pEspacoCat {
+  float: right;
+  margin-right: 80px;
+  margin-top: 34px;
+}
+
+#divItemCat {
+  height: 100%;
+  width: 41%;
+  float: left;
+}
+
+#divItemCat p {
+  font-size: 15px;
+  float: left;
+  width: 100%;
+  height: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-top: 24px;
+  padding-left: 32px;
+  color: rgba(128, 128, 128, 0.911);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#pEditarItem {
+  float: right;
+  font-size: 15px;
+  color: purple;
+  font-weight: bold;
+  margin-right: 20px;
+  border: none;
+  box-shadow: none;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+#pDuplicarItemCat {
+  float: right;
+  font-size: 15px;
+  color: purple;
+  font-weight: bold;
+  margin-right: 20px;
+  border: none;
+  box-shadow: none;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+#inpValorItemCat {
+  float: right;
+  width: 100px;
+  margin-right: 20px;
+  margin-top: 16px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid gray !important;
+  text-align: right;
+  padding-right: 5px;
+}
+
+#pAdicionarItemCat {
+  color: purple;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#pAdicionarItemCat i {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#divCategoria {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.checkbox-blue-grey[type="checkbox"].filled-in:checked
+  + span:not(.lever):after {
+  border: 1px solid purple;
+  background-color: purple;
+}
+
+.divCentroPerfil {
+  width: 50%;
+  border-radius: 3px;
+  padding-top: 10px;
+}
+
+.divCentroPerfil > div:not(:last-child) {
+  position: relative;
+}
+.divCentroPerfil > div > p {
+  font-weight: 500;
+  padding: 2px 4px 4px 3px;
+  height: 18px;
+  font-size: 0.85rem;
+  background-color: purple;
+  color: white;
+  display: inline;
+  margin-left: 1rem;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.divCentroPerfil > div > input,
+.divCentroPerfil > div > textarea {
+  border: 2px solid purple;
+  border-radius: 15px;
+  padding: 0 35px 0 10px;
+  height: 50px;
+  color: purple;
+  font-weight: 500;
+  width: 100%;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.divCentroPerfil > div > textarea {
+  height: 70px !important;
+  resize: none !important;
+  padding-top: 7px;
+}
+
+.divCentroPerfil > div > i {
+  position: absolute;
+  right: 8px;
+  top: 39%;
+  color: purple;
+}
+
+#divPausePlay,
+#divPausePlay2 {
+  float: right;
+  margin-right: 20px;
+  margin-top: 31.5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+#divPausePlay2 {
+  margin-top: 20px;
+}
+
+#pPausePlay {
+  float: right;
+  padding-top: 3.5px;
+  color: grey;
+}
+
+#imgPausePlay {
+  float: right;
+  margin-left: -20px;
+  margin-top: 2px;
+  opacity: 0.8;
+  width: 25%;
+}
+
+#modalCategoria,
+#modalDesc,
+#modalDescComp,
+#modalItem,
+#modalExibItem,
+#modalEditarItem {
+  border-radius: 5px;
+  outline: 0;
+  border-top: 3px solid purple;
+  border-bottom: 3px solid purple;
+}
+
+#Complementos > thead > tr > th:nth-child(1),
+#Complementos > thead > tr > th:nth-child(2),
+#Complementos > thead > tr > th:nth-child(3),
+#Complementos > thead > tr > th:nth-child(4),
+#Complementos > thead > tr > th:nth-child(5),
+#complementosEdit > thead > tr > th:nth-child(1),
+#complementosEdit > thead > tr > th:nth-child(2),
+#complementosEdit > thead > tr > th:nth-child(3),
+#complementosEdit > thead > tr > th:nth-child(4),
+#complementosEdit > thead > tr > th:nth-child(5) {
+  padding: 0px;
+  color: purple;
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+
+#Complementos,
+#complementosEdit {
+  margin-top: 10px;
+}
+
+#modalExibirProd {
+  width: 90%;
+  border-radius: 3px;
+  outline: none;
+}
+
+#corpoModal,
+#corpoModal3 #corpoModalItem {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  padding: 15px;
+}
+
+#nomeCreate,
+#nomeEdit,
+#nomecatprodCreate,
+#nomecatprodEdit,
+#precoCreate,
+#precoEdit {
+  border: 2px solid purple !important;
+  height: 45px;
+  padding: 0 5px;
+  width: -webkit-fill-available;
+  border-radius: 3px;
+  outline: none;
+}
+
+#pCriarCat,
+#pCriarGrupo,
+#pCriarItem {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 33px;
+  padding-bottom: 20px;
+}
+
+#pCriarGrupo1,
+#pCriarGrupo2 {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 33px;
+  padding-bottom: 20px;
+}
+
+#pCriarGrupo2 {
+  padding-left: 10px;
+}
+
+#modalEditProd,
+#modalExibirProd {
+  width: 60%;
+  border-radius: 3px;
+  outline: none;
+}
+
+.tabs .tab a {
+  color: black !important;
+  font-weight: bold;
+  background-color: white;
+}
+
+.tabs .tab a:hover {
+  background-color: transparent !important;
+  color: white !important;
+  background-color: rgba(128, 0, 128, 0.699) !important;
+}
+
+.swal2-content .swal2-input:focus {
+  border-bottom: 2px solid purple !important;
+  box-shadow: none !important;
+}
+
+.swal2-popup {
+  border-right: 2px solid rgba(51, 51, 51, 0.3) !important;
+  border-left: 2px solid rgba(51, 51, 51, 0.3) !important;
+}
+
+table.display.dataTable tbody tr:hover,
+table.display.dataTable tbody tr:hover > .sorting_1,
+table.display1.dataTable tbody tr:hover,
+table.display1.dataTable tbody tr:hover > .sorting_1,
+table.display2.dataTable tbody tr:hover,
+table.display2.dataTable tbody tr:hover > .sorting_1 {
+  background-color: rgba(128, 0, 128, 0.253) !important;
+  /* font-weight: bold; */
+}
+
+.tabs .indicator {
+  background-color: rgba(219, 0, 219, 0.877) !important;
+}
+
+#btnItemToComp {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  height: 40px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+#btnItemToComp:hover {
+  background-color: rgba(51, 51, 51, 0.37);
+}
+
+#btnRetornar {
+  padding-left: 15px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-weight: bold;
+  outline: none;
+}
+
+#btnRetornar:active,
+#btnRetornar:visited {
+  background-color: transparent;
+}
+
+.swal2-textarea {
+  box-shadow: inset 0 0 3px purple !important;
+  border: 1px solid purple !important;
+  height: 150px !important;
+  width: 100% !important;
+  resize: none !important;
+}
+
+.collapsible-body {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: #fff;
+}
+
+.tabs .tab a.active {
+  background-color: transparent !important;
+  color: #333 !important;
+  background-color: white !important;
+}
+
+.tabsped .indicator {
+  background-color: purple !important;
+}
+
+#iconX {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 15px;
+  padding-right: 15px;
+  font-size: 30px;
+  color: purple;
+  cursor: pointer;
+}
+
+#cliqueNa {
+  color: gray;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#divEscuroModal {
+  background-color: rgba(128, 128, 128, 0.315);
+  height: 85px;
+  margin-bottom: 20px;
+}
+
+#pSelecioneMod {
+  font-size: 12px;
+  padding: 14px;
+  font-weight: bold;
+}
+
+#pRadio {
+  padding-left: 15px;
+}
+
+#spanMod {
+  color: black;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+  background-color: purple !important;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid #333 !important;
+}
+
+.input-field input[type="text"]:focus + label {
+  color: purple !important;
+  font-weight: bold;
+}
+
+.input-field input[type="text"]:focus {
+  border: 1px solid purple !important;
+}
+
+.input-field input[type="number"]:focus + label {
+  color: purple !important;
+  font-weight: bold;
+}
+
+.input-field input[type="number"]:focus {
+  border: 1px solid purple !important;
+}
+
+textarea:focus {
+  border: 1px solid purple !important;
+}
+
+textarea:focus + label {
+  color: purple !important;
+  font-weight: bold;
+}
+
+.input-field input[type="text"] + label {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.input-field input[type="text"] {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4) !important;
+}
+
+.divImgChange {
+  background-color: purple;
+  height: 180px;
+  width: 180px;
+  border-radius: 100px;
+  border: 1px solid grey;
+  transition: 0.3s;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px 2px;
+  background: url(http://shoppingrecife.com.br/externos/lojas/vitrine/foto_2002.jpg);
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  background-size: cover !important;
+}
+
+.divImgChange:hover {
+  box-shadow: inset 0 0 20px 7px;
+}
+
+#divInpNomeModal {
+  width: 90% !important;
+}
+
+#divInpNomeModalGrupo {
+  width: 98%;
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+#divInpDesc {
+  width: 95%;
+  margin-bottom: 10px;
+}
+
+#divInpDescComp {
+  /* width: 95%; */
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+#divInpDescCompValor {
+  /* width: 95%; */
+  margin-bottom: 10px;
+  /* background-color: rgb(100, 100, 100); */
+}
+
+#grupoComp {
+  width: 100%;
+  height: 36px;
+  padding-left: 3px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  outline: none;
+}
+
+#lblGrupoComp {
+  margin-top: -6px;
+  margin-left: 3px;
+}
+
+#inpCompSec,
+#inpCompSec2,
+#inpCompSec3 {
+  width: 30%;
+  /* margin-right: 7px; */
+  height: 35px;
+  padding-left: 3px;
+  border: 1px solid grey !important;
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+#maisGrupoComp {
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+#divInpNomeCompModal {
+  width: 99%;
+  margin-top: 0px;
+  /* display: inline-flex; */
+}
+
+#divModalBtns {
+  display: flex;
+  width: 95%;
+  margin-bottom: 10px;
+}
+
+#divModalBtnsGrupo {
+  display: flex;
+  width: 100%;
+}
+
+#modalDetalhes > i {
+  margin: 10px;
+}
+
+#btnModalCancelarGrupo,
+#btnModalCancelar,
+#btnModalSalvar,
+#btnModalSalvar2,
+#btnModalSalvarGrupo {
+  width: 45%;
+  height: 45px;
+  font-size: 15px;
+  line-height: 41px;
+  background-color: transparent;
+  border: 1px solid purple;
+  color: purple;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: none;
+  box-shadow: 0px 0px 0px 1px purple;
+  margin: auto;
+}
+
+#btnModalCancelarGrupo {
+  margin-left: 5px;
+}
+
+#selectGrupo1,
+#selectGrupoEdit {
+  height: 35px;
+  border: 2px solid purple;
+  border-radius: 4px;
+}
+
+#btnModalSalvarCateg,
+#btnModalSalvarComples,
+#btnModalSalvarComplesGrupo {
+  width: 45%;
+  height: 45px;
+  font-size: 15px;
+  line-height: 41px;
+  background-color: purple;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: none;
+  margin: auto;
+}
+
+#btnModalSalvarComplesGrupo {
+  margin-right: 5px;
+  width: 45%;
+}
+
+#btnModalSalvar,
+#btnModalSalvar2,
+#btnModalSalvarGrupo {
+  background-color: purple;
+  color: white;
+}
+
+.dv-bt-solicit {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.dv-bt-solicit > a,
+.dv-bt-solicit > button {
+  margin-bottom: 5px;
+  border-radius: 35px;
+  height: 40px;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+
+.btnEditarPerfil {
+  display: flex !important;
+  background-color: purple !important;
+}
+
+.btnCancelSol,
+.btnEnviarSol {
+  margin-bottom: 5px;
+  display: none !important;
+}
+
+#compObg {
+  color: purple;
+}
+
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid purple !important;
+  background-color: purple !important;
+  z-index: 0;
+}
+
+.titleItem {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: purple;
+}
+
+.divDetalhes {
+  padding-left: 23px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+#pDetalhes {
+  font-size: 17px;
+  color: purple;
+  font-weight: bold;
+  background-color: rgba(201, 201, 201, 0.692);
+  border-radius: 5px;
+  float: left;
+  width: 80px;
+  padding-left: 5px;
+  margin-bottom: -1px;
+}
+
+#corpoModal2 {
+  padding-top: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+#divImgProd {
+  height: 120px;
+  width: 100%;
+  padding-top: 0px;
+  margin-bottom: -20px;
+}
+
+#imgProd,
+#imgProd2,
+#imgProdExib {
+  background-color: white;
+  cursor: pointer;
+}
+
+#divIntroImg {
+  height: 120px;
+  border: 1px solid gray !important;
+  border-radius: 5px;
+  width: 175px;
+  overflow: hidden;
+  position: relative;
+}
+
+#divIntroImgProfile {
+  height: 200px;
+  border: 1px solid gray !important;
+  border-radius: 5px;
+  width: 270px;
+  overflow: hidden;
+  position: relative;
+}
+
+.btndarkmode {
+  cursor: pointer;
+  background-color: rgb(26, 26, 26);
+  border-radius: 2px;
+  padding: 3px;
+  border: 1px solid rgba(128, 128, 128, 0.411);
+  text-shadow: 1px 1px 1px purple;
+}
+
+#divSupImgProd {
+  background-color: rgba(128, 0, 128, 0.07);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: 3px solid purple;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+}
+
+#divNomeCat {
+  height: 120px;
+  width: 100%;
+  padding-top: 0px;
+  display: inline-flex;
+  margin-bottom: -40px;
+}
+
+#nome {
+  width: 100%;
+  height: 45px;
+  margin-top: 2px;
+  border-radius: 3px;
+  border: 2px solid purple !important;
+  outline: none;
+  padding-left: 5px;
+}
+
+#divNomeP {
+  width: 60%;
+  height: 50px;
+  padding-top: 5px;
+}
+
+#nomecatprod {
+  width: 100%;
+  height: 45px;
+  border: 2px solid purple !important;
+  border-radius: 3px;
+  outline: none;
+  padding-left: 5px;
+}
+
+#divSelCat {
+  width: 39%;
+  height: 50px;
+  padding-top: 5px;
+}
+
+#selCat {
+  border: 1px solid gray !important;
+  border-radius: 3px;
+  outline: none;
+}
+
+#divDesc1 {
+  height: 80px;
+  width: 100%;
+  display: inline-flex;
+  margin-top: 10px;
+}
+
+#divInterDesc1 {
+  width: 100%;
+  margin: 0px;
+  padding-top: 5px;
+}
+
+#lblTextArea2 {
+  padding-left: 5px;
+}
+
+#divPrecoPause {
+  height: 40px;
+  display: inline-flex;
+  margin-top: -10px;
+  padding-top: 5px;
+}
+
+.select2-container--default .select2-results__group {
+  background-color: #333 !important;
+  color: white !important;
+  text-align: center !important;
+  /* border: 1px solid black; */
+}
+
+#inpPreco {
+  outline: none;
+  border-radius: 3px;
+  border: 2px solid purple !important;
+  padding-left: 5px;
+  margin-right: 10px;
+}
+
+#divPauseItem {
+  height: 36px;
+  padding-top: 5px;
+  padding-left: 10px;
+  width: 140px;
+}
+
+#imgPauseIcon {
+  display: inline-flex;
+  width: 25px;
+  margin-right: 20px;
+}
+
+#pPauseItem {
+  display: inline-flex;
+  font-size: 17px;
+  float: left;
+  color: gray;
+  text-shadow: 1px 1px 0.05px white;
+}
+
+#ulListaComp {
+  display: inline-flex;
+  width: 100%;
+  text-align: center;
+}
+
+#divInterListaComp i {
+  float: right;
+  color: darkred;
+  margin-right: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#divInterListaComp {
+  width: 100%;
+  width: 100%;
+  border: 1px solid gray;
+  /* border-top-width: 0px; */
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+#ulListaComp li {
+  margin-right: 10px;
+  margin: auto;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 10px;
+  margin-right: 10px;
+  text-decoration: underline;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#divListaComp {
+  width: 100%;
+}
+
+#textarea2 {
+  resize: none;
+  outline: none;
+  border-radius: 3px;
+  height: 50px;
+  border: 2px solid purple !important;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+#divComp {
+  padding-left: 5px;
+  height: 40px;
+  margin-top: 20px;
+}
+
+#pComp {
+  font-size: 17px;
+  color: purple;
+  font-weight: bold;
+  background-color: darkcyan;
+  width: 133px;
+  padding-left: 5px;
+  background-color: rgba(201, 201, 201, 0.692);
+  border-radius: 5px;
+  float: left;
+}
+
+.divAdCont {
+  /* height: 40px; */
+  width: 100%;
+  border: 1px solid gray !important;
+  border-top-width: 0px;
+  /* border-bottom-width: 0px; */
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  /* display: inline-flex; */
+  /* text-align: center; */
+  /* background-color: green; */
+  /* float: left; */
+  display: none;
+  /* margin-bottom: 10px; */
+}
+
+#btnAddGrupos {
+  display: none;
+}
+
+#pACRI {
+  cursor: pointer;
+  color: purple;
+  text-decoration: underline;
+}
+
+#modalProcentagem > div > div:nth-child(4) > ul > p:nth-child(1),
+#modalProcentagem > div > div:nth-child(4) > ul > p:nth-child(5),
+#modalValor > div > div:nth-child(4) > ul > p:nth-child(1),
+#modalValor > div > div:nth-child(4) > ul > p:nth-child(5),
+#modalFrete > div > div:nth-child(4) > ul > p:nth-child(1),
+#modalFrete > div > div:nth-child(4) > ul > p:nth-child(6) {
+  text-decoration: underline;
+}
+
+#nomeProd {
+  width: 26%;
+  padding-top: -10px;
+  height: 30px;
+  float: left;
+  margin-right: 10px;
+  border: 1px solid gray !important;
+  outline: none;
+  border-radius: 3px;
+  padding-left: 3px;
+}
+
+#lblNomeProd {
+  margin-top: -9px;
+  margin-left: 5px;
+}
+
+#corpoComplemento {
+  border: 1px solid gray;
+  border-bottom-width: 0px;
+  border-top-width: 0px;
+}
+
+#MinMaxComp {
+  height: 100%;
+  padding-top: -5px;
+  padding-left: 20px;
+  padding-right: 30px;
+  margin-bottom: 30px;
+  background-color: blue;
+}
+
+.min,
+.min1 {
+  width: 50px;
+  height: 30px;
+  float: left;
+  margin-left: -10px;
+  border: 2px solid purple !important;
+  outline: none;
+  border-radius: 3px;
+  padding-left: 5px;
+}
+
+#lblMax {
+  margin-left: 5px;
+  margin-top: -3px;
+  color: gray;
+}
+
+#lblMin {
+  margin-left: -5px;
+  margin-top: -3px;
+  color: gray;
+}
+
+#btnLog {
+  float: right;
+  height: 47px;
+  width: 50px;
+  padding: 0px;
+  margin-top: 2px;
+  margin-right: 8px;
+  color: darkred;
+  font-weight: bold;
+  background-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.max,
+.max1 {
+  width: 50px;
+  height: 30px;
+  float: left;
+  border: 2px solid purple !important;
+  outline: none;
+  border-radius: 3px;
+  padding-left: 3px;
+}
+
+#pCompObg {
+  margin-top: 11px;
+  /* margin-right: 52px; */
+  float: left;
+  margin-left: 15px;
+  /* background-color: yellow; */
+  width: 150px;
+}
+
+#divNomeDescPrecoExcluirPausar {
+  height: 100%;
+  background-color: red;
+  padding-left: 48px;
+  margin-top: -10px;
+}
+
+#desc2 {
+  width: 46%;
+  height: 30px;
+  float: left;
+  border: 1px solid gray !important;
+  outline: none;
+  border-radius: 3px;
+  padding-left: 3px;
+  margin-right: 10px;
+}
+
+#preco2 {
+  width: 16%;
+  height: 30px;
+  float: left;
+  border: 1px solid gray !important;
+  outline: none;
+  border-radius: 3px;
+  padding-left: 3px;
+}
+
+#divExluirPause {
+  height: 30px;
+  float: right;
+  width: 100%;
+  margin-top: 15px;
+  padding-right: 60px;
+}
+
+#pExcluir {
+  color: purple;
+  float: right;
+  line-height: 15px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+#pPauseItem {
+  display: inline-flex;
+  font-size: 17px;
+  float: right;
+  color: gray;
+}
+
+#pPauseItem2 {
+  display: inline-flex;
+  font-size: 17px;
+  float: right;
+  color: gray;
+  margin-top: -5px;
+  cursor: pointer;
+}
+
+#imgPauseBlack {
+  display: inline-flex;
+  width: 25px;
+  float: right;
+  margin-top: -5px;
+  cursor: pointer;
+}
+
+.selcomp {
+  height: 30px;
+  outline: none;
+  margin-left: 10px;
+  width: auto;
+  float: left;
+  margin: auto;
+  /* margin-top: 5px; */
+  margin-top: 4px;
+  border-radius: 3px;
+  /* position: absolute; */
+  /* display: inline-flex; */
+
+  border: 1px solid gray;
+}
+
+#divAdComponente {
+  height: 50px;
+  padding-top: 10px;
+  padding-left: 18px;
+  cursor: pointer;
+  border: 1px solid gray !important;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 20px;
+}
+
+#pAdComp {
+  color: purple;
+}
+
+#spanDias {
+  height: 20px;
+  line-height: 20px;
+  color: #333;
+}
+
+#divDisp {
+  padding-left: 5px;
+  height: 40px;
+  margin-top: 20px;
+}
+
+#delCat,
+#statusCat,
+#dupCat,
+#editCat {
+  float: right;
+  margin-top: 9px;
+  margin-right: 10px;
+  font-size: 22px;
+  text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.432);
+  cursor: pointer;
+}
+
+#statusCat {
+  color: rgb(21, 165, 21);
+}
+
+.collapsible {
+  /* background-color: #777; */
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  border: 1px solid gray;
+  background-color: transparent;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapsible:active,
+.collapsible:focus {
+  border: 1px solid gray;
+  background-color: transparent;
+  color: black;
+}
+
+.content {
+  display: none;
+  text-align: left;
+  float: left;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+#dupCat {
+  color: #333;
+}
+
+#delCat {
+  color: darkred;
+}
+
+#editCat {
+  color: rgb(20, 124, 124);
+}
+
+#cancelModalDel,
+#confirmModalDel {
+  color: white;
+  text-shadow: 1px 1px 1px #333;
+}
+
+#cancelModalDel {
+  background-color: darkred;
+  border: 0.5px solid white;
+}
+
+#confirmModalDel {
+  background-color: rgb(12, 105, 12);
+  border: 0.5px solid white;
+}
+
+#divCorpo > div.center > a {
+  background-color: purple;
+  text-shadow: 1px 1px 1px black;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+#btnCategoria,
+#btnCategoria2 {
+  height: 40px;
+  width: 80%;
+  border: none;
+  text-align: left;
+  padding-left: 20px;
+  font-weight: 500;
+}
+
+#btnCategoria:hover,
+#btnCategoria2:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+#input_text,
+#input_text2,
+#valorcomp,
+#desccomp,
+#nomecomp {
+  width: 100%;
+  height: 38px;
+  padding-left: 5px;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid gray;
+  border-bottom: 30px;
+}
+
+#input_desc,
+#input_desc2,
+#input_desc3 {
+  width: 100%;
+  height: 38px;
+  padding-left: 5px;
+  outline: none;
+  border-radius: 3px;
+}
+
+#input_desc2 {
+  height: 70px;
+}
+
+#input_desc3 {
+  width: 30%;
+  background-color: white;
+}
+
+#pDisp {
+  font-size: 17px;
+  color: purple;
+  font-weight: bold;
+  background-color: darkcyan;
+  width: 135px;
+  padding-left: 5px;
+  background-color: rgba(201, 201, 201, 0.692);
+  border-radius: 5px;
+  float: left;
+}
+
+#pDiasEmQue {
+  font-size: 12px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+#divIntroImg > input,
+#divIntroImgProfile > input,
+#lblInputImg > input {
+  display: none;
+}
+
+#emailProp,
+#nomePropEstab {
+  background-color: purple;
+}
+
+#indef {
+  height: 65px;
+}
+
+#emailProp {
+  border: 2px solid white;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  border-top-width: 0px;
+}
+
+#divDias {
+  padding-top: 10px;
+  padding-left: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#divButtons {
+  display: inline-flex;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#btnSalvarItem,
+#btnSalvarItem1,
+#btnCancelarItem,
+#btnSalvarItemProdEdit {
+  border-radius: 30px;
+  width: 48%;
+  height: 45px;
+  background-color: purple;
+  margin: 0 10px 0 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: capitalize !important;
+}
+
+.btnnovogrupo1,
+.btnnovogrupo {
+  background-color: purple !important;
+  text-shadow: 1px 1px 1px black !important;
+  border-radius: 30px !important;
+  height: 35px !important;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+#btnCancelarItem {
+  background-color: white;
+  color: purple;
+  border: 2px solid purple;
+  margin: 0 0 0 5px;
+}
+
+.card .card-content .comentario-cmt {
+  background-color: rgba(112, 112, 112, 0.1);
+  color: #333;
+  border-radius: 3px;
+  text-shadow: none;
+  padding: 5px;
+  border-left: 3px solid rgba(109, 109, 109, 0.3);
+  border-right: 3px solid rgb(109, 109, 109, 0.3);
+  transition: 0.3s;
+}
+
+#divSelectsComples {
+  width: 100%;
+  display: flex;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+tbody > tr.child {
+  padding: 0.5em 1em;
+}
+
+ul.dtr-details {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.dtr-details li {
+  padding: 0.5em 0;
+}
+
+span.dtr-title {
+  display: inline-block;
+  min-width: 75px;
+  font-weight: bold;
+}
+
+#btnTopo:hover {
+  transition: 0.3s;
+  transform: scale(1.05, 1.05);
+}
+
+#btnTopo:active {
+  transition: 0.1s;
+  transform: scale(1, 1);
+}
+
+#lblPreco2,
+#lblDesc2 {
+  margin-left: 76%;
+  margin-top: -8px;
+}
+
+#lblDesc2 {
+  margin-left: 29%;
+}
+
+#divBoxSelect1 > span {
+  width: 100% !important;
+  margin-left: 2px;
+}
+
+#selespecpromo1,
+#selespecpromo7 {
+  border: 2px solid purple;
+  border-radius: 4px;
+  display: inline-flex;
+  margin-left: 2px;
+  width: 100%;
+  height: 35px;
+  padding: 0px;
+  outline: none;
+}
+
+#tabsPrinc {
+  background-color: white;
+  text-align: center;
+  width: 94%;
+  margin-bottom: 20px;
+}
+
+#tabsSecond {
+  border: 1px solid;
+  width: 94%;
+}
+
+#thGrup {
+  padding-left: 20px;
+}
+
+#menuIconSup {
+  width: 100%;
+  height: 100%;
+  margin-top: -7px;
+}
+
+#modalCadastrados > div > div > span > span.selection > span,
+#modalEditarPerfil > div > div > span > span.selection > span {
+  border: 2px solid purple;
+  height: 40px !important;
+  padding-top: 3px !important;
+}
+
+#modalEditarPerfil > div > div > span,
+#modalCadastrados > div > div > span {
+  width: 100% !important;
+}
+
+.divoptionscadusu {
+  display: flex;
+}
+
+#modalCadastrados > div > div > div > div:nth-child(1) > p,
+#modalCadastrados > div > div > div > div:nth-child(2) > p {
+  font-family: "Isidora Alt W00 Bold";
+}
+
+.divbtncomps1,
+.divbtncomps2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.divbtncomps1 a,
+.divbtncomps2 a {
+  background-color: purple;
+  font-weight: bold;
+}
+
+.divbtncomps1 a:hover,
+.divbtncomps2 a:hover {
+  background-color: rgb(61, 1, 61);
+}
+
+.modal-close {
+  color: purple;
+}
+
+.gp1 {
+  background-color: purple !important;
+  color: white !important;
+  text-shadow: 1px 1px 1px black !important;
+}
+
+.liCol,
+.liCol2 {
+  border: 1px solid black !important;
+}
+
+.trCol,
+.trCol2 {
+  background-color: #333 !important;
+  color: white !important;
+}
+
+.thMinMaxObg,
+.thMinMaxObg2 {
+  text-align: center;
+  width: 20%;
+}
+
+.inpValMinMax,
+.inpValMinMax2 {
+  width: 45px;
+  padding-left: 2px;
+  border: 1px solid grey;
+  height: 25px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.titleComps,
+.titleComps2 {
+  margin: auto;
+}
+
+.thNome,
+.thNome2 {
+  width: 70%;
+}
+
+.divIntSel,
+.divIntSel2 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#test-swipe-3 > div > div:nth-child(2) > textarea {
+  height: 80px;
+  width: 98%;
+  resize: none;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid purple;
+  padding-left: 5px;
+  padding-top: 5px;
+  word-break: break-all;
+}
+
+#tblHr > thead > tr > th {
+  transition: 0.3s;
+}
+
+#test-swipe-3 > div > div:nth-child(2) > textarea:focus {
+  border: 2px solid purple !important;
+}
+
+.btnBuscarComps {
+  width: 100% !important;
+  background-color: purple !important;
+  color: white !important;
+  font-weight: bold !important;
+  height: 30px !important;
+  border-radius: 0 0 4px 4px !important;
+}
+
+.datepicker-table td.is-today {
+  color: purple !important;
+}
+.datepicker-table td.is-selected {
+  background-color: purple !important;
+  color: white !important;
+  box-shadow: 0px 2px 2px #333 !important;
+}
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+  color: purple !important;
+  font-weight: bold !important;
+  /* border-bottom: 2px solid purple !important; */
+  margin-right: 2px !important;
+  margin-left: 2px !important;
+}
+
+.datepicker-container.modal-content,
+.datepicker-modal {
+  outline: none !important;
+}
+
+.select-month > .select-dropdown,
+.select-year > .select-dropdown {
+  color: purple !important;
+}
+
+.drag-target {
+  width: 30px !important;
+}
+
+.collapsible-header,
+.collapsible-body,
+.collapsible,
+.collapsible li {
+  margin: 0 !important;
+  font-size: 12px;
+  padding: 0px !important;
+  box-shadow: none;
+  outline: none;
+}
+
+.tableInf tr th,
+.tableInf2 tr th {
+  padding: 0 !important;
+  text-align: center;
+}
+
+.prodComp {
+  padding: 0 !important;
+  text-align: center;
+}
+
+#tblHr td {
+  padding: 0 !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  margin: 0 !important;
+}
+
+.prodComp p {
+  margin: 0 !important;
+  margin-left: 10px !important;
+}
+
+.tablePrinc th,
+.tablePrinc2 th {
+  text-align: center;
+}
+
+.tabsped .tab a.active {
+  background-color: purple !important;
+  color: white !important;
+  text-shadow: 1px 1px 1px #333 !important;
+  border-radius: 3px !important;
+}
+
+.tabsped .tab a:not(.active):hover {
+  background-color: rgba(128, 0, 128, 0.651) !important;
+  color: white !important;
+  text-shadow: 1px 1px 1px #333 !important;
+  border-radius: 3px !important;
+}
+
+.tabsped .tab {
+  width: 100px !important;
+}
+
+.tabsped .tab a {
+  font-size: 10px !important;
+  padding: 0px !important;
+}
+
+.tabsped .indicator {
+  background-color: rgb(218, 0, 218) !important;
+}
+
+#select2-select2item-results > li {
+  display: block;
+}
+
+#select2-select2item-results > li > p {
+  padding-top: 4px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.btnPDF,
+.btnCadUsu,
+.btnPromoAtivas,
+.btnEnvio {
+  float: right;
+  background-color: purple !important;
+  transition: 0.2s;
+}
+
+.btnPDF:hover,
+.btnCadUsu:hover,
+btnPromoAtivas:hover,
+.btnEnvio:hover {
+  transform: scale(1.2, 1.2);
+  transition: 0.2s;
+}
+
+.select2-selection input {
+  height: 20px !important;
+}
+
+.select2-results__options {
+  background-color: purple !important;
+  color: white !important;
+  /* border-radius: 0 0 3px 3px !important; */
+  /* border: 1px solid black !important; */
+}
+
+.select2-selection__choice {
+  background-color: #333 !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.514) !important;
+  color: white !important;
+}
+
+.select2-selection__choice__remove:hover {
+  color: white !important;
+  opacity: 1;
+}
+
+.select2-selection__choice__remove {
+  opacity: 0.9;
+}
+
+.lblObg {
+  color: black !important;
+}
+
+.select2-results__option[aria-selected="true"] {
+  background-color: #333 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-weight: normal !important;
+}
+
+.select2-results__option[aria-selected="true"]::before {
+  content: "x" !important;
+  color: white !important;
+  margin-right: 5px;
+  float: right !important;
+  text-shadow: 1px 1px 1px black;
+}
+
+.select2-results__option--highlighted {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  color: purple !important;
+  font-weight: bold !important;
+}
+
+.iconAddProd {
+  margin-left: -10px;
+  margin-top: 2px;
+  text-shadow: 1px 1px 13px black;
+  font-weight: bold;
+}
+
+.aIconAdd {
+  padding-right: 10px !important;
+  background-color: purple !important;
+  border-radius: 0px 20px 20px 0px !important;
+  margin-left: -1px;
+  height: 35px !important;
+}
+
+.modal-content .datepicker-container {
+  outline: none !important;
+}
+
+.datepicker-date-display {
+  background-color: purple !important;
+}
+
+.aIconAdd:hover {
+  box-shadow: 1px 0px 3px 1px purple !important;
+}
+
+#divSelectsComples > span > span.selection > span {
+  border: 2px solid purple !important;
+  border-radius: 4px 0 0 4px;
+}
+
+#divSelectsComples > span {
+  width: 65% !important;
+}
+
+.divInputMaxMin,
+#divMixMax {
+  margin-top: 10px !important;
+  margin-bottom: 20px;
+}
+
+.spanObg {
+  margin-left: 10px;
+  outline: none;
+  padding-left: 25px !important;
+}
+.spanObg::after {
+  top: 2px !important;
+  border-color: purple !important;
+}
+
+.divInputMaxMin p,
+#divMinMax p {
+  margin: 0px;
+  margin-top: 0px !important;
+}
+
+.divInputMaxMin input,
+.divInputMaxMin1 input,
+#divMinMax input {
+  border: 2px solid purple;
+  border-radius: 3px;
+  height: 30px;
+  width: 50px;
+  margin: 0px;
+  margin-right: 3px !important;
+  margin-left: 3px !important;
+  padding-left: 0px;
+  text-align: center;
+  outline: none;
+}
+
+.divInputMaxMin div:nth-child(2),
+.divInputMaxMin1 div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divInputMaxMin > h5,
+.divInputMaxMin1 > h5 {
+  text-align: center;
+  background-color: rgba(128, 0, 128, 0.5);
+  border-radius: 3px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.divInputMaxMin1 div:nth-child(2) > p {
+  margin: 0 !important;
+}
+
+#modalComplemento,
+#cadastra_Categoria,
+#editCategoria,
+#editComp {
+  border-radius: 2px !important;
+  outline: none;
+}
+
+#selectGrupoC {
+  width: 30%;
+  height: 37px;
+  padding-top: 3px;
+  border: 2px solid purple;
+  border-radius: 4px;
+  display: inline-flex;
+  outline: none;
+}
+
+.titleCategSel,
+.titleCategSel2 {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 6px;
+}
+
+#modalProcentagem > div > div:nth-child(16) > span {
+  width: 100% !important;
+  margin-left: 2px;
+}
+
+#modalCadastrados > div,
+#modalEditarPerfil div {
+  width: 100%;
+}
+
+/* layout > card */
+.dv-card {
+  width: 90%;
+}
+
+.cardpromos {
+  box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.308);
+}
+
+#divCorpo
+  div:nth-child(4)
+  div
+  div.card-image.waves-effect.waves-block.waves-light,
+#divCorpo
+  div:nth-child(5)
+  div
+  div.card-image.waves-effect.waves-block.waves-light,
+#divCorpo
+  div:nth-child(6)
+  div
+  div.card-image.waves-effect.waves-block.waves-light,
+#divCorpo
+  > div:nth-child(7)
+  > div
+  > div.card-image.waves-effect.waves-block.waves-light {
+  background-color: rgba(128, 0, 128, 0.3);
+  background-image: linear-gradient(to left, white, white, purple);
+  transition: 0.3s;
+}
+
+#btnSaiba1,
+#btnSaiba2,
+#btnSaiba3,
+#btnSaiba4,
+#btnSaiba5,
+#btnSaiba6 {
+  background-color: rgba(128, 0, 128, 0.1) !important;
+  color: purple !important;
+  transition: 0.3s !important;
+}
+
+#btnSaiba1:hover,
+#btnSaiba2:hover,
+#btnSaiba3:hover,
+#btnSaiba4:hover,
+#btnSaiba5:hover,
+#btnSaiba6:hover {
+  box-shadow: 0px 0px 1px 2px rgba(128, 0, 128, 0.5) !important;
+  padding-top: -3px !important;
+  padding-bottom: 0px !important;
+}
+
+.card-image > img {
+  width: 160px !important;
+  padding: 9px;
+  background-color: white;
+}
+
+#modalCadastrados,
+#modalEditarPerfil {
+  outline: none;
+  width: 50%;
+  min-height: -webkit-fill-available !important;
+  top: 0 !important;
+  width: 50%;
+}
+
+#selectGrupoC option {
+  background-color: purple;
+  color: white;
+}
+
+#tableForms tbody tr td:last-child,
+#tableForms_wrapper
+  > div.dataTables_scroll
+  > div.dataTables_scrollHead
+  > div
+  > table
+  > thead
+  > tr
+  > th.sorting {
+  text-align: center !important;
+}
+
+#divInpNomeCompModal > div {
+  display: flex;
+  width: 95%;
+}
+
+::selection {
+  background-color: purple;
+  color: white;
+  text-shadow: 0 1px 0 black;
+}
+
+#divBoxSelect1 {
+  display: flex;
+}
+
+#divBoxSelect1 > span #btnAddGrup {
+  width: 18%;
+  height: 37px;
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  margin: auto;
+  padding: 0px !important;
+  font-size: 10.5px;
+}
+
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: purple !important;
+  border: 1px solid purple !important;
+}
+
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: rgba(128, 0, 128, 0.5) !important;
+}
+
+.switch label input[type="checkbox"] + .lever:after {
+  border: 1px solid purple !important;
+}
+
+@media only screen and (max-width: 1366px) {
+  #divGeral {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 1330px) {
+  #lblPreco2 {
+    margin-left: 77.5%;
+  }
+}
+
+@media only screen and (max-width: 1056px) {
+  #divPausePlay,
+  #divPausePlay2 {
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+    width: 28px;
+    height: 25px;
+    margin-right: 20px;
+    margin-top: -1px;
+    border: 1px solid gray !important;
+    border-radius: 0px 5px 0px 5px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .divCentroPerfil {
+      width: 60%;
+    }
+  }
+
+  #pPausePlay {
+    display: none;
+  }
+
+  #imgPausePlay {
+    opacity: 0.8;
+    width: 100%;
+    padding-left: 4px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  main,
+  footer,
+  #divCorpo {
+    padding-left: 0;
+  }
+
+  #divIconMenu {
+    display: block;
+    transition: 0.1s;
+  }
+
+  #divHorarioTopo {
+    margin-right: 135px;
+    transition: 0s;
+  }
+
+  #sidenav-1 {
+    margin-top: 0px !important;
+  }
+
+  #btnLog {
+    margin-right: 5px;
+  }
+
+  .aIconAdd,
+  #selectGrupo1,
+  #selectGrupoEdit {
+    height: 34px !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #modalCadastrados,
+  #modalEditarPerfil {
+    width: 80% !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .divCentroPerfil {
+    width: 60%;
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .corpo-comentario{
+    width: 93%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .divPrincCard {
+    display: block;
+  }
+
+  .divCardsPed {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 672px) {
+  #lblPreco2 {
+    margin-left: 78%;
+  }
+
+  #lblDesc2 {
+    margin-left: 30%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #modalEditProd,
+  #modalExibirProd {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 636px) {
+  #formCompp {
+    width: 100%;
+  }
+  #btnCat {
+    height: 33px;
+    border-radius: 3px !important;
+    margin-left: 0px !important;
+    width: 100px;
+  }
+  #divBtnCat {
+    text-align: center;
+  }
+  #cadastra_Categoria,
+  #editCategoria,
+  #editComp,
+  #modalComplemento,
+  #modalItem,
+  #modalEditarItem,
+  #modalDetalhes,
+  #modalDetalhes1,
+  #modalEnvios,
+  #modalProcentagem,
+  #modalValor,
+  #modalFrete,
+  #modalEditProd,
+  #modalEscolhaComp,
+  #modalExibirProd,
+  #modalPromoAtivas,
+  #modalForms,
+  #modalEditarPerfil,
+  #modalCropUser,
+  #modalCropUserCreate,
+  #modalCropUserEdit,
+  #modalHorarioEntrega,
+  #modalCancelamento {
+    width: 100% !important;
+    outline: none !important;
+    border-radius: 0;
+    top: 0px !important;
+    min-height: -webkit-fill-available !important;
+  }
+
+  #test-swipe-3 {
+    padding: 10px !important;
+    padding-top: 20px !important;
+  }
+
+  #divNomeCat {
+    display: block;
+    margin-bottom: 0px;
+  }
+
+  #divNomeP,
+  #divSelCat {
+    width: auto;
+  }
+
+  #modalDetalhes > div {
+    padding: 3px;
+  }
+
+  #modalDetalhes > div > p {
+    width: 80%;
+  }
+
+  #divSelCat > label,
+  #divNomeP > label,
+  #divInterDesc1 > label {
+    margin-left: 3px !important;
+    margin-top: 7px !important;
+  }
+
+  #divInterDesc1 > label {
+    margin-top: 4px !important;
+  }
+
+  #divIntroImg {
+    height: 150px;
+    width: 190px;
+  }
+
+  #divInterDesc1 > span {
+    margin-top: -5px;
+  }
+
+  #divDesc1 {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  body
+    > div.swal2-container.swal2-center.swal2-fade.swal2-shown
+    > div
+    > div.swal2-content
+    > textarea {
+    resize: none !important;
+  }
+
+  #textarea2 {
+    height: 120px;
+  }
+
+  #inpCompSec,
+  #inpCompSec2,
+  #inpCompSec3 {
+    width: 95% !important;
+  }
+
+  #divSelectsComples {
+    display: block;
+  }
+
+  #divSelectsComples > span {
+    width: 100% !important;
+    margin-bottom: 5px;
+    border-radius: 3px !important;
+  }
+
+  #divSelectsComples > span > span.selection > span {
+    border-radius: 3px !important;
+  }
+
+  .aIconAdd {
+    border-radius: 3px !important;
+    float: right !important;
+  }
+
+  #divSelectsComples > a > i {
+    padding-left: 5px;
+  }
+
+  #divInpNomeCompModal > div {
+    display: block;
+    width: 100%;
+  }
+
+  .divInputMaxMin,
+  #divMinMax {
+    margin-top: 2px !important;
+  }
+
+  #selectGrupo1,
+  #selectGrupoEdit {
+    width: 100% !important;
+    margin-bottom: 5px;
+  }
+
+  #divInpNomeCompModal > div input {
+    margin-bottom: 10px !important;
+  }
+
+  #modalComplemento {
+    width: 100% !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    top: 0 !important;
+    min-height: -webkit-fill-available !important;
+  }
+
+  #cadastra_Categoria {
+    width: 100% !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    top: 0 !important;
+    min-height: -webkit-fill-available !important;
+  }
+
+  #corpoModal3 {
+    border-radius: 0px;
+    padding: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .logo-nav {
+    margin-top: -7px;
+  }
+  #menuIconSup {
+    margin-top: -15px;
+  }
+
+  #divIconMenu button {
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    transition: 0.1s;
+  }
+
+  #divIconMenu {
+    display: block;
+  }
+
+  #divHorarioTopo {
+    height: 43px;
+  }
+
+  #btnLog {
+    float: right;
+    height: 40px;
+    width: 50px;
+    padding: 0px;
+    margin-right: 0px;
+  }
+
+  .divUsers {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .icon-comeae {
+    font-size: 2.2rem;
+  }
+  .icon-comeae_texto {
+    font-size: 0.95rem;
+  }
+}
+
+@media only screen and (min-width: 509px) {
+  #btnSaiba2,
+  #btnSaiba4,
+  #btnSaiba6 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 508px) {
+  #btnSaiba1,
+  #btnSaiba3,
+  #btnSaiba5 {
+    display: none;
+  }
+
+  #corpocard {
+    padding-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #divInicio p {
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  .mdlpromoporc,
+  .mdlpromoval,
+  .mdlpromofrete {
+    width: 95% !important;
+  }
+
+  #modalCadastrados,
+  #modalEditarPerfil {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 484px) {
+  .logo-nav {
+    display: none;
+  }
+  #divHorarioTopo {
+    height: 43px;
+    width: 65%;
+    margin-right: 135px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .divbuscarloc {
+    align-items: center;
+    justify-content: center;
+    float: none;
+  }
+  #modalForms p {
+    font-size: 15px;
+  }
+  .divbuscarloc p {
+    margin-top: -20px;
+  }
+  #divBoxSelect1 {
+    display: block;
+  }
+  #tblHr > thead > tr > th {
+    padding: 0px !important;
+  }
+  #tabsPrinc,
+  #tabsSecond {
+    width: 100%;
+  }
+  #sidenav-1 {
+    width: 260px;
+  }
+
+  #delCat,
+  #editCat,
+  #dupCat,
+  #statusCat {
+    font-size: 16px;
+  }
+
+  #btnCategoria2,
+  #btnCategoria {
+    font-size: 10px;
+  }
+
+  #selectGrupoC {
+    width: 48%;
+  }
+
+  #btnAddGrup {
+    width: 99%;
+    margin-top: 5px !important;
+  }
+
+  #divHorarioTopo {
+    width: 65%;
+    margin-right: 125px;
+  }
+
+  #btnLog {
+    margin-right: -5px;
+  }
+
+  .divMedia {
+    margin-left: 30px;
+  }
+
+  #modalEnvios {
+    width: 100% !important;
+  }
+
+  .mdlpromoporc .select2-container,
+  .mdlpromoval .select2-container,
+  .mdlpromofrete .select2-container {
+    width: 100% !important;
+  }
+
+  .divCentroPerfil {
+    width: 80%;
+  }
+
+  #selespecpromo1 {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 394px) {
+  .divoptionscadusu {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  #divInicio p {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  #divHorarioTopo {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .divUsers {
+    width: 95% !important;
+    padding: 0px !important;
+  }
+  #modalForms p {
+    font-size: 13px;
+  }
+  .divCentroPerfil {
+    width: 95%;
+  }
+
+  #modalCadastrados > div,
+  #modalEditarPerfil > div {
+    padding: 10px;
+  }
+
+  #modalCadastrados
+    > div
+    > div
+    > a.waves-effect.waves-light.btn-small.center.btnSalvarPerfil {
+    margin-top: 30px !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .corpo-comentario{
+    width: 100%;
+    padding: 10px;
+  }
+  #divHorarioTopo {
+    width: 62%;
+    margin-right: 112px;
+  }
+  #btnLog {
+    margin-right: -10px;
+    width: 45px;
+  }
+
+  .divMedia {
+    margin-left: 20px;
+  }
+
+  .divUsers {
+    width: 95% !important;
+  }
+
+  .divCentroPerfil {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 312px) {
+  #divisorCard,
+  #divisorCard2 {
+    margin-top: 50px !important;
+  }
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Promoções</title>
+    <link rel="stylesheet" href="./views/css/placeholder-loading.css">
+    <link rel="stylesheet" href="./views/css/administracao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.5.0/css/lightcase.css">
+</head>
+
+<body>
+
+    <div class="loader-place"></div>
+
+    <nav class="navbar-comeae kit-flex" style="position: sticky;">
+        <div class="dv-logo-nav">
+            <i class="icon-comeae fonte-logo"></i>
+            <i class="icon-comeae_texto fonte-logo-texto"></i>
+        </div>
+        <div class="dv-identificador-nav dropdown-sair-trigger" data-target="dropdown-sair">
+            <p class="fonte-primaria nome-admin">Felipe Moreira</p>
+            <p class="cargo-admin">Programador</p>
+            <i class="material-icons">arrow_drop_down</i>
+        </div>
+        <div class="waves-effect waves-light hide-on-large-only sidenav-trigger dv-menu-nav" data-target="side-actions">
+            <i class="material-icons">menu</i>
+        </div>
+    </nav>
+
+    <!-- DROPDOWN SAIR -->
+    <ul id='dropdown-sair' class='dropdown-content'>
+        <li><a>Sair</a></li>
+    </ul>
+
+    {{!-- SIDENAV ACOES --}}
+    <ul id="side-actions" class="sidenav side-acoes sidenav-fixed">
+        <li><a class="waves-effect" href="/resumo-adm"><i class="material-icons">home</i>Resumo</a></li>
+        <li><a class="waves-effect" href="/cadastros-adm"><i class="material-icons">format_align_center</i>Gerenciar
+                cadastros</a></li>
+        <li class="atual"><a class="waves-effect" href="/promocoes-adm"><i class="material-icons">local_atm</i>Gerenciar
+                promoções</a></li>
+        <li><a class="waves-effect" href="/pedidos-adm"><i class="material-icons">view_carousel</i>Gerenciar pedidos</a>
+        </li>
+        <li><a class="waves-effect" href="/clientes-adm"><i class="material-icons">people</i>Clientes</a>
+        </li>
+        <li ><a class="waves-effect" href="/produtos-adm"><i class="material-icons">local_bar</i>Produtos</a>
+        </li>
+        <li><a class="waves-effect" href="/voucher-adm"><i
+                    class="material-icons">confirmation_number</i>Voucher</a>
+        </li>
+        <li><a class="waves-effect" href="/gerencia-adm"><i class="material-icons">group_add</i>Novo admin</a>
+        </li>
+        <li><a class="waves-effect" href="/relatorios-adm"><i class="material-icons">picture_as_pdf</i>Relatórios</a>
+        </li>
+    </ul>
+
+    <input class="idprodutos" type="hidden"/>
+    <input class="idpromo" type="hidden"/>
+    <!-- MODAL VISUALIZAR -->
+    <div id="modalVisualizar" class="modal modal-fixed-footer">
+        <div class="loader-place-modal"></div>
+        <div class="modal-header kit-flex header-visualizar">
+            <i class="material-icons modal-close">close</i>
+            <p class="fonte-primaria center">Análise de Promoção</p>
+        </div>
+        <div class="modal-content">
+            <div class="dv-informacoes">
+                <span class="kit-flex cabc-table">Dados do Estabelecimento</span>
+                <div style="margin-top: 15px;" class="center">
+                    <a href="/views/img/base.png" data-rel="lightcase">
+                        <img src="/views/img/base.png" class="img-cadastro-sol responsive-img b-lazy"
+                            alt="Imagem cadastro">
+                    </a>
+                </div>
+                <div>
+                    <table class="striped highlight tableVisRest">
+                        <tr>
+                            <th>Dono:</th>
+                            <td>Felipe Moreira</td>
+                        </tr>
+                        <tr>
+                            <th>Restaurante:</th>
+                            <td class="local"></td>
+                        </tr>
+                        <tr>
+                            <th>Data Início:</th>
+                            <td class="dataInicio"></td>
+                        </tr>
+                        <tr>
+                            <th>Data Fim:</th>
+                            <td class="dataFinal"></td>
+                        </tr>
+                        <tr>
+                            <th>Tipo:</th>
+                            <td class="tipoPromocao"></td>
+                        </tr>
+                        <tr>
+                            <th>Valor:</th>
+                            <td class="valor"></td>
+                        </tr>
+                        <tr>
+                            <th>Itens ou Bairros:</th>
+                            <td class="itens"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="sec-geral">
+        <div class="dv-corpo">
+            <div class="dv-datatables-geral">
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="tabs tabs-promocoes">
+                            <li class="tab col s3"><a class="tab-solicitadas kit-flex"
+                                    href="#tab-solicitadas">Solicitadas</a>
+                            </li>
+                            <li class="tab col s3"><a class="tab-inativas kit-flex" href="#tab-inativas">Inativas</a>
+                            </li>
+                            <li class="tab col s3"><a class="tab-ativas kit-flex" href="#tab-ativas">Ativas</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tab-solicitadas" class="col s12">
+                        <div>
+                            <p class="center white-text fonte-primaria headers-pro">Solicitadas</p>
+
+                            <table id="tableSolicitadas" class="display compact striped">
+                                <thead>
+                                    <tr>
+                                        <th>Restaurante</th>
+                                        <th>Tipo</th>
+                                        <th>Data Início</th>
+                                        <th>Data Fim</th>
+                                        <th>Opções</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   
+                                           
+                                     
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="tab-inativas" class="col s12">
+                        <div>
+                            <p class="center white-text fonte-primaria headers-pro">Inativas</p>
+                            <table id="tableInativas" class="display compact striped">
+                                <thead>
+                                    <tr>
+                                        <th>Restaurante</th>
+                                        <th>Tipo</th>
+                                        <th>Data Início</th>
+                                        <th>Data Fim</th>
+                                        <th>Opções</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="tab-ativas" class="col s12">
+                        <div>
+                            <p class="center white-text fonte-primaria headers-pro">Ativas</p>
+                            <table id="tableAtivas" class="display compact striped">
+                                <thead>
+                                    <tr>
+                                        <th>Restaurante</th>
+                                        <th>Tipo</th>
+                                        <th>Data Início</th>
+                                        <th>Data Fim</th>
+                                        <th>Opções</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                      
+                                           
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="rodape-mobile hide-on-large-only row center-align no-select">
+        <a href="/resumo-adm" class="col s12 m12">
+            <i class="icon-home"></i>
+            <span class="legenda-tab-menu">Inicio</span>
+        </a>
+    </footer>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"
+    integrity="sha256-D0J9D4igaYyVX/Y78Tr0yoDJsy8hi14hCEdFDakBp08=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.5.0/js/lightcase.js"></script>
+<script src="/js/CompartilhadoADM.js"></script>
+<script src="/js/promocoes-adm.js"></script>
+
+</html>

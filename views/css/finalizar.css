@@ -1,0 +1,684 @@
+/* LAYOUT CAIXA 1 */
+.caixageral {
+  display: flex;
+  padding: 30px;
+}
+.caixa1 {
+  width: 50%;
+}
+.caixa1 > p:nth-child(1) {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: auto;
+}
+.dv-location-sup > p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 15px;
+}
+.dv-location-sup > div {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.dv-location-sup > div > i {
+  font-size: 17px;
+  margin-right: 5px;
+  text-shadow: 1px 1px 1px #000000ab;
+}
+.dv-location-sup > div > p {
+  font-size: 18px;
+  margin: initial;
+}
+.txt-pg {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 15px;
+}
+
+/* LAYOUT CARD DIREITO */
+.caixa2 {
+  width: 50%;
+}
+.caixa2 > div {
+  width: 85%;
+  margin: auto;
+}
+.caixa2 > div > .card-content {
+  padding: 15px;
+}
+#test2 {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+.divgeraldadoscard {
+  margin: auto;
+  width: 90%;
+}
+.dv-nmrcard {
+  width: 100%;
+  margin: auto;
+  margin-top: 0px;
+}
+.dv-data-cvc {
+  display: flex;
+  justify-content: space-between;
+}
+.dv-data-cvc > div {
+  width: 45%;
+}
+.dv-nome-cpf > {
+  width: 100%;
+}
+.nomeRest {
+  font-size: 1.5rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.divider.cardright {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.divider.cardfinal {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.i-info-card {
+  font-size: 21px;
+  color: #800080b8;
+  margin-left: 3px;
+}
+.sp-rv-cup > i {
+  position: absolute;
+  right: 20px;
+  top: 33px;
+}
+.dv-inp-cup {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dv-inp-cup > div {
+  width: 100%;
+}
+.dv-inp-cup > div > input {
+  height: 43px !important;
+  width: 100% !important;
+  padding-left: 3px !important;
+  border-radius: 3px !important;
+  outline: none !important;
+  font-size: 20px !important;
+  border: 1px solid purple !important;
+  font-weight: bold !important;
+}
+.dv-inp-cup > p {
+  width: 35%;
+  text-align: center;
+  color: purple;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.dv-opc-cup {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  border: 1px solid rgba(128, 128, 128, 0.39);
+  border-radius: 3px;
+  padding-left: 5px;
+}
+.dv-opc-cup > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dv-opc-cup > div > div > i {
+  margin-right: 7px;
+  font-size: 30px;
+  color: purple;
+  padding-top: 5px;
+}
+.dv-sem-cup > p:nth-child(1),
+.dv-sem-cup > p:nth-child(2) {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.dv-opc-cup > p {
+  padding-top: 5px;
+}
+.cupomcard {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.cupomcard > i:nth-child(1) {
+  margin-right: 7px;
+  font-size: 30px;
+  color: purple;
+  text-shadow: 0px 1px 1px black;
+}
+.cupomcard > i:nth-child(3) {
+  position: absolute;
+  right: 13px;
+  font-size: 30px;
+  color: purple;
+  text-shadow: -1px 0px 1px #000000d1;
+}
+.cupom-title {
+  text-align: center;
+  font-weight: bold;
+  color: purple;
+  font-family: "Isidora Alt W00 Bold";
+}
+
+/* layout FORM ESQUERDO */
+.dv-nmrcard > input,
+.dv-data-cvc > div > input,
+.dv-nome-cpf > div > input {
+  width: 100%;
+  height: 43px;
+  font-size: 18px;
+  padding-left: 5px;
+  margin-top: 4px;
+  outline: none;
+}
+.dv-nmrcard > label,
+.dv-data-cvc > div > label,
+.dv-nome-cpf > div > label {
+  color: #8080809c;
+  margin-left: 3px;
+}
+#test1 {
+  display: block;
+  color: grey;
+  padding: 0;
+}
+.dv-bt-escolher-end {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.bt-escolher-end {
+  width: 100%;
+  height: 3rem !important;
+  border-radius: 30px !important;
+  background-color: purple !important;
+  font-family: "Isidora Alt W00 Bold" !important;
+  font-size: 1.3rem !important;
+  text-transform: capitalize !important;
+}
+
+.divtabsfinal {
+  margin-top: 10px;
+}
+
+.divtabsfinal .tabs .tab a:hover,
+.tabs .tab a.active {
+  background-color: transparent !important;
+  color: black !important;
+  font-weight: bold;
+}
+
+.divtabsfinal .tabs .tab a:hover {
+  background-color: transparent !important;
+  font-weight: normal;
+}
+
+.divtabsfinal .tabs .tab a {
+  color: grey;
+}
+
+.divtabsfinal .tabs .tab {
+  width: 50%;
+}
+
+.divtabsfinal .tabs .indicator {
+  background-color: purple !important;
+}
+
+.divpayment {
+  margin-top: 15px;
+}
+
+.divpayment p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.377);
+}
+
+.divgrouppay {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.divcashpay {
+  display: flex;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 25px;
+  padding: 6px;
+  transition: 0.2s;
+  background-color: purple;
+}
+
+.divcashpay > img {
+  padding: 3px;
+  width: 43px;
+}
+
+.divcashpay p {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  margin: 0px;
+}
+#modalEndereco,
+#modalTroco,
+#modalValorTroco {
+  z-index: 9999 !important;
+}
+#modalEndereco .modal-content {
+  padding: 15px !important;
+}
+#modalEndereco.modal {
+  width: 60%;
+}
+.modal-overlay {
+  z-index: 9998 !important;
+}
+
+#modalTroco {
+  top: 30% !important;
+  height: 200px !important;
+  width: 300px !important;
+  border-radius: 10px !important;
+}
+#modalTroco .modal-content > h4 {
+  text-align: center;
+  color: purple;
+  margin-top: 10px;
+}
+#modalTroco .modal-content > p {
+  text-align: center;
+  font-size: 22px;
+  margin: 0;
+}
+.dv-bt-troco {
+  text-align: center;
+  padding-top: 15px;
+}
+.dv-bt-troco > a:nth-child(1) {
+  background-color: purple;
+}
+.dv-bt-troco > a:nth-child(2) {
+  background-color: #333;
+}
+
+#modalValorTroco {
+  top: 20% !important;
+}
+
+.divgroupsolopay {
+  width: 49%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  transition: 0.1s;
+  background-color: purple;
+  height: 50px;
+  justify-content: flex-start;
+}
+
+.divgroupsolopay:hover,
+.divcashpay:hover {
+  background-color: rgb(78, 1, 78);
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.295);
+  transform: scale(1.03, 1.03);
+}
+
+#modalEndereco .header-modal > .modal-close {
+  position: absolute;
+  color: purple;
+  right: 10px;
+  top: 5px;
+}
+#modalEndereco .header-modal > p {
+  font-size: 1.2rem;
+  text-align: center;
+  width: 80%;
+  padding: 5px 0;
+}
+#modalEndereco .header-modal {
+  height: auto;
+  border-bottom: 1px solid #e1e1e1;
+  position: sticky;
+  top: 0;
+  background-color: #fafafa;
+}
+
+.dv-conf-novoend,
+.dv-conf-end {
+  margin-top: 20px;
+}
+
+.btnconfirmarnovoend,
+.btnconfirmarsaveend {
+  background-color: purple !important;
+  font-weight: bold !important;
+}
+
+.bt-confirm-externo {
+  background-color: purple !important;
+  height: 45px !important;
+  font-size: 1.4rem !important;
+  padding-top: 2px !important;
+  width: 100% !important;
+  border-radius: 30px !important;
+  text-transform: initial !important;
+  margin-top: 1.3rem !important;
+}
+
+.divgroupsolopay:active,
+.divcashpay:active {
+  transform: scale(1, 1);
+}
+
+.divsolopay {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3px;
+  width: 100%;
+  height: 100%;
+}
+
+.divsolopay > img {
+  width: 38px;
+  padding: 3px;
+  margin-left: 5px;
+}
+
+.divisor-dash {
+  margin-top: 43px !important;
+  margin-bottom: 30px !important;
+  margin: auto;
+  border: 1px solid #8080803b;
+  border-style: dashed;
+}
+
+.dv-nota-cpf {
+  width: 100%;
+  margin: auto;
+}
+
+.dv-nota-cpf > div > input {
+  width: 100%;
+  height: 43px;
+  font-size: 18px;
+  padding-left: 5px;
+  margin-top: 4px;
+  outline: none;
+}
+.dv-nota-cpf > div > label {
+  color: #8080809c;
+  margin-left: 3px;
+}
+
+#test2 .input-field input[type="text"]:focus + label,
+#test2 .input-field input[type="tel"]:focus + label,
+#test1 .input-field input[type="text"]:focus + label,
+#modalEndereco .input-field input[type="text"]:focus + label {
+  color: purple;
+  font-weight: bold;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.divendsup {
+  margin-top: 9px;
+}
+
+.divenderecosup {
+  width: 50%;
+  margin-right: 5px;
+}
+
+.divnmrsup {
+  width: 15%;
+  margin-right: 5px;
+}
+
+.divbairrosup {
+  width: 25%;
+}
+
+.endsaved {
+  display: flex;
+  padding-top: 10px;
+}
+.endsaved > .dv-endereco {
+  display: flex;
+  align-items: center;
+  width: 95%;
+}
+.dv-endereco > i {
+  font-size: 24px;
+  margin-right: 8px;
+  color: purple;
+  text-shadow: 0px 1px 1px black;
+}
+.dv-endereco > div {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: 10px;
+}
+.dv-endereco > div > p {
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: #f4f4f4;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bebebe;
+}
+
+.divenderecosup > input,
+.divnmrsup > input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid purple;
+  padding: 0 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.divnmrsup > input {
+  text-transform: uppercase;
+}
+
+#test2 .input-field input[type="text"]:focus,
+#test1 .input-field input[type="text"]:focus,
+#test1 .input-field input[type="tel"]:focus,
+#test2 .input-field input[type="tel"],
+#test2 .input-field input[type="text"],
+#test1
+  .input-field
+  input[type="text"]
+  #modalEndereco
+  .input-field
+  input[type="text"]:focus,
+#modalEndereco .input-field input[type="text"] {
+  border-bottom: 1px solid purple;
+  box-shadow: 0 1px 0 0 purple;
+}
+
+.input-field input[type="text"].valid,
+.input-field input[type="tel"].valid {
+  border-bottom: 1px solid rgb(76, 175, 80) !important;
+  box-shadow: 0 1px 0 0 rgb(76, 175, 80) !important;
+}
+
+.input-field input[type="text"].invalid,
+.input-field input[type="tel"].invalid {
+  border-bottom: 1px solid #f44336 !important;
+  box-shadow: 0 1px 0 0 #f44336 !important;
+}
+
+.card-wrapper {
+  /* background-color: purple; */
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+#test2 > form > div.card-wrapper > div > div > div.jp-card-front,
+#test2 > form > div.card-wrapper > div > div > div.jp-card-back {
+  background-color: purple !important;
+}
+
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid purple !important;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+  background-color: purple !important;
+}
+
+@media only screen and (max-width: 993px) {
+  #modalEndereco {
+    width: 100% !important;
+    outline: none !important;
+    border-radius: 0;
+    top: 0px !important;
+    min-height: -webkit-fill-available !important;
+    border-radius: 0 !important;
+  }
+  #modalEndereco > div > div.divendsup > div.divbairrosup > span {
+    width: 100% !important;
+  }
+  #modalEndereco
+    > div
+    > div.divendsup
+    > div.divbairrosup
+    > span
+    > span.selection
+    > span {
+    width: 100% !important;
+  }
+  .bt-return {
+    display: flex !important;
+  }
+  #modalEntrada,
+  #modalPedidos3 {
+    min-height: -webkit-fill-available !important;
+    height: 480px;
+    width: 100% !important;
+    top: 0% !important;
+    z-index: 999999999 !important;
+  }
+  #modalFavoritos {
+    max-width: 100% !important;
+    margin: auto !important;
+    z-index: 999999999 !important;
+  }
+  .dv-container-finalizar {
+    margin-bottom: 5rem;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .caixa1,
+  .caixa2 {
+    width: 100% !important;
+  }
+  .caixageral {
+    display: block !important;
+  }
+  .card {
+    margin-top: 40px !important;
+    width: 85% !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #modalTroco,
+  #modalValorTroco {
+    width: 100% !important;
+    outline: none !important;
+    border-radius: 0;
+    top: 0px !important;
+    min-height: -webkit-fill-available !important;
+    border-radius: 0 !important;
+  }
+  .divendsup {
+    display: block !important;
+  }
+  .divenderecosup > input,
+  .divnmrsup > input {
+    border-radius: 35px !important;
+    width: 280px;
+  }
+  .divenderecosup,
+  .divnmrsup,
+  .divbairrosup {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .divgeraldadoscard {
+    width: 100% !important;
+  }
+  .caixageral {
+    padding: 10px !important;
+  }
+  .tabscol,
+  #test1 {
+    padding: 0px !important;
+  }
+  .card {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .card-wrapper {
+    margin-left: -16px !important;
+  }
+  .card {
+    width: 100% !important;
+  }
+}

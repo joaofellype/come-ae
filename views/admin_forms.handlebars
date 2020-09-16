@@ -1,0 +1,519 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divGeral">
+
+        <!-- NAVBAR -->
+        <header>
+            <nav id="navBar">
+                <div onclick="window.location.href='/admin_start'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+                <div id="divIconMenu">
+                    <button style="padding: 0px;" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger"><i id="menuIconSup"
+                            class="material-icons">menu</i></button>
+                </div>
+
+                <div>
+                    <div id="divHorarioTopo">
+                        <select name="selc" class="selc">
+                            <option id="1" value="fechado">Restaurante Fechado</option>
+                            <option id="2" value="aberto">Restaurante Aberto</option>
+                            <option id="3" value="pausado">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair
+                    </button>
+                </div>
+
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+            <div id="pageLinks">
+                <li><a id="nomePropEstab" class="waves-effect waves-light">{{nome}}<span class="new badge pulse"
+                            onclick="javascript:window.location.href='/admin_ped'">4</span></a></li>
+                <li><a id="emailProp" class="waves-effect waves-light">{{email}}</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_start">Início</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_ava">Avaliações</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Financeiro</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_card">Cardápio</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="admin_promo">Promoções</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_areas">Áreas de entrega</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Formas de pagamento</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_hr">Horário de funcionamento</a>
+                </li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_users">Usuários</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Políticas</a></li>
+                <li style="display: none;">
+                    <a style="background-color: rgb(128, 0, 128); text-shadow: 1px 1px 1px black;"
+                        class="waves-effect waves-light trigger-loader" id="marcaPaginaAtual" href="/admin_forms">Novos
+                        Formulários
+                        <span style="text-shadow: none !important" class="new badge pulse"
+                            onclick="javascript:window.location.href='/admin_forms'">4</span>
+                    </a>
+                </li>
+
+                <div class="divider"></div>
+                <i style="font-size: 25px; margin-top: 10px; margin-bottom: 10px; color: white; margin-left: 30px;"
+                    class="material-icons btndarkmode">brightness_2</i>
+                {{!-- <li><a id="indf" class="waves-effect waves-light"></a></li> --}}
+            </div>
+        </ul>
+
+        <div id="divCorpo">
+
+            <div id="divInicio">
+                <h4>Novos Formulários</h4>
+            </div>
+
+            <div style="width: 95%; margin-top: 50px;" class="divider"></div>
+
+            <div style="margin-top: 20px;">
+                <div style="width: 95%" id="test-swipe-1">
+                    <table id="tableForms" class="display cell-border nowrap compact">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>CPF/CNPJ</th>
+                                <th style="width: 100px">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {{!-- MODAL FORMULARIO --}}
+    <div id="modalForms" class="modal">
+        <div class="modal-content">
+            <i id="iconX" class="material-icons modal-close">close</i>
+            <h5 style="margin-bottom: 20px; font-weight: bold;">Dados do formulário</h5>
+            <div class="divider"></div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <p style="background-color: rgb(65, 0, 65); color:white; text-shadow: 1px 1px 1px black;">Sobre o
+                    restaurante
+                </p>
+            </div>
+            <input type="hidden" class="idUsuario">
+            <input type="hidden" class="idRestaurante">
+            <div style="text-align: center; margin-bottom: 20px; margin-top: 20px;">
+                <img class="fotoRestaurante" style="border: 1px solid black; border-radius: 3px;" width="250px"
+                    src="/views/img/icons/cam.png">
+            </div>
+            <div style="display: flex;">
+                <p>Nome fantasia:</p>
+                <p class="nomeFantasia">l</p>
+            </div>
+            <div style="display: flex;">
+                <p>Razão Social:</p>
+                <p class="razaoSocial"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Email restaurante:</p>
+                <p class="emailRestaurante"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Telefone restaurante:</p>
+                <p class="telefoneRestaurante"></p>
+            </div>
+            <div style="display: flex;">
+                <p>CPNJ/CPF:</p>
+                <p class="CNPJ"></p>
+            </div>
+            <div style="display: flex;">
+                <p>CEP:</p>
+                <p class="cep"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Rua:</p>
+                <p class="rua"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Nº:</p>
+                <p class="nmrCasa"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Complemento:</p>
+                <p class="comple"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Bairro:</p>
+                <p class="bairro"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Cidade:</p>
+                <p class="cidade"></p>
+            </div>
+            <div style="display: flex;">
+                <p>UF:</p>
+                <p class="uf"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Especilidade:</p>
+                <p class="categoriaRestaurante">J</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                <p style="background-color: rgb(65, 0, 65); color:white; text-shadow: 1px 1px 1px black;">Sobre o
+                    proprietário
+                </p>
+            </div>
+
+            <div style="display: flex;">
+                <p>Nome:</p>
+                <p class="nomeProprietario"></p>
+            </div>
+            <div style="display: flex;">
+                <p>CPF:</p>
+                <p class="CPF"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Email:</p>
+                <p class="emailProprietario"></p>
+            </div>
+            <div style="display: flex;">
+                <p>Telefone:</p>
+                <p class="telefonePropietario"></p>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div style="text-align: center;" class="modal-footer">
+            <a style="background-color: rgb(0, 102, 0); text-shadow: 1px 1px 1px black;"
+                class="waves-effect waves-light btn-flat white-text aceitarform">Aceitar</a>
+            <a style="background-color: darkred; text-shadow: 1px 1px 1px black;"
+                class="waves-effect waves-light btn-flat white-text recusarform">Recusar</a>
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+
+
+    $(document).on('click', '.trigger-loader', function () {
+        $('.divLoader').css('display', '')
+    })
+
+    $(document).on('click', '.btndarkmode', function () {
+        if ($(this).text() == 'brightness_2') {
+            $(this).text('brightness_high')
+        } else {
+            $(this).text('brightness_2')
+        }
+    })
+
+    $(document).on('click', '.aceitarform', function () {
+        Swal.fire({
+            title: 'Confirma?',
+            html: 'O formulário será <b>aceito</b>!',
+            type: 'warning',
+            confirmButtonColor: '#800080',
+            confirmButtonText: 'Sim',
+            cancelButtonColor: '#333',
+            cancelButtonText: 'Não',
+            showCancelButton: true
+        }).then((result) => {
+            if (result.value) {
+
+                let idRestaurante = $('.idRestaurante').val();
+                let idusuario = $('.idUsuario').val();
+
+                $.ajax({
+                    url: '/aprovarForm/' + idRestaurante + '/' + idusuario,
+                    type: 'POST',
+                    beforeSend: function () {
+                        // $('.divLoader').css('display', '')
+                    },
+                    data: { nomePropietario: $('.nomeProprietario').text(), emailUsuario: $('.emailProprietario').text() },
+                    success: function () {
+                        console.log('lsklklf');
+                        Swal.fire({
+                            title: 'Confirmação!',
+                            text: 'O formulário foi aceito!',
+                            type: 'success',
+                            timer: 3500,
+                            confirmButtonColor: '#800080'
+                        })
+                        $('.divLoader').css('display', 'none')
+                        $('#modalForms').modal('close')
+                        $('table.display').DataTable().ajax.reload()
+                    }
+                })
+            }
+        })
+    })
+
+    $(document).on('click', '.recusarform', function () {
+        Swal.fire({
+            title: 'Qual o motivo?',
+            input: 'textarea',
+            type: 'warning',
+            confirmButtonColor: '#800080',
+            confirmButtonText: 'Enviar',
+            cancelButtonColor: '#333',
+            cancelButtonText: 'Cancelar',
+            inputPlaceholder: "Mensagem...",
+            showCancelButton: true,
+            inputValidator: (value) => {
+                return !value && 'Você precisa informar algum motivo'
+            }
+        }).then((result) => {
+            if (result.value) {
+
+                $.ajax({
+                    url: '/recusaForm',
+                    type: 'POST',
+                    data: { nomePropietario: $('.nomeProprietario').text(), emailUsuario: $('.emailProprietario').text(), motivo: result.value },
+                    success: function (data) {
+
+                    }
+                })
+                Swal.fire({
+                    title: 'Confirmação!',
+                    text: 'O formulário foi recusado!',
+                    type: 'success',
+                    timer: 3500,
+                    confirmButtonColor: '#800080'
+                })
+                $('#modalForms').modal('close')
+            }
+        })
+    })
+
+    $(document).on('focus', '.swal2-textarea', function () {
+        $('.swal2-textarea').attr('maxlength', '250')
+    })
+
+    $(document).ready(function () {
+
+        $('.collapsible').collapsible();
+
+        $(window).resize(function () {
+            var tst = $('table.display').DataTable()
+            tst.columns.adjust().draw();
+        })
+
+        $('.modal').modal({
+            dismissible: false
+        }).css('outline', 'none');
+
+        $('.display').DataTable({
+            "ajax": '/aprovaRestaurate',
+            beforeSend: function () {
+                $('.divLoader').css('display', '')
+            },
+            "columns": [
+                { "data": "coluna1" },
+                { "data": "coluna2" }, //nome do estabelecimento
+                { "data": "coluna3", "defaultContent": "", "searchable": false } //botões
+            ],
+            "initComplete": function (settings, json) {
+                $('.divLoader').css('display', 'none')
+            },
+            "drawCallback": function (settings) {
+            },
+            "columnDefs": [
+                { className: "cpf", "targets": [1] },
+                { "targets": [2], "searchable": false, "orderable": false }
+            ],
+            responsive: true,
+            "scrollY": "420px",
+            "scrollCollapse": true,
+            "paging": false,
+            "language": {
+                "lengthMenu": "Exibindo _MENU_ ",
+                "info": '',
+                "zeroRecords": "Nada encontrado!",
+                "infoEmpty": "Sem registros encontrados!",
+                "infoFiltered": "(Filtrando por um total de  _MAX_ registros)",
+                "sSearch": "Buscar:",
+                "sEmptyTable": function () {
+                    return "Nada encontrado!";
+                }
+            },
+            "bAutoWidth": true
+        });
+
+        $('.dataTables_filter input').addClass('browser-default').css('outline', 'none').css('height', '25px').css('border', '1px solid black').css('border-radius', '3px').css('padding-left', '3px')
+        $('.dataTables_length select').addClass('browser-default');
+
+        $('.logout').click(function () {
+            Swal.fire({
+                title: 'Deseja realmente sair?',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#800080',
+                cancelButtonColor: '#333',
+                cancelButtonText: 'Não',
+                confirmButtonText: 'Sim'
+            }).then((result) => {
+                if (result.value) {
+                    window.location.href = "/logout";
+                    $('.divLoader').css('display', '')
+                }
+            })
+        })
+
+        $('.sidenav').sidenav();
+        $('#sidenav-1').sidenav({ edge: 'left' });
+        $('#divHorarioTopo select').formSelect();
+        $('select').formSelect();
+        $('input#input_text, textarea#textarea2').characterCounter();
+        $('input#nome, textarea#textarea2').characterCounter();
+
+        //pegar valores do select
+        $('#divHorarioTopo select').change(function () {
+            $('#divHorarioTopo select').formSelect();
+            var instance = M.FormSelect.getInstance($('#divHorarioTopo select'));
+            var valor = instance.getSelectedValues();
+            Swal.fire({
+                title: 'Aviso!',
+                html: '<b>Restaurante ' + $(this).val() + '</b>.',
+                type: 'info',
+                confirmButtonColor: '#800080',
+                timer: 3500,
+            })
+        });
+
+
+
+
+        $(document).on("click", ".btn-floating", function () {
+            let nome;
+            let cpf;
+
+            if ($("#tableForms").hasClass("collapsed")) {
+                nome = $(this).parents('tr').prev().find('td').eq(0).html();
+                cpf = $(this).parents('tr').prev().find('td').eq(1).html();
+            } else {
+                nome = $(this).parents('tr').find('td').eq(0).html();
+                cpf = $(this).parents('tr').find('td').eq(1).html();
+            }
+
+            let tel = cpf.replace("/", ',')
+            $.ajax({
+                url: '/listarForm/' + nome + '/' + tel,
+                dataType: 'json',
+                beforeSend: function () {
+                    $('.divLoader').css('display', '')
+                },
+                success: function (data) {
+
+                    $('.nomeFantasia').text(data.nomefantasia)
+                    $('.razaoSocial').text(data.razaosocial)
+                    $('.emailRestaurante').text(data.email)
+                    $('.telefoneRestaurante').text(data.numerorestaurante)
+                    $('.CNPJ').text(data.cnpj)
+                    $('.cep').text(data.cep)
+                    $('.rua').text(data.rua)
+                    $('.nmrCasa').text(data.nmrcasa)
+                    $('.bairro').text(data.bairro)
+                    $('.cidade').text(data.cidade)
+                    $('.comple').text(data.complemento)
+                    $('.fotoRestaurante').attr("src", data.caminhofoto)
+                    $('.uf').text(data.uf)
+                    $('.categoriaRestaurante').text(data.categoriarestaurante)
+                    $('.nomeProprietario').text(data.nomeusuario)
+                    $('.CPF').text(data.cpf)
+                    $('.emailProprietario').text(data.emailusuario)
+                    $('.telefonePropietario').text(data.numerousuario)
+                    $('.idUsuario').val(data.idusuario)
+                    $('.idRestaurante').val(data.idrestaurante)
+
+                    $('.divLoader').css('display', 'none')
+                }
+            })
+        })
+
+        //resertar select
+        $("#btnDel").on("click", function () {
+            $('#selcomp option').prop('selected', function () {
+                return this.defaultSelected;
+            });
+        });
+
+    });
+
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+            $("#sidenav-1").css('marginTop', '0px');
+            $("#sidenav-1").css('transition', '.2s')
+        } else {
+            $("#sidenav-1").css('marginTop', '65px');
+            $("#sidenav-1").css('transition', '.2s');
+        }
+
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            $('#btnTopo').css('display', 'block')
+        } else {
+            $('#btnTopo').css('display', 'none')
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+</script>
+
+</html>

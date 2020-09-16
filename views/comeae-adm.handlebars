@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>ComeAê - Login</title>
+    <link rel="stylesheet" href="./views/css/placeholder-loading.css">
+    <link rel="stylesheet" href="./views/css/administracao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="topo row sticky no-select">
+        <a class="col s2 m2 center-align bt-acao-mobile"></a>
+        <div onclick="window.location.href='/comeae'" class="col s8 m8 center-align" id="logo-mobile">
+            <i class="icon-comeae fonte-logo"></i><i class="icon-comeae_texto fonte-logo-texto"></i>
+        </div>
+        <a class="col s2 m2 center-align"></a>
+    </nav>
+
+    <div class="corpo-geral kit-flex">
+        <form class="fm-log-adm">
+            <span class="fonte-primaria kit-flex">Administração</span>
+            <div class="input-field kit-flex dv-email">
+                <input type="email" id="emaillog" placeholder="Email">
+                <i class="material-icons">email</i>
+            </div>
+            <div class="input-field kit-flex dv-senha">
+                <input id="senhalog" type="password" placeholder="Senha">
+                <i class="material-icons">lock</i>
+            </div>
+            <div style="margin: 10px;" class="kit-flex dv-check-manter">
+                <span>Manter conectado</span>
+                <p>
+                    <label>
+                        <input type="checkbox" class="filled-in check-log-adm" checked="checked">
+                        <span class="kit-flex"></span>
+                    </label>
+                </p>
+            </div>
+            <div class="dv-entrar-adm kit-flex">
+                <button class="fonte-primaria waves-effect waves-light btn-small bt-log-adm">Entrar</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="rodape-mobile hide-on-large-only row center-align no-select">
+        <a onclick="window.location.href='/comeae'" class="col s12 m12">
+            <i class="icon-home cor-secundaria"></i>
+            <span class="legenda-tab-menu cor-secundaria">ComeAê</span>
+        </a>
+    </footer>
+
+</body>
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.bootcss.com/push.js/1.0.12/push.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"
+    integrity="sha256-D0J9D4igaYyVX/Y78Tr0yoDJsy8hi14hCEdFDakBp08=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+<script src="/js/Outros/jquery.mask.js"></script>
+<script src="/js/comeae-adm.js"></script>
+<script src="/js/Funcoes/Compartilhados.js"></script>
+
+</html>

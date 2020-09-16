@@ -1,0 +1,225 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divGeral">
+        <header>
+            <nav id="navBar">
+                <div onclick="window.location.href='/comeae'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+                <div id="divIconMenu">
+                    <button style="padding: 0px;" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger">
+                        <i id="menuIconSup" class="material-icons">menu</i>
+                    </button>
+                </div>
+                <div>
+                    <div id="divHorarioTopo">
+                        <select class="selc">
+                            <option id="1" value="Fechado">Restaurante Fechado</option>
+                            <option id="2" value="Aberto">Restaurante Aberto</option>
+                            <option id="3" value="Pausado">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+            <div id="pageLinks">
+                <li><a id="nomePropEstab" data-id="{{codrestaurante}}" class="waves-effect waves-light"><span
+                            class="nmlocal">{{nome}}</span><span class="new badge pulse countPedido"
+                            onclick="javascript:window.location.href='/admin_ped'"></span></a>
+                </li>
+                <li><a id="emailProp" class="waves-effect waves-light">{{email}}</a></li>
+                <li><a id="marcaPaginaAtual" class="waves-effect waves-light trigger-loader"
+                        href="/admin_start">Início</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_ava">Avaliações</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Financeiro</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_card">Cardápio</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="admin_promo">Promoções</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_areas">Áreas de entrega</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Formas de pagamento</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_hr">Horário de funcionamento</a>
+                </li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_users">Usuários</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="/admin_relatorio">Relatório</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light trigger-loader" href="">Políticas</a></li>
+                <li style="display: none">
+                    <a style="background-color: rgb(128, 0, 128); text-shadow: 1px 1px 1px black;"
+                        class="waves-effect waves-light trigger-loader" href="/admin_forms">Novos Formulários
+                        <span style="text-shadow: none !important" class="new badge pulse"
+                            onclick="javascript:window.location.href='/admin_forms'">4</span>
+                    </a>
+                </li>
+                <div class="divider"></div>
+            </div>
+        </ul>
+
+        <div id="divCorpo">
+
+            <div id="divInicio">
+                <h4>Início</h4>
+            </div>
+
+            <li id="divisorCard2" class="divider"></li>
+
+            <div class="hr-entrega-show kit-flex">
+                <span>Horário de entrega:</span>
+                <span class="sp-hr-ent"></span>
+            </div>
+
+            <li id="divisorCard2" class="divider"></li>
+
+            <div class="divCardStatus">
+                <div onclick="javascript:window.location.href='/admin_card#test-swipe-2'"
+                    class="card-panel red accent-4 center-align cardInicio trigger-loader">
+                    <div class="divIconCard">
+                        <i class="material-icons white-text iconCardStart">library_add</i>
+                    </div>
+                    <div class="divNameCard">
+                        <p class="white-text textCardStart">Adicionais</p>
+                    </div>
+
+                    <div class="left">
+                        <p class="white-text numCardStart countAdicionais">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    </div>
+
+                </div>
+
+                <div onclick="javascript:window.location.href='/admin_card'"
+                    class="card-panel purple darken-2 center-align cardInicio trigger-loader">
+                    <div class="divIconCard">
+                        <i class="material-icons white-text iconCardStart">bubble_chart</i>
+                    </div>
+                    <div class="divNameCard">
+                        <p class="white-text textCardStart">Categorias</p>
+                    </div>
+
+                    <div class="left">
+                        <p class="white-text numCardStart countCategoria">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    </div>
+                </div>
+
+                <div onclick="javascript:window.location.href='/admin_card#test-swipe-2'"
+                    class="card-panel orange darken-3 center-align cardInicio trigger-loader">
+                    <div class="divIconCard">
+                        <i class="material-icons white-text iconCardStart">group_work</i>
+                    </div>
+                    <div class="divNameCard">
+                        <p class="white-text textCardStart">Grupos&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    </div>
+
+                    <div class="left">
+                        <p class="white-text numCardStart countGrupos">
+                        </p>
+                    </div>
+
+                </div>
+
+                <div onclick="javascript:window.location.href='/admin_ped'"
+                    class="card-panel  brown darken-3 center-align cardInicio trigger-loader">
+                    <div class="divIconCard">
+                        <i class="material-icons white-text iconCardStart">border_color</i>
+                    </div>
+                    <div class="divNameCard">
+                        <p class="white-text textCardStart">Pedidos &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    </div>
+                    {{!-- {{#each grup}} --}}
+                    <div class="left">
+                        <p class="white-text numCardStart countPedidos"></p>
+                    </div>
+                    {{!-- {{/each}} --}}
+                </div>
+
+                <div onclick="javascript:window.location.href='/admin_card'"
+                    class="card-panel green darken-4 center-align cardInicio trigger-loader">
+                    <div class="divIconCard">
+                        <i class="material-icons white-text iconCardStart">shopping_basket</i>
+                    </div>
+                    <div class="divNameCard">
+                        <p class="white-text textCardStart">Produtos&nbsp&nbsp&nbsp&nbsp</p>
+                    </div>
+
+                    <div class="left">
+                        <p class="white-text numCardStart countProdutos"></p>
+                    </div>
+
+                </div>
+
+                <div onclick="javascript:window.location.href='/admin_ava'"
+                    class="card-panel indigo darken-4 center-align cardInicio trigger-loader">
+                    <div class="divIconCard">
+                        <i class="material-icons white-text iconCardStart">show_chart</i>
+                    </div>
+                    <div class="divNameCard">
+                        <p class="white-text textCardStart">Avaliações</p>
+                    </div>
+                    {{!-- {{#each prod}} --}}
+                    <div class="left">
+                        <p class="white-text numCardStart countAvaliacoes">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    </div>
+                    {{!-- {{/each}} --}}
+                </div>
+            </div>
+            <div class="divider divider-inicio"></div>
+            <div class="div-vendas">
+                <div class="dv-titulo-ava">
+                    <p>Vendas</p>
+                    <div class="linha-prim"></div>
+                </div>
+                <canvas id="vendas"></canvas>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.bootcss.com/push.js/1.0.12/push.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+
+<script src="/js/Funcoes/Compartilhado-REST.js"></script>
+<script src="/js/admin_start.js"></script>
+
+</html>

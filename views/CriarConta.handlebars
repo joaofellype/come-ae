@@ -1,0 +1,189 @@
+<!DOCTYPE>
+<html lang="pt-br">
+
+<head>
+    <title>Criar Conta</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/CriarConta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.css">
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divSup">
+        <div onclick="window.location.href='/comeae'" class="kit-in-flex">
+            <i class="icon-comeae"></i>
+            <i class="icon-comeae_texto"></i>
+        </div>
+        <div id="divLinks">
+            <a href="/ajuda">
+                <p>Ajuda</p>
+            </a>
+            <a href="/comeae">
+                <p>Já tenho conta</p>
+            </a>
+        </div>
+    </div>
+
+    <div id="divForm">
+
+        <div id="formIni">
+
+            <div id="divLabel">
+                <p id="pRest">Sobre o restaurante</p>
+            </div>
+
+            <div class="row center">
+                <div class="dv-imagem-user">
+                    <label for="btninput">
+                        <img id="imgInside" src="/views/img/base.png"
+                            style="width: 170px; height: 170px; border: 2px solid purple;"
+                            class="circle responsive-img b-lazy img-user-perfil">
+                    </label>
+                    <input name="imgPerfil" accept="image/*" class="form" type="file" id="btninput">
+                    <input name="fotocaminho" class="form" type="hidden" />
+                </div>
+                <span style="font-size: 0.7rem;" class="grey-text">Alterar imagem</span>
+            </div>
+
+            <div>
+                <p style="background-color: purple; color: white; border-radius: 3px; padding-right: 3px; padding-left: 3px; box-shadow: 1px 1px 3px 0.1px black; text-shadow: 1px 1px 1px black"
+                    class="left">Os itens com <b>*</b> são de preenchimento obrigatório!</p>
+            </div> <br>
+            <div id="divInputs">
+
+                <div id="Grupo1" class="input-field">
+                    <input placeholder="Nome Fantasia *" id="nome_fantasia" value="{{nome_fantasia}}" type="text"
+                        name="nomefantasia" class="validate form" required>
+                    <input placeholder="Razão Social *" id="nome_fantasia2" type="text" name="razaosocial"
+                        class="validate form" required>
+                    <input placeholder="Email restaurante" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                        title="Não é possível modificar o email" id="emailRest" name="email" type="email"
+                        class="validate form valid" disabled readonly value="{{email_rest}}" required>
+                </div>
+
+                <div id="Grupo2" class="input-field">
+                    <input placeholder="Telefone *" value="{{cel_rest}}" name="numeroRestaurante" value="" id="tel"
+                        type="tel" class="form" alt="tel" maxlength="17" required>
+                    <input placeholder="CNPJ ou CPF *" alt="cpfcnpj" name="cnpj" value="" id="cpfcnpj" type="text"
+                        class="form" required>
+                    <input placeholder="CEP *" name="cep" alt="cep" type="text" id="cep" value="" size="10"
+                        maxlength="9" onblur="pesquisacep(this.value);" class="form" required>
+                </div>
+
+                <div id="Grupo3" class="input-field">
+                    <input placeholder="Rua*" name="rua" type="text" id="rua" size="60" class="validate form" required>
+                    <input placeholder="Bairro *" name="bairro" type="text" id="bairro" size="40" class="validate form"
+                        required>
+                    <input placeholder="Complemento" name="complemento" type="text" id="complemento" size="40"
+                        class="validate form">
+                </div>
+
+                <div id="Grupo4" class="input-field">
+                    <input placeholder="Cidade *" name="cidade" type="text" id="cidade" size="40" class="validate form"
+                        required>
+                    <input placeholder="Nº" maxlength="6" name="nmrCasa" value="" id="num" type="text"
+                        class="validate form">
+                    <input placeholder="UF *" maxlength="2" class="input-field validate form autocomplete" required
+                        name="uf" type="text" id="uf" placeholder="" size="2">
+
+                    <div>
+                        <select name="categoriaRestaurante" multiple style="border: 1px solid grey; border-radius: 5px;"
+                            class="form" id="especialidade">
+                            {{#each cat}}
+                            <option value="{{id}}">{{categoriarestaurante}}</option>
+                            {{/each}}
+                        </select>
+                        <label for="especialidade">Especialidades (Max: 2)</label>
+                    </div>
+                </div>
+
+            </div>
+            <div id="divLabel">
+                <p id="pProp">Sobre o proprietário</p>
+            </div>
+
+            <div id="divInputs">
+                <div id="Grupo5" class="input-field">
+                    <input placeholder="Nome *" name="nomeDono" value="" id="nome" type="text" class="validate form"
+                        required>
+                    <input placeholder="CPF *" maxlength="14" name="cpf" value="" alt="cpf" id="cpf" type="text"
+                        class="form" required>
+                    <input oninput="validate()" onfocus="validate()" name="emailDono"
+                        pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="Email *" id="emailProp" value="" type="email"
+                        class="validate form" required>
+                </div>
+
+                <div id="Grupo5" class="input-field">
+                    <input placeholder="Telefone *" name="numeroDono" value="" alt="tel2" id="tel2" type="tel"
+                        class="form" maxlength="15" minlength="14" required>
+                    <input placeholder="Senha *" name="senhaDono" value="" id="senhadono" type="password"
+                        class="validate form" maxlength="17" required>
+                    <input placeholder="Confirme a senha *" name="senhaConfirm" value="" id="senhaConfirm"
+                        type="password" class="validate form" maxlength="17" required>
+                </div>
+            </div>
+
+            <button id="btnCriarConta" class="waves-effect waves-light btn-small">Confirmar</button>
+
+        </div>
+
+    </div>
+
+    <!-- Modal CROP IMAGE -->
+    <div id="modalCropUser" class="modal modal-fixed-footer">
+        <div class="modal-header kit-flex" style="height: 45px;">
+            <i class="material-icons purple-text text-darken-2 close-top-crop modal-close">close</i>
+            <span class="purple-text text-darken-2 kit-flex sp-top-crop">Ajustar Imagem</span>
+        </div>
+        <div class="modal-content">
+            <div id="image_demo"></div>
+        </div>
+        <div class="modal-footer kit-flex">
+            <a class="waves-effect waves-light btn-small purple darken-2 crop_image">Enviar</a>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h5 style="text-align: center;">Aviso</h5>
+            <p>Ao preencher todos os dados e apertar em <b>Confirmar</b> no fim da página, você estará de acordo com a
+                análise dos seus dados.</p><br>
+            <p><i>Todos os seus dados serão preservados.</i></p>
+        </div>
+        <div style="width: 99%" class="modal-footer">
+            <button onclick="aceitarTermos()" style="background-color: purple; font-weight: bold; color: white;"
+                class="modal-close waves-effect waves-green btn-flat">Concordo</button>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
+<script src="/js/CriarConta.js"></script>
+
+</html>

@@ -1,0 +1,347 @@
+* {
+  margin: 0 auto;
+  padding-bottom: 0;
+  background-color: transparent;
+}
+
+body {
+  background-image: url(/views/img/back3ori.png);
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(94, 0, 94);
+  background-repeat: no-repeat;
+  font-family: "Ubuntu";
+}
+
+/* Fontes */
+@font-face {
+  font-family: "Isidora Alt W00 Bold";
+  src: url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.eot");
+  src: url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.woff2")
+      format("woff2"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.woff") format("woff"),
+    url("svsv/fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.ttf")
+      format("truetype"),
+    url("./fonts/isidora/eddfd86d7e01977d2d2b3861f3053992.svg#Isidora")
+      format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.eot");
+  src: url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.woff2") format("woff2"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.woff") format("woff"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.ttf")
+      format("truetype"),
+    url("./fonts/ubuntu/1c5965c2b1dcdea439b54c3ac60cee38.svg#Ubuntu")
+      format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("./fonts/icomoon_comeae/icomoon.eot?egt8k8");
+  src: url("./fonts/icomoon_comeae/icomoon.eot?egt8k8#iefix")
+      format("embedded-opentype"),
+    url("./fonts/icomoon_comeae/icomoon.ttf?egt8k8") format("truetype"),
+    url("./fonts/icomoon_comeae/icomoon.woff?egt8k8") format("woff"),
+    url("./fonts/icomoon_comeae/icomoon.svg?egt8k8#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Icones */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-comeae:before {
+  content: "\e929";
+}
+.icon-comeae_texto:before {
+  content: "\e935";
+}
+
+/* PREDES */
+
+.kit-in-flex,
+.kit-flex {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.kit-flex {
+  display: flex;
+}
+
+/*  */
+
+#divGeral {
+  width: 1366px;
+  margin: auto;
+}
+
+#formLogar {
+  padding: 30px;
+  background-color: purple;
+  margin: 30px;
+}
+
+#p_log {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+}
+
+#formIni {
+  background-color: white;
+  display: inline-flex;
+  width: 27rem;
+  float: right;
+  height: 450px;
+  box-shadow: 0px 1px 1px 2px purple;
+  margin: 0px 50px auto;
+}
+
+#formIni > div:nth-child(3),
+#formIni > div:nth-child(4),
+#formIni > div:nth-child(5) {
+  height: 50px;
+  width: 80% !important;
+}
+#formIni > div:nth-child(4),
+#formIni > div:nth-child(5) {
+  margin-top: 50px;
+}
+
+#divSup {
+  height: 100px;
+  padding-top: 28px;
+  padding-left: 30px;
+}
+
+#divFrase {
+  height: 200px;
+  width: 50%;
+  float: left;
+  margin: 10px 50px auto;
+}
+
+#divFrase p {
+  color: white;
+  background-color: transparent;
+  font-size: 80px;
+  margin-left: 50px;
+  font-weight: bold;
+  text-align: start;
+  text-shadow: 0px 1px 5px black;
+}
+
+.dv-logo {
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.dv-logo i:first-child {
+  font-size: 3rem;
+}
+
+#btnFazerParte {
+  margin-top: -12px;
+  padding: 15px 10px 15px 10px;
+  border-radius: 10px;
+  border: 1px white solid;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-family: "Ubuntu" !important;
+  cursor: pointer;
+}
+
+#btnFazerParte:hover {
+  transition: 0.4s;
+  background-color: white;
+  color: purple;
+}
+
+#divLinks {
+  margin-right: 40px;
+  padding-top: 7px;
+  height: 45px;
+  width: 320px;
+  float: right;
+  display: inline-flex;
+}
+
+#divLinks a {
+  font-size: 17px;
+  color: white;
+}
+
+#formIni p {
+  height: 42px;
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#btnEntrarCadRest {
+  height: 45px;
+  width: 80%;
+  color: white;
+  font-weight: bold;
+  background-color: purple;
+  padding-top: 4px;
+  font-size: 1.4rem;
+  text-shadow: 1px 1px 1px #333;
+  border-radius: 10px;
+  margin: 73px 0 30px 0;
+  box-shadow: 0px 0px 1px 1px white;
+  font-family: "Isidora Alt W00 Bold";
+  text-transform: capitalize !important;
+}
+
+#btnEntrarCadRest:hover {
+  background-color: rgb(68, 1, 68);
+}
+
+#formIni input:focus + label {
+  color: rgb(129, 0, 126) !important;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+#formIni input + label {
+  color: rgb(0, 0, 0) !important;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.input-field input:focus {
+  border-bottom: 1px solid rgb(129, 0, 126) !important;
+  box-shadow: 0 1px 0 0 rgb(129, 0, 126) !important;
+}
+
+@media only screen and (max-width: 1240px) {
+  #formIni {
+    float: none;
+    width: 70vw;
+    margin: 5px 5px auto;
+    text-align: center;
+    transition: 0.1s;
+  }
+  #divFrase p {
+    font-size: 70px;
+    margin-top: -30px;
+  }
+  #divForm {
+    text-align: center;
+    transition: 0.2s;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #divFrase p {
+    font-size: 60px;
+    margin-left: 30px;
+    transition: 0.2s;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #divSup {
+    padding-top: 10px;
+    padding-left: 20px;
+    transition: 0.3s;
+  }
+  #divLinks {
+    width: 160px;
+    margin-right: 0px;
+    padding-top: 15px;
+    transition: 0.3s;
+  }
+  #btnFazerParte {
+    display: none;
+    transition: 0.3s;
+  }
+  #divFrase {
+    transition: 0.3s;
+    height: 160px;
+  }
+  #divFrase p {
+    font-size: 50px;
+    margin-left: 30px;
+    transition: 0.2s;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  #divGeral {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #divFrase p {
+    font-size: 50px;
+    margin-left: 30px;
+    transition: 0.2s;
+  }
+  #divFrase {
+    transition: 0.3s;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #formIni {
+    transition: 0.3s;
+    width: 96vw;
+  }
+  #divFrase p {
+    font-size: 40px;
+  }
+  #divFrase {
+    transition: 0.3s;
+    height: 145px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #divFrase {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 396px) {
+  #divFrase {
+    margin: 0px;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: -30px;
+  }
+  #formIni > p {
+    font-size: 22px;
+    margin-top: 15px;
+    color: purple;
+  }
+}
+@media only screen and (max-width: 340px) {
+  #divLinks {
+    text-decoration: underline;
+  }
+}

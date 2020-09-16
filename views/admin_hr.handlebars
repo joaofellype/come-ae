@@ -1,0 +1,406 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>ADM Horário</title>
+    <link rel="stylesheet" type="text/css" href="/views/css/estilo_admin_card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="divLoader">
+        <div class="preloader-wrapper big active loader-spinner">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="divGeral">
+
+        <!-- NAVBAR -->
+        <header>
+            <nav id="navBar">
+                <div onclick="window.location.href='/admin_start'" class="purple-text kit-flex logo-nav">
+                    <i class="icon-comeae kit-flex"></i>
+                    <i class="icon-comeae_texto kit-flex"></i>
+                </div>
+                <div id="divIconMenu">
+                    <button style="padding: 0px;" data-target="sidenav-1"
+                        class="waves-effect waves-light btn sidenav-trigger"><i id="menuIconSup"
+                            class="material-icons">menu</i></button>
+                </div>
+
+                <div>
+                    <div id="divHorarioTopo">
+                        <select class="selc">
+                            <option id="1" value="Fechado">Restaurante Fechado</option>
+                            <option id="2" value="Aberto">Restaurante Aberto</option>
+                            <option id="3" value="Pausado">Pausado</option>
+                        </select>
+                    </div>
+                    <button id="btnLog" class="btn-small logout">Sair
+                    </button>
+                </div>
+
+            </nav>
+        </header>
+
+        <!-- LEFT SIDEBAR	 -->
+        <ul id="sidenav-1" class="sidenav sidenav-fixed">
+
+            <div id="pageLinks">
+                <li><a id="nomePropEstab" class="waves-effect waves-light">{{nome}}<span class="new badge pulse"
+                            onclick="javascript:window.location.href='/admin_ped'">4</span></a></li>
+                <li><a id="emailProp" class="waves-effect waves-light">{{email}}</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_start">Início</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ava">Avaliações</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_ped">Pedidos</a></li>
+                <li><a class="waves-effect waves-light" href="">Financeiro</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_card">Cardápio</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_promo">Promoções</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_areas">Áreas de entrega</a></li>
+                <li><a class="waves-effect waves-light" href="">Formas de pagamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_users">Usuários</a></li>
+                <li><a id="marcaPaginaAtual" class="waves-effect waves-light" href="/admin_hr">Horário de
+                        funcionamento</a></li>
+                <li><a class="waves-effect waves-light" href="/admin_profile">Perfil</a></li>
+                <li><a class="waves-effect waves-light" href="">Ajuda</a></li>
+                <li><a class="waves-effect waves-light" href="">Políticas</a></li>
+                <li><a class="waves-effect waves-light" href="">Configurações do ambiente</a></li>
+
+                <div class="divider"></div>
+                <li><a id="indef" class="waves-effect waves-light"></a></li>
+            </div>
+        </ul>
+
+        <div id="divCorpo">
+
+            <div id="divInicio">
+                <h4>Funcionamento</h4>
+            </div>
+            <div style="margin-bottom: 10px;" class="divider"></div>
+
+            <div style="justify-content: center; align-items: center; display: flex; margin-bottom: 10px;">
+                <p style="margin: 0px; margin-right: 2px !important;"><b>● Indisponíveis:</b></p>
+                <div
+                    style="width: 50px; height: 20px; background-color: purple; margin: 0px; border-radius: 3px; box-shadow: 1px 1px 1px black; margin-right: 10px;">
+                </div>
+                <p style="margin: 0px; margin-right: 3px !important;"><b>● Disponíveis:</b></p>
+                <div
+                    style="width: 50px; height: 20px; background-color: white; margin: 0px; border-radius: 3px; box-shadow: 0px 0px 1px 1px purple;">
+                </div>
+            </div>
+            <div style="justify-content: center; align-items: center; text-align: center; margin-bottom: 10px;">
+                <p><b>● Para limpar a <u>linha</u> inteira da semana, toque/clique sobre a <u>letra</u> do dia em
+                        questão</b></p>
+            </div>
+            <div style="width: 100%;">
+                <form>
+                    <table id="tblHr" class="centered striped highlight">
+                        <thead>
+                            <tr>
+                                <th>Dia</th>
+                                <th colspan="2">1º Turno</th>
+                                <th colspan="2">2º Turno</th>
+                                <th colspan="2">3º Turno</th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>↓</th>
+                                <th style="letter-spacing: 1px">De</th>
+                                <th style="letter-spacing: 1px">Até</th>
+                                <th style="letter-spacing: 1px">De</th>
+                                <th style="letter-spacing: 1px">Até</th>
+                                <th style="letter-spacing: 1px">De</th>
+                                <th style="letter-spacing: 1px">Até</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{!-- SEGUNDA --}}
+                            <tr class="segunda">
+                                <td>
+                                    <p class="semanadia tooltipped" data-tooltip="Limpar" data-position="top">
+                                        S<p>
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="seginp1" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="seginp2" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="seginp3" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="seginp4" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="seginp5" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="seginp6" id="">
+                                </td>
+
+
+
+
+                            </tr>
+
+                            {{!-- TERÇA --}}
+                            <tr class="terca">
+                                <td>
+                                    <p class="semanadia tooltipped" data-tooltip="Limpar" data-position="top">
+                                        T<p>
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="terinp1" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="terinp2" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="terinp3" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="terinp4" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="terinp5" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="terinp6" id="">
+                                </td>
+
+                            </tr>
+
+                            {{!-- QUARTA --}}
+                            <tr class="quarta">
+                                <td>
+                                    <p class="semanadia tooltipped" data-tooltip="Limpar" data-position="top">
+                                        Q<p>
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="quainp1" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="quainp2" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="quainp3" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="quainp4" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="quainp5" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="quainp6" id="">
+                                </td>
+
+
+                            </tr>
+
+                            {{!-- QUINTA --}}
+                            <tr class="quinta">
+                                <td>
+                                    <p class="semanadia tooltipped" data-tooltip="Limpar" data-position="top">
+                                        Q<p>
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="quiinp1" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="quiinp2" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="quiinp3" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="quiinp4" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="quiinp5" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="quiinp6" id="">
+                                </td>
+
+                            </tr>
+
+                            {{!-- SEXTA --}}
+                            <tr class="sexta">
+                                <td>
+                                    <p class="semanadia tooltipped" data-tooltip="Limpar" data-position="top">
+                                        S<p>
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="sexinp1" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="sexinp2" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="sexinp3" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="sexinp4" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="sexinp5" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="sexinp6" id="">
+                                </td>
+
+                            </tr>
+
+                            {{!-- SÁBADO --}}
+                            <tr class="sabado">
+                                <td>
+                                    <p class="semanadia tooltipped" data-tooltip="Limpar" data-position="top">
+                                        S<p>
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="sabinp1" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="sabinp2" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="sabinp3" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="sabinp4" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="sabinp5" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="sabinp6" id="">
+                                </td>
+
+                            </tr>
+
+                            {{!-- DOMINGO --}}
+                            <tr class="domingo">
+                                <td>
+                                    <p class="semanadia tooltipped" data-tooltip="Limpar" data-position="top">
+                                        D<p>
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="dominp1" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="dominp2" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="dominp3" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="dominp4" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='De' name="dominp5" id="">
+                                </td>
+                                <td>
+                                    <input type="text" inputmode="numeric" class="horariomask browser-default"
+                                        placeholder='Até' name="dominp6" id="">
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+            <div style="text-align: center;">
+                <a class="waves-effect waves-light btn-small save btnsavehr">Salvar</a>
+            </div>
+
+        </div>
+        <form id="formHorario" method="POST">
+            <input type="hidden" value="" name="terca">
+            <input type="hidden" value="" name="quarta">
+            <input type="hidden" value="" name="quinta">
+            <input type="hidden" value="" name="sexta">
+            <input type="hidden" value="" name="sabado">
+            <input type="hidden" value="" name="domingo">
+            <input type="hidden" value="" name="segunda">
+        </form>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://rawgit.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script type="text/javascript" src="https://pastebin.com/raw/QkBYGVub"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+
+<script type="text/javascript" src="https://pastebin.com/raw/neg3Zijg"></script>
+<script type="text/javascript" src="https://pastebin.com/raw/10z8dxLQ"></script>
+<script src="/js/Funcoes/Compartilhado-REST.js"></script>
+<script src="/js/admin_hr.js"></script>
+
+</html>
